@@ -32,7 +32,7 @@ if ($data = $Cache_Lite->get($id)) {
     // Cache miss !
     // Put in $data datas to put in cache
     // (...)
-    $Cache_Lite->save($id, $data);
+    $Cache_Lite->save($data);
 
 }
 
@@ -58,7 +58,7 @@ if ($data = $Cache_Lite->get('block1')) {
     echo($data);
 } else { 
     $data = 'Data of the block 1';
-    $Cache_Lite->save('block1', $data);
+    $Cache_Lite->save($data);
 }
 
 echo('<br><br>Non cached line !<br><br>');
@@ -67,7 +67,7 @@ if ($data = $Cache_Lite->get('block2')) {
     echo($data);
 } else { 
     $data = 'Data of the block 2';
-    $Cache_Lite->save('block2', $data);
+    $Cache_Lite->save($data);
 }
 
 ?>

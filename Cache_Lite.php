@@ -109,6 +109,20 @@ class Cache_Lite
     */
     var $_pearErrorMode = PEAR_ERROR_DIE;
     
+    /**
+    * Current cache id
+    *
+    * @var string $_id
+    */
+    var $_id;
+    
+    /**
+    * Current cache group
+    *
+    * @var string $_group
+    */
+    var $_group;
+    
     // --- Public methods ---
     
     /**
@@ -148,6 +162,8 @@ class Cache_Lite
     */
     function get($id, $group = 'default')
     {
+        $this->_id = $id;
+        $this->_group = $group;
         if ($this->_caching) {
             $this->_setFileName($id, $group);
             if (@filemtime($this->_file) > $this->_refreshTime) {
@@ -160,16 +176,18 @@ class Cache_Lite
     /**
     * Save some data in a cache file
     *
-    * @param string $id cache id
     * @param string $data data to put in cache
+    * @param string $id cache id
     * @param string $group name of the cache group
     * @return boolean true if no problem
     * @access public
     */
-    function save($id, $data, $group = 'default') 
+    function save($data, $id = NULL, $group = 'default') 
     {
         if ($this->_caching) {
-            $this->_setFileName($id, $group);
+            if (isset($id)) {
+                $this->_setFileName($id, $group);
+            }
             if ($this->_writeControl) {
                 if (!$this->_writeAndControl($data)) {
                     @touch($this->_file, time() - 2*abs($this->_lifeTime));

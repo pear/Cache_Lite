@@ -19,7 +19,7 @@ if ($data = $Cache_Lite->get('123')) {
         $data .= '0123456789';
     }
     echo($data);
-    $Cache_Lite->save('123', $data);
+    $Cache_Lite->save($data);
 }
 
 ?>
