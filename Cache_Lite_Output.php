@@ -1,17 +1,17 @@
 <?php
 
-require_once('Cache_Lite.php');
-
 /**
-* This class extends Cache_Lite and uses output buffering to get
-* the data to cache.
+* This class extends Cache_Lite and uses output buffering to get the data to cache.
 *
 * There are some examples in the 'docs/examples' file
 * Technical choices are described in the 'docs/technical' file
 *
+* @package Cache_Lite
 * @version $Id$
 * @author Fabien MARTY <fab@php.net>
 */
+
+require_once('Cache_Lite/Cache_Lite.php');
 
 class Cache_Lite_Output extends Cache_Lite
 {
