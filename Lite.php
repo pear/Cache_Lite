@@ -472,7 +472,7 @@ class Cache_Lite
     */
     function _read()
     {
-        $fp = @fopen($this->_file, "r");
+        $fp = @fopen($this->_file, "rb");
         if ($this->_fileLocking) @flock($fp, LOCK_SH);
         if ($fp) {
             clearstatcache(); // because the filesize can be cached by PHP itself...
@@ -509,7 +509,7 @@ class Cache_Lite
     */
     function _write($data)
     {
-        $fp = @fopen($this->_file, "w");
+        $fp = @fopen($this->_file, "wb");
         if ($fp) {
             if ($this->_fileLocking) @flock($fp, LOCK_EX);
             if ($this->_readControl) {
