@@ -215,6 +215,7 @@ class Cache_Lite
     {
         $this->_id = $id;
         $this->_group = $group;
+        $data = false;
         if ($this->_caching) {
             $this->_setFileName($id, $group);
             if ($this->_memoryCaching) {
