@@ -141,6 +141,7 @@ class Cache_Lite
 
     /**
     * Enable / Disable "Only Memory Caching"
+    * (be carefull, memory caching is "beta quality")
     *
     * @var boolean $_onlyMemoryCaching
     */
