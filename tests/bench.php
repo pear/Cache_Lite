@@ -1,5 +1,8 @@
 <?php
 
+// Bench script of Cache_Lite
+// $Id$
+
 require_once('../Cache_Lite.php');
 
 $options = array(

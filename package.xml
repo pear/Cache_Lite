@@ -25,6 +25,7 @@ uses file locking and/or anti-corruption tests).</description>
       <file role="php" baseinstalldir="Cache_Lite/tests" md5sum="218a9d4acffeba7c225ad621586322c1" name="tests/test.php"/>
       <file role="php" baseinstalldir="Cache_Lite/docs" md5sum="27cf445c71e577dbcad20ffe8c6759f9" name="docs/examples"/>
       <file role="php" baseinstalldir="Cache_Lite/docs" md5sum="934071f21c17611811e01396ca604c79" name="docs/technical"/>
+      <file role="php" baseinstalldir="Cache_Lite" name="Cache_Lite_Output"/>
     </filelist>
   </release>
 </package>
