@@ -190,7 +190,7 @@ class Cache_Lite
     * @param array $options options
     * @access public
     */
-    function Cache_Lite($options = NULL)
+    function Cache_Lite($options = array(NULL))
     {
         $availableOptions = '{memoryCaching}{onlyMemoryCaching}{memoryCachingLimit}{cacheDir}{caching}{lifeTime}{fileLocking}{writeControl}{readControl}{readControlType}{pearErrorMode}';
         while (list($key, $value) = each($options)) {
