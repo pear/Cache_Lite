@@ -190,7 +190,7 @@ class bench
 
 <?php
 
-require_once('Cache/Lite/Function');
+require_once('Cache/Lite/Function.php');
 
 $options = array(
     'cacheDir' => '/tmp/',
