@@ -291,16 +291,16 @@ class Cache_Lite
     function _read()
     {
         $fp = @fopen($this->_file, "r");
-        if ($this->_fileLocking) flock($fp, LOCK_SH);
+        if ($this->_fileLocking) @flock($fp, LOCK_SH);
         if ($fp) {
-            $length = filesize($this->_file);
+            $length = @filesize($this->_file);
             if ($this->_readControl) {
-                $hashControl = fread($fp, 32);
+                $hashControl = @fread($fp, 32);
                 $length = $length - 32;
             } 
-            $data = fread($fp, $length);
-            if ($this->_fileLocking) flock($fp, LOCK_UN);
-            fclose($fp);
+            $data = @fread($fp, $length);
+            if ($this->_fileLocking) @flock($fp, LOCK_UN);
+            @fclose($fp);
             if ($this->_readControl) {
                 $hashData = $this->_hash($data, $this->_readControlType);
                 if ($hashData != $hashControl) {
@@ -326,13 +326,13 @@ class Cache_Lite
         $fp = @fopen($this->_file, "w");
         if ($fp) {
             $len = strlen($data);
-            if ($this->_fileLocking) flock($fp, LOCK_EX);
+            if ($this->_fileLocking) @flock($fp, LOCK_EX);
             if ($this->_readControl) {
-                fwrite($fp, $this->_hash($data, $this->_readControlType), 32); 
+                @fwrite($fp, $this->_hash($data, $this->_readControlType), 32); 
             }
-            fwrite($fp, $data, $len);
-            if ($this->_fileLocking) flock($fp, LOCK_UN);
-            fclose($fp);
+            @fwrite($fp, $data, $len);
+            if ($this->_fileLocking) @flock($fp, LOCK_UN);
+            @fclose($fp);
             return true;
         }
         Cache_Lite::_raiseError('Cache_Lite : Unable to write cache !', -1);
