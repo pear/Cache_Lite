@@ -82,6 +82,8 @@ class Cache_Lite_Function extends Cache_Lite
                 list($class, $method) = explode('::', $target);
                 $result = call_user_method_array($method, $class, $arguments);
             } else if (strstr($target, '->')) { // object->method
+                // use a stupid name ($objet_123456789 because) of problems when the object
+                // name is the same as this var name
                 list($object_123456789, $method) = explode('->', $target);
                 global $$object_123456789;
                 $result = call_user_method_array($method, $$object_123456789, $arguments);
