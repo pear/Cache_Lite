@@ -14,15 +14,15 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.3.1</version>
-    <date>2004-08-16</date>
+    <version>1.4.0beta1</version>
+    <date>2004-11-23</date>
     <license>lgpl</license>
-    <state>stable</state>
+    <state>beta</state>
     <notes>
-      Bug fixed :
-      - problem with clean() method with memoryCaching activated (thanks to Bojan Mihelac (bmihelac at mihelac dot org))
-      - remove() method didn't deal with memoryCaching
-      - bug fix #1758, thanks to Dave (djpenton at cs dot mu dot oz dot au)
+      New features :
+      - hashed cache directory structure with the choice of the level (thanks to Mike Benoit (ipso at snappymail dot ca))
+      - new options for cleaning the cache ("not in group", "too old"...) (thanks to dontilooksweetandinnocent@ambience.ru)
+      - automatic cleaning of too old cache files based on a customisable "random method"
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -50,6 +50,18 @@
     </filelist>
   </release>
   <changelog>
+    <release>
+     <version>1.3.1</version>
+     <date>2004-08-16</date>
+     <license>lgpl</license>
+     <state>stable</state>
+     <notes>
+      Bug fixed :
+      - problem with clean() method with memoryCaching activated (thanks to Bojan Mihelac (bmihelac at mihelac dot org))
+      - remove() method didn't deal with memoryCaching
+      - bug fix #1758, thanks to Dave (djpenton at cs dot mu dot oz dot au)
+     </notes>
+    </release>
     <release>
      <version>1.3</version>
      <date>2004-02-07</date>
