@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE package SYSTEM "../package.dtd">
 <package version="1.0">
- <name>Cache_Lite</name>
- <summary>Fast and Safe little cache system</summary>
- <description>
-  This package is a little cache system optimized for file containers. It is fast and safe (because it
-  uses file locking and/or anti-corruption tests).
- </description>
- <license>lgpl</license>
- <maintainers>
-  <maintainer>
-   <user>fab</user>
-   <name>Fabien MARTY</name>
-   <email>fab@php.net</email>
-   <role>lead</role>
-  </maintainer>
- </maintainers>
- <release>
-  <version>0.1</version>
-  <date>2002-07-25</date>
-  <state>devel</state>
-  <notes>
-   This is the first release.
-  </notes>
-  <filelist>
-   <dir name="/" baseinstalldir="Cache_Lite">
-    <file role="php">Cache_Lite.php</file>
-   </dir>
-  </filelist>
- </release>
+  <name>Cache_Lite</name>
+  <summary>Fast and Safe little cache system</summary>
+  <description>This package is a little cache system optimized for file containers. It is fast and safe (because it
+uses file locking and/or anti-corruption tests).</description>
+  <maintainers>
+    <maintainer>
+      <user>fab</user>
+      <name>Fabien MARTY</name>
+      <email>fab@php.net</email>
+      <role>lead</role>
+    </maintainer>
+  </maintainers>
+  <release>
+    <version>0.1</version>
+    <date>2002-07-25</date>
+    <license>lgpl</license>
+    <state>devel</state>
+    <notes>This is the first release.</notes>
+    <filelist>
+      <file role="php" baseinstalldir="Cache_Lite" md5sum="5bd6ce8c71878268569d3e635ab7b523" name="Cache_Lite.php"/>
+      <file role="doc" baseinstalldir="Cache_Lite/tests" md5sum="f7a9487bf565e79860114dac982848c5" name="tests/readme"/>
+      <file role="php" baseinstalldir="Cache_Lite/tests" md5sum="5acefa182df097d21315098e179f5707" name="tests/bench.php"/>
+      <file role="php" baseinstalldir="Cache_Lite/tests" md5sum="218a9d4acffeba7c225ad621586322c1" name="tests/test.php"/>
+    </filelist>
+  </release>
 </package>
-
