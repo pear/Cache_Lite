@@ -14,22 +14,17 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.2</version>
-    <date>2003-10-25</date>
+    <version>1.3</version>
+    <date>2004-02-07</date>
     <license>lgpl</license>
     <state>stable</state>
     <notes>
       Changes :
-      - Rewrite of Cache_Lite constructor (thanks to Brian E. Lozier) 
-      New Features :
-      - Add of lastModified() method (for Cache_Lite hackers) (thanks to Harry Fuecks)
-      - Introduce automatic serialization (false in default) (thanks to Dan Wilson)
-      - Add of an url for a cache_lite tutorial (english (thanks to paj) and french)
+      - Add a warning in examples file because of http://pear.php.net/bugs/bug.php?id=660
       Bug fixed :
-      - Change the Cache_Lite::raiseError calls in $this->raiseError (thanks to Holger Willenborg)
-      - Set the default group for remove, since get and save both have it set (thanks to jellybob)
-      - Little fix for caching binary data under Windows (thanks to Simeon Franklin)
-      - little fix with fileNameProtection set to false (not the default (big thank to Harry Fuecks))
+      - little warning fix in Cache_Lite_Function (fab)
+      - little bug fix in lastModified() method (thanks to Yavor Shahpasov)
+      - fix http://pear.php.net/bugs/bug.php?id=513 (thanks to alan@aardwolfweb.com)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -57,6 +52,25 @@
     </filelist>
   </release>
   <changelog>
+    <release>
+      <version>1.2</version>
+      <date>2003-10-25</date>
+      <license>lgpl</license>
+      <state>stable</state>
+      <notes>
+        Changes :
+        - Rewrite of Cache_Lite constructor (thanks to Brian E. Lozier) 
+        New Features :
+        - Add of lastModified() method (for Cache_Lite hackers) (thanks to Harry Fuecks)
+        - Introduce automatic serialization (false in default) (thanks to Dan Wilson)
+        - Add of an url for a cache_lite tutorial (english (thanks to paj) and french)
+        Bug fixed :
+        - Change the Cache_Lite::raiseError calls in $this->raiseError (thanks to Holger Willenborg)
+        - Set the default group for remove, since get and save both have it set (thanks to jellybob)
+        - Little fix for caching binary data under Windows (thanks to Simeon Franklin)
+        - little fix with fileNameProtection set to false (not the default (big thank to Harry Fuecks))
+      </notes>
+    </release>
     <release>
       <version>1.1</version>
       <date>2003-02-23</date>
