@@ -232,7 +232,7 @@ class Cache_Lite
             }
         }
         $this->_refreshTime = time() - $this->_lifeTime;
-	}
+    }
     
     /**
     * Test if a cache is available and (if yes) return it
@@ -275,7 +275,7 @@ class Cache_Lite
             if (($data) and ($this->_memoryCaching)) {
                 $this->_memoryCacheAdd($this->_file, $data);
             }
-            if ($this->_automaticSerialization) {
+            if (($this->_automaticSerialization) and (is_string($data))) {
                 $data = unserialize($data);
             }
             return $data;
