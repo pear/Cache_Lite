@@ -12,29 +12,24 @@
       <email>fab@php.net</email>
       <role>lead</role>
      </maintainer>
-     <maintainer>
-      <user>jfbus</user>
-      <name>Jean-François BUSTARRET</name>
-      <email>JFBUSTARRET@tf1.fr</email>
-      <role>developer</role>
-    </maintainer>
   </maintainers>
   <release>
-    <version>1.1</version>
-    <date>2003-02-23</date>
+    <version>1.2</version>
+    <date>2003-10-25</date>
     <license>lgpl</license>
     <state>stable</state>
     <notes>
       Changes :
-      - Move to usage of call_user_func_array() and call_user_func() as call_user_method() is depreciated (thanks to Sterling Hughes) 
+      - Rewrite of Cache_Lite constructor (thanks to Brian E. Lozier) 
       New Features :
-      - Introduce memoryCaching (idea of Mike Benoit)
-      - Add of a file name protection option (can be faster if set to off) (thanks to Brian Webb for the idea)
+      - Add of lastModified() method (for Cache_Lite hackers) (thanks to Harry Fuecks)
+      - Introduce automatic serialization (false in default) (thanks to Dan Wilson)
+      - Add of an url for a cache_lite tutorial (english (thanks to paj) and french)
       Bug fixed :
-      - Little fix : cache was inefficient if the output is only 0 (thanks to Brian Webb)
-      - notice fix (thanks to Lorenzo Alberton, Pierre-Alain Joye and Jon Parise)
-      - Little fix to avoid file names problems with an exotic group name (thanks to Brian Webb)
-      - Fix a possible bug when resave a cache file after a succesfull get (thanks to Michael Caplan) 
+      - Change the Cache_Lite::raiseError calls in $this->raiseError (thanks to Holger Willenborg)
+      - Set the default group for remove, since get and save both have it set (thanks to jellybob)
+      - Little fix for caching binary data under Windows (thanks to Simeon Franklin)
+      - little fix with fileNameProtection set to false (not the default (big thank to Harry Fuecks))
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -62,6 +57,24 @@
     </filelist>
   </release>
   <changelog>
+    <release>
+      <version>1.1</version>
+      <date>2003-02-23</date>
+      <license>lgpl</license>
+      <state>stable</state>
+      <notes>
+        Changes :
+        - Move to usage of call_user_func_array() and call_user_func() as call_user_method() is depreciated (thanks to Sterling Hughes) 
+        New Features :
+        - Introduce memoryCaching (idea of Mike Benoit)
+        - Add of a file name protection option (can be faster if set to off) (thanks to Brian Webb for the idea)
+        Bug fixed :
+        - Little fix : cache was inefficient if the output is only 0 (thanks to Brian Webb)
+        - notice fix (thanks to Lorenzo Alberton, Pierre-Alain Joye and Jon Parise)
+        - Little fix to avoid file names problems with an exotic group name (thanks to Brian Webb)
+        - Fix a possible bug when resave a cache file after a succesfull get (thanks to Michael Caplan)
+      </notes>
+    </release>
     <release>
      <version>1.0.1</version>
      <date>2002-11-12</date>
