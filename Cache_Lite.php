@@ -15,6 +15,8 @@
 * @author Fabien MARTY <fab@php.net>
 */
 
+require_once 'PEAR.php';
+
 class Cache_Lite
 {
 
