@@ -3,10 +3,9 @@
 /**
 * Fast, light and safe Cache Class
 *
-* Cache_Lite is a fast, light and safe cache system. It's designed
-* This package is a little cache system optimized for file containers. 
-* It is fast and safe (because it uses file locking and/or 
-* anti-corruption tests).
+* Cache_Lite is a fast, light and safe cache system. It's optimized
+* for file containers. It is fast and safe (because it uses file 
+* locking and/or anti-corruption tests).
 *
 * There are some examples in the 'docs/examples' file
 * Technical choices are described in the 'docs/technical' file
@@ -93,7 +92,7 @@ class Cache_Lite
     * Available values are :
     * 'md5' for a md5 hash control (best but slowest)
     * 'crc32' for a crc32 hash control (lightly less safe but faster, better choice)
-    * 'length' for a length only test (fastest)
+    * 'strlen' for a length only test (fastest)
     *
     * @var boolean $_readControlType
     */
