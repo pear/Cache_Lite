@@ -29,11 +29,12 @@
       - E_NOTICEs problems and maybe a minor bug of errors management (Thanks to Sebastian BERGMANN)
     </notes>
     <filelist>
-      <dir name="/" baseinstalldir="Cache_Lite">
-        <file role="php">Cache_Lite.php</file>
-        <file role="php">Cache_Lite_Output.php</file>
-        <file role="php">Cache_Lite_Function.php</file>
-        <file role="doc">LICENSE</file>
+      <dir name="/" baseinstalldir="Cache">
+        <dir name="docs">
+          <file role="doc">technical</file>
+          <file role="doc">examples</file>
+        </dir>
+
         <dir name="tests">
           <file role="test">test.php</file>
           <file role="test">test2.php</file>
@@ -43,10 +44,14 @@
           <file role="test">bench3.php</file>
           <file role="doc">readme</file>
         </dir>
-        <dir name="docs">
-          <file role="doc">technical</file>
-          <file role="doc">examples</file>
+
+        <dir name="Lite">
+          <file role="php">Output.php</file>
+          <file role="php">Function.php</file>
         </dir>
+
+        <file role="php">Lite.php</file>
+        <file role="doc">LICENSE</file>
       </dir>
     </filelist>
   </release>
