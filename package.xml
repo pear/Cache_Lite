@@ -26,15 +26,15 @@
     <state>stable</state>
     <notes>
       Changes :
-      - Move to usage of call_user_func_array() and call_user_func() as call_user_method() is depreciated (thanks to Sterling Hughes <sterling@bumblebury.com> 
+      - Move to usage of call_user_func_array() and call_user_func() as call_user_method() is depreciated (thanks to Sterling Hughes) 
       New Features :
       - Introduce memoryCaching (idea of Mike Benoit)
-      - Add of a file name protection option (can be faster if set to off) (thanks to Brian Webb <bwebb9@yahoo.com> for the idea)
+      - Add of a file name protection option (can be faster if set to off) (thanks to Brian Webb for the idea)
       Bug fixed :
-      - Little fix : cache was inefficient if the output is only 0 (thanks to Brian Webb <bwebb9@yahoo.com>)
+      - Little fix : cache was inefficient if the output is only 0 (thanks to Brian Webb)
       - notice fix (thanks to Lorenzo Alberton, Pierre-Alain Joye and Jon Parise)
-      - Little fix to avoid file names problems with an exotic group name (thanks to Brian Webb <bwebb9@yahoo.com>)
-      - Fix a possible bug when resave a cache file after a succesfull get (thanks to Michael Caplan <michael@eggplant.ws>) 
+      - Little fix to avoid file names problems with an exotic group name (thanks to Brian Webb)
+      - Fix a possible bug when resave a cache file after a succesfull get (thanks to Michael Caplan) 
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
