@@ -334,11 +334,14 @@ class Cache_Lite
         if ($this->_fileLocking) @flock($fp, LOCK_SH);
         if ($fp) {
             $length = @filesize($this->_file);
-            if ($this->_readControl) {
+            $mqr = get_magic_quotes_runtime();
+        	set_magic_quotes_runtime(0);
+        	if ($this->_readControl) {
                 $hashControl = @fread($fp, 32);
                 $length = $length - 32;
             } 
             $data = @fread($fp, $length);
+            set_magic_quotes_runtime($mqr);
             if ($this->_fileLocking) @flock($fp, LOCK_UN);
             @fclose($fp);
             if ($this->_readControl) {
