@@ -350,11 +350,11 @@ class Cache_Lite
     {
         $fp = @fopen($this->_file, "w");
         if ($fp) {
-            $len = strlen($data);
             if ($this->_fileLocking) @flock($fp, LOCK_EX);
             if ($this->_readControl) {
-                @fwrite($fp, $this->_hash($data, $this->_readControlType), 32); 
+                @fwrite($fp, $this->_hash($data, $this->_readControlType), 32);
             }
+            $len = strlen($data);
             @fwrite($fp, $data, $len);
             if ($this->_fileLocking) @flock($fp, LOCK_UN);
             @fclose($fp);
@@ -403,4 +403,3 @@ class Cache_Lite
 } 
 
 ?>
-
