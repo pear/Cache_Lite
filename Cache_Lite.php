@@ -1,30 +1,17 @@
 <?php
 
 /**
-* Fast & Safe Cache Class
+* Fast, light and safe Cache Class
 *
-* Synopsis :
+* Cache_Lite is a fast, light and safe cache system. It's designed
+* This package is a little cache system optimized for file containers. 
+* It is fast and safe (because it uses file locking and/or 
+* anti-corruption tests).
 *
-* <?php
-* require_once('Cache_Lite/Cache_Lite.php');
-* $id = '123';
-* $options = array(
-*    'cacheDir' => '/tmp/',
-*    'lifeTime' => 3600
-* );
-* $Cache_Lite = new Cache_Lite($options);
-* if ($data = $Cache_Lite->get($id)) {
-*     // Cache hit !
-*     // Content is in $data
-*     // (...)
-* } else {
-*     // Cache miss !
-*     // Put in $data datas to put in cache
-*     // (...)
-*     $Cache_Lite->save($id, $data);
-* }
-* ?>
+* There are some examples in the 'docs/examples' file
+* Technical choices are described in the 'docs/technical' file
 *
+* @version $Id$
 * @author Fabien MARTY <fab@php.net>
 */
 
