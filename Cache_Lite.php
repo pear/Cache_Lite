@@ -160,17 +160,24 @@ class Cache_Lite
     *
     * @param string $id cache id
     * @param string $group name of the cache group
+    * @param boolean $doNotTestCacheValidity if set to true, the cache validity won't be tested
     * @return string data of the cache (or false if no cache available)
     * @access public
     */
-    function get($id, $group = 'default')
+    function get($id, $group = 'default', $doNotTestCacheValidity = false)
     {
         $this->_id = $id;
         $this->_group = $group;
         if ($this->_caching) {
             $this->_setFileName($id, $group);
-            if (@filemtime($this->_file) > $this->_refreshTime) {
-                return (($data = $this->_read()));
+            if ($doNotTestCacheValidity) {
+                if (file_exists($this->_file)) {
+                    return (($data = $this->_read()));
+                }
+            } else {
+                if (@filemtime($this->_file) > $this->_refreshTime) {
+                    return (($data = $this->_read()));
+                }
             }
         }
         return false;
