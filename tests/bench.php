@@ -3,7 +3,7 @@
 // Bench script of Cache_Lite
 // $Id$
 
-require_once('../Cache_Lite.php');
+require_once('../Lite.php');
 
 $options = array(
     'caching' => true,

@@ -3,7 +3,7 @@
 // Test script of Cache_Lite_Output
 // $Id$
 
-require_once('../Cache_Lite_Output.php');
+require_once('../Lite/Output.php');
 
 $options = array(
     'cacheDir' => '/tmp/',
