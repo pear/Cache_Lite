@@ -224,15 +224,15 @@ class Cache_Lite
     */
     function Cache_Lite($options = array(NULL))
     {
-        $availableOptions = '{automaticSerialization}{fileNameProtection}{memoryCaching}{onlyMemoryCaching}{memoryCachingLimit}{cacheDir}{caching}{lifeTime}{fileLocking}{writeControl}{readControl}{readControlType}{pearErrorMode}';
-        while (list($key, $value) = each($options)) {
-            if (strpos('>'.$availableOptions, '{'.$key.'}')) {
+        $availableOptions = array('automaticSerialization', 'fileNameProtection', 'memoryCaching', 'onlyMemoryCaching', 'memoryCachingLimit', 'cacheDir', 'caching', 'lifeTime', 'fileLocking', 'writeControl', 'readControl', 'readControlType', 'pearErrorMode');
+        foreach($options as $key => $value) {
+            if(in_array($key, $availableOptions)) {
                 $property = '_'.$key;
                 $this->$property = $value;
             }
         }
         $this->_refreshTime = time() - $this->_lifeTime;
-    }
+	}
     
     /**
     * Test if a cache is available and (if yes) return it
@@ -442,7 +442,18 @@ class Cache_Lite
             }
         }
     }
-
+    
+    /**
+    * Return the cache last modification time
+    *
+    * BE CAREFUL : THIS METHOD IS FOR HACKING ONLY !
+    *
+    * @return int last modification time
+    */
+    function lastModified() {
+        return filemtime($this->cache->_file);
+    }
+    
     /**
     * Trigger a PEAR error
     *
