@@ -393,7 +393,7 @@ class Cache_Lite
     */
     function clean($group = false, $mode = 'ingroup')
     {
-        $this->_cleanDir($this->_cacheDir, $group, $mode);
+        return $this->_cleanDir($this->_cacheDir, $group, $mode);
     }
        
     /**
