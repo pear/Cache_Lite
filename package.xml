@@ -14,6 +14,43 @@
      </maintainer>
   </maintainers>
   <release>
+    <version>1.4.0</version>
+    <date>2005-01-21</date>
+    <license>lgpl</license>
+    <state>stable</state>
+    <notes>
+      Changes :
+      - juste a little more docs since 1.4.0beta1
+    </notes>
+    <filelist>
+      <dir name="/" baseinstalldir="Cache">
+        <dir name="docs">
+          <file role="doc">technical</file>
+          <file role="doc">examples</file>
+        </dir>
+        <dir name="tests">
+          <file role="test">test.php</file>
+          <file role="test">test2.php</file>
+          <file role="test">test3.php</file>
+          <file role="test">bench.php</file>
+          <file role="test">bench2.php</file>
+          <file role="test">bench3.php</file>
+          <file role="doc">readme</file>
+        </dir>
+        <dir name="Lite">
+          <file role="php">Output.php</file>
+          <file role="php">Function.php</file>
+        </dir>
+        <file role="php">Lite.php</file>
+        <file role="doc">LICENSE</file>
+        <file role="doc">TODO</file>
+      </dir>
+    </filelist>
+  </release>
+  
+  
+  
+  <release>
     <version>1.4.0beta1</version>
     <date>2004-12-11</date>
     <license>lgpl</license>
@@ -50,6 +87,18 @@
     </filelist>
   </release>
   <changelog>
+    <release>
+     <version>1.4.0beta1</version>
+     <date>2004-12-11</date>
+     <license>lgpl</license>
+     <state>beta</state>
+     <notes>
+       New features :
+       - hashed cache directory structure with the choice of the level (thanks to Mike Benoit (ipso at snappymail dot ca))
+       - new options for cleaning the cache ("not in group", "too old"...) (thanks to dontilooksweetandinnocent@ambience.ru)
+       - automatic cleaning of too old cache files based on a customisable "random method"
+     </notes>
+    </release>
     <release>
      <version>1.3.1</version>
      <date>2004-08-16</date>
