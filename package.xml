@@ -13,20 +13,31 @@ uses file locking and/or anti-corruption tests).</description>
     </maintainer>
   </maintainers>
   <release>
-    <version>0.1.1</version>
-    <date>2002-08-08</date>
+    <version>0.2.0</version>
+    <date>2002-08-10</date>
     <license>lgpl</license>
     <state>beta</state>
-    <notes>A little packaging fix</notes>
+    <notes>
+      New features :
+      - Adding Cache_Lite_Function (to cache the result and output of functions/methods)
+     
+      Bugs fixed :
+      - In a few cases of cache corruption, it was possible to get some warnings (but the output was correct)
+      - Cache_Lite_Output require_once (to load Cache_Lite) wasn't correct  
+    </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache_Lite">
         <file role="php">Cache_Lite.php</file>
         <file role="php">Cache_Lite_Output.php</file>
+        <file role="php">Cache_Lite_Function.php</file>
+        <file role="doc">LICENSE</file>
         <dir name="tests">
           <file role="test">test.php</file>
           <file role="test">test2.php</file>
+          <file role="test">test3.php</file>
           <file role="test">bench.php</file>
           <file role="test">bench2.php</file>
+          <file role="test">bench3.php</file>
           <file role="doc">readme</file>
         </dir>
         <dir name="docs">
@@ -37,6 +48,13 @@ uses file locking and/or anti-corruption tests).</description>
     </filelist>
   </release>
   <changelog>
+    <release>
+     <version>0.1.1</version>
+     <date>2002-08-08</date>
+     <license>lgpl</license>
+      <state>beta</state>
+      <notes>A little packaging fix</notes>
+    </release>
     <release>
       <version>0.1</version>
       <date>2002-08-08</date>
