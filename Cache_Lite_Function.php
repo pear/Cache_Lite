@@ -69,7 +69,7 @@ class Cache_Lite_Function extends Cache_Lite
     function call()
     {
         $arguments = func_get_args();
-        $id = md5(serialize($arguments)); // Generate a cache id
+        $id = serialize($arguments); // Generate a cache id
         if ($data = $this->get($id, $this->_defaultGroup)) {
             $array = unserialize($data);
             $output = $array['output'];
