@@ -22,7 +22,7 @@
       Bug fixed :
       - problem of non-ISO-8859-1 characters in package.xml (bug #3621)
       - problem of the returning value in clean() method (integer and not void)
-        (thanks to Demian Turner <demian (at) phpkitchen (dot) com>)
+        (thanks to Demian Turner (demian (at) phpkitchen (dot) com))
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
