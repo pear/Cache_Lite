@@ -6,7 +6,7 @@ A few examples of Cache_Lite using :
 <?php
 
 // Include the package
-require_once('Cache_Lite/Cache_Lite.php');
+require_once('Cache/Lite.php');
 
 // Set a id for this cache
 $id = '123';
@@ -44,7 +44,7 @@ if ($data = $Cache_Lite->get($id)) {
 
 <?php
 
-require_once('Cache_Lite/Cache_Lite.php');
+require_once('Cache/Lite.php');
 
 $options = array(
     'cacheDir' => '/tmp/',
@@ -80,7 +80,7 @@ A few examples of Cache_Lite_Output using :
 
 <?php
 
-require_once('Cache_Lite_Output.php');
+require_once('Cache/Lite/Output.php');
 
 $options = array(
     'cacheDir' => '/tmp/',
@@ -104,7 +104,7 @@ if (!($cache->start('123'))) {
 
 <?php
 
-require_once('Cache_Lite_Output.php');
+require_once('Cache/Lite/Output.php');
 
 $options = array(
     'cacheDir' => '/tmp/',
@@ -135,7 +135,7 @@ A few examples of Cache_Lite_Function using :
 
 <?php
 
-require_once('Cache_Lite/Cache_Lite_Function');
+require_once('Cache/Lite/Function.php');
 
 $options = array(
     'cacheDir' => '/tmp/',
@@ -158,7 +158,7 @@ function function_to_bench($arg1, $arg2)
 
 <?php
 
-require_once('Cache_Lite/Cache_Lite_Function');
+require_once('Cache/Lite/Function.php');
 
 $options = array(
     'cacheDir' => '/tmp/',
@@ -190,7 +190,7 @@ class bench
 
 <?php
 
-require_once('Cache_Lite/Cache_Lite_Function');
+require_once('Cache/Lite/Function');
 
 $options = array(
     'cacheDir' => '/tmp/',
