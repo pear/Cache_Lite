@@ -1,0 +1,23 @@
+<?php
+
+require_once('../Cache_Lite.php');
+
+$options = array(
+    'cacheDir' => '/tmp/',
+    'lifeTime' => 10
+);
+
+$Cache_Lite = new Cache_Lite($options);
+
+if ($data = $Cache_Lite->get('123')) {
+    echo($data);
+} else {
+    $data = '';
+    for($i=0;$i<1000;$i++) {
+        $data .= '0123456789';
+    }
+    echo($data);
+    $Cache_Lite->save('123', $data);
+}
+
+?>
