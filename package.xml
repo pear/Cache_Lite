@@ -16,7 +16,7 @@ uses file locking and/or anti-corruption tests).</description>
     <version>0.1</version>
     <date>2002-07-25</date>
     <license>lgpl</license>
-    <state>devel</state>
+    <state>beta</state>
     <notes>This is the first release.</notes>
     <filelist>
       <file role="php" baseinstalldir="Cache_Lite" md5sum="5bd6ce8c71878268569d3e635ab7b523" name="Cache_Lite.php"/>
