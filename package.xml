@@ -6,7 +6,7 @@
 uses file locking and/or anti-corruption tests).</description>
   <maintainers>
     <maintainer>
-      <user>FAB</user>
+      <user>fab</user>
       <name>Fabien MARTY</name>
       <email>fab@php.net</email>
       <role>lead</role>
