@@ -20,15 +20,13 @@
     </maintainer>
   </maintainers>
   <release>
-    <version>1.0</version>
-    <date>2002-11-11</date>
+    <version>1.0.1</version>
+    <date>2002-11-12</date>
     <license>lgpl</license>
     <state>stable</state>
     <notes>
-      This is the first stable release of Cache_Lite. There is no big change since the
-      0.4 beta release but two months of tests !
-      Changes :
-      - fix magic_q issue (Thanks to Moshe Doron) 
+      Bug fixed :
+      - clean() bug with group (Thanks to Ondrej Jombik)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -56,6 +54,18 @@
     </filelist>
   </release>
   <changelog>
+    <release>
+      <version>1.0</version>
+      <date>2002-11-11</date>
+      <license>lgpl</license>
+      <state>stable</state>
+      <notes>
+        This is the first stable release of Cache_Lite. There is no big change since the
+        0.4 beta release but two months of tests !
+        Changes :
+        - fix magic_q issue (Thanks to Moshe Doron) 
+      </notes>
+    </release>
     <release>
       <version>0.4</version>
       <date>2002-09-25</date>
