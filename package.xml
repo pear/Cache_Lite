@@ -11,22 +11,25 @@
       <name>Fabien MARTY</name>
       <email>fab@php.net</email>
       <role>lead</role>
+     </maintainer>
+     <maintainer>
+      <user>jfbus</user>
+      <name>Jean-François BUSTARRET</name>
+      <email>JFBUSTARRET@tf1.fr</email>
+      <role>developer</role>
     </maintainer>
   </maintainers>
   <release>
-    <version>0.3</version>
-    <date>2002-08-31</date>
+    <version>0.4</version>
+    <date>2002-09-25</date>
     <license>lgpl</license>
     <state>beta</state>
     <notes>
       New features :
-      - Add '$doNotTestCacheValidity' optional parameter for the get() method
+      - Add setLifeTime() method to change the cache lifetime dynamicaly
       Changes :
-      - raiseError() method becomes public
-      - swap of two lines in _write() method (Thanks to Jean-François BUSTARRET)
-      Bugs fixed :
-      - remove blank spaces at the end of the class (Thanks to Jean-François BUSTARRET)
-      - E_NOTICEs problems and maybe a minor bug of errors management (Thanks to Sebastian BERGMANN)
+      - changes in the directory layout and in file names to (better) respect PEAR standards
+        => incompatibility with 0.3 version even there is no incompatible change in the API
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -56,7 +59,23 @@
     </filelist>
   </release>
   <changelog>
-    <release>
+   <release>
+    <version>0.3</version>
+    <date>2002-08-31</date>
+    <license>lgpl</license>
+    <state>beta</state>
+    <notes>
+      New features :
+      - Add '$doNotTestCacheValidity' optional parameter for the get() method
+      Changes :
+      - raiseError() method becomes public
+      - swap of two lines in _write() method (Thanks to Jean-François BUSTARRET)
+      Bugs fixed :
+      - remove blank spaces at the end of the class (Thanks to Jean-François BUSTARRET)
+      - E_NOTICEs problems and maybe a minor bug of errors management (Thanks to Sebastian BERGMANN)
+    </notes>
+   </release>
+   <release>
       <version>0.2.0</version>
       <date>2002-08-10</date>
       <license>lgpl</license>
