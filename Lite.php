@@ -422,7 +422,10 @@ class Cache_Lite
     }
 
     /**
+    * Save the state of the caching memory array into a cache file cache
     *
+    * @param string $id cache id
+    * @param string $group name of the cache group
     * @access public
     */
     function saveMemoryCachingState($id, $group = 'default')
@@ -438,7 +441,11 @@ class Cache_Lite
     }
 
     /**
+    * Load the state of the caching memory array from a given cache file cache
     *
+    * @param string $id cache id
+    * @param string $group name of the cache group
+    * @param boolean $doNotTestCacheValidity if set to true, the cache validity won't be tested
     * @access public
     */
     function getMemoryCachingState($id, $group = 'default', $doNotTestCacheValidity = false)
@@ -500,7 +507,11 @@ class Cache_Lite
     }
 
     /**
+    * Recursive function for cleaning cache file in the given directory
     *
+    * @param string $dir directory complete path (with a trailing slash)
+    * @param string $group name of the cache group
+    * @param string $mode flush cache mode : 'old', 'ingroup', 'notingroup'
     * @return boolean true if no problem
     * @access private
     */
