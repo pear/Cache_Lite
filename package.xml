@@ -20,16 +20,15 @@
     </maintainer>
   </maintainers>
   <release>
-    <version>0.4</version>
-    <date>2002-09-25</date>
+    <version>1.0</version>
+    <date>2002-11-11</date>
     <license>lgpl</license>
-    <state>beta</state>
+    <state>stable</state>
     <notes>
-      New features :
-      - Add setLifeTime() method to change the cache lifetime dynamicaly
+      This is the first stable release of Cache_Lite. There is no big change since the
+      0.4 beta release but two months of tests !
       Changes :
-      - changes in the directory layout and in file names to (better) respect PEAR standards
-        => incompatibility with 0.3 version even there is no incompatible change in the API
+      - fix magic_q issue (Thanks to Moshe Doron) 
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -37,7 +36,6 @@
           <file role="doc">technical</file>
           <file role="doc">examples</file>
         </dir>
-
         <dir name="tests">
           <file role="test">test.php</file>
           <file role="test">test2.php</file>
@@ -47,18 +45,30 @@
           <file role="test">bench3.php</file>
           <file role="doc">readme</file>
         </dir>
-
         <dir name="Lite">
           <file role="php">Output.php</file>
           <file role="php">Function.php</file>
         </dir>
-
         <file role="php">Lite.php</file>
         <file role="doc">LICENSE</file>
+        <file role="doc">TODO</file>
       </dir>
     </filelist>
   </release>
   <changelog>
+    <release>
+      <version>0.4</version>
+      <date>2002-09-25</date>
+      <license>lgpl</license>
+      <state>beta</state>
+      <notes>
+        New features :
+        - Add setLifeTime() method to change the cache lifetime dynamicaly
+        Changes :
+        - changes in the directory layout and in file names to (better) respect PEAR standards
+          => incompatibility with 0.3 version even there is no incompatible change in the API
+      </notes>
+   </release>
    <release>
     <version>0.3</version>
     <date>2002-08-31</date>
