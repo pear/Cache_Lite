@@ -217,7 +217,7 @@ class Cache_Lite
     {
         $this->_setFileName($id, $group);
         if (!@unlink($this->_file)) {
-            Cache_Lite::_raiseError('Cache_Lite : Unable to remove cache !', -3);   
+            Cache_Lite::raiseError('Cache_Lite : Unable to remove cache !', -3);   
             return false;
         }
         return true;
@@ -237,7 +237,7 @@ class Cache_Lite
     {
         $motif = ($group) ? "cache_$group_" : 'cache_';
         if (!($dh = opendir($this->_cacheDir))) {
-            Cache_Lite::_raiseError('Cache_Lite : Unable to open cache directory !', -4);   
+            Cache_Lite::raiseError('Cache_Lite : Unable to open cache directory !', -4);   
             return false;
         }
         while ($file = readdir($dh)) {
@@ -246,7 +246,7 @@ class Cache_Lite
                 if (is_file($file)) {
                     if (strpos($file, $motif, 0)) {
                         if (!@unlink($file)) {
-                            Cache_Lite::_raiseError('Cache_Lite : Unable to remove cache !', -3);   
+                            Cache_Lite::raiseError('Cache_Lite : Unable to remove cache !', -3);   
                             return false;
                         }
                     }
@@ -268,7 +268,24 @@ class Cache_Lite
     {
         $this->_pearErrorMode = PEAR_ERROR_DIE;
     }
-    
+
+    /**
+    * Trigger a PEAR error
+    *
+    * To improve performances, the PEAR.php file is included dynamically.
+    * The file is so included only when an error is triggered. So, in most
+    * cases, the file isn't included and perfs are much better. 
+    *
+    * @param string $msg error message
+    * @param int $code error code
+    * @access public
+    */
+    function raiseError($msg, $code)
+    {
+        include_once('PEAR.php');
+        PEAR::raiseError($msg, $code, $this->_pearErrorMode);
+    }
+
     // --- Private methods ---
     
     /**
@@ -311,7 +328,7 @@ class Cache_Lite
             }
             return $data;
         }
-        Cache_Lite::_raiseError('Cache_Lite : Unable to read cache !', -2);   
+        Cache_Lite::raiseError('Cache_Lite : Unable to read cache !', -2);   
         return false;
     }
     
@@ -336,7 +353,7 @@ class Cache_Lite
             @fclose($fp);
             return true;
         }
-        Cache_Lite::_raiseError('Cache_Lite : Unable to write cache !', -1);
+        Cache_Lite::raiseError('Cache_Lite : Unable to write cache !', -1);
         return false;
     }
     
@@ -372,25 +389,8 @@ class Cache_Lite
         case 'strlen':
             return sprintf('% 32d', strlen($data));
         default:
-            $this->_raiseError('Unknown controlType ! (available values are only \'md5\', \'crc32\', \'strlen\')', -5);
+            $this->raiseError('Unknown controlType ! (available values are only \'md5\', \'crc32\', \'strlen\')', -5);
         }
-    }
-    
-    /**
-    * Trigger a PEAR error
-    *
-    * To improve performances, the PEAR.php file is included dynamically.
-    * The file is so included only when an error is triggered. So, in most
-    * cases, the file isn't included and perfs are much better. 
-    *
-    * @param string $msg error message
-    * @param int $code error code
-    * @access private
-    */
-    function _raiseError($msg, $code)
-    {
-        include_once('PEAR.php');
-        PEAR::raiseError($msg, $code, $this->_pearErrorMode);
     }
     
 } 
