@@ -127,7 +127,7 @@ class Cache_Lite
     /**
     * Constructor
     *
-    * $options is an assoc. Availables options are :
+    * $options is an assoc. Available options are :
     * $options = array(
     *     'cacheDir' => directory where to put the cache files (string),
     *     'caching' => enable / disable caching (boolean),
@@ -144,9 +144,12 @@ class Cache_Lite
     */
     function Cache_Lite($options = NULL)
     {
+        $availableOptions = '{cacheDir}{caching}{lifeTime}{fileLocking}{writeControl}{readControl}{readControlType}{pearErrorMode}';
         while (list($key, $value) = each($options)) {
-            $property = '_'.$key;
-            $this->$property = $value;
+            if (strpos('>'.$availableOptions, '{'.$key.'}')) {
+                $property = '_'.$key;
+                $this->$property = $value;
+            }
         }
         $this->_refreshTime = time() - $this->_lifeTime;
     }
