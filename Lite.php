@@ -309,7 +309,7 @@ class Cache_Lite
     */
     function clean($group = false)     
     {
-        $motif = ($group) ? 'cache_'.$group.'_' : 'cache_';
+        $motif = ($group) ? 'cache_'.md5($group).'_' : 'cache_';
         if ($this->_memoryCaching) {
             while (list($key, $value) = each($this->_memoryCaching)) {
                 if (strpos($key, $motif, 0)) {
@@ -440,7 +440,7 @@ class Cache_Lite
     */
     function _setFileName($id, $group)
     {
-        $this->_file = ($this->_cacheDir.'cache_'.$group.'_'.md5($id));
+        $this->_file = ($this->_cacheDir.'cache_'.md5($group).'_'.md5($id));
     }
     
     /**
