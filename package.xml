@@ -170,7 +170,7 @@
       - raiseError() method becomes public
       - swap of two lines in _write() method (Thanks to Jean-Francois BUSTARRET)
       Bugs fixed :
-      - remove blank spaces at the end of the class (Thanks to Jean-François BUSTARRET)
+      - remove blank spaces at the end of the class (Thanks to Jean-Francois BUSTARRET)
       - E_NOTICEs problems and maybe a minor bug of errors management (Thanks to Sebastian BERGMANN)
     </notes>
    </release>
