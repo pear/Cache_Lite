@@ -42,7 +42,8 @@ class Cache_Lite_Output extends Cache_Lite
     */
     function start($id, $group = 'default')
     {
-        if ($data = $this->get($id, $group)) {
+        $data = $this->get($id, $group);
+        if ($data !== false) {
             echo($data);
             return true;
         } else {
