@@ -6,7 +6,7 @@
 uses file locking and/or anti-corruption tests).</description>
   <maintainers>
     <maintainer>
-      <user>fab</user>
+      <user>FAB</user>
       <name>Fabien MARTY</name>
       <email>fab@php.net</email>
       <role>lead</role>
@@ -14,7 +14,7 @@ uses file locking and/or anti-corruption tests).</description>
   </maintainers>
   <release>
     <version>0.1</version>
-    <date>2002-07-25</date>
+    <date>2002-08-08</date>
     <license>lgpl</license>
     <state>beta</state>
     <notes>This is the first release.</notes>
