@@ -14,17 +14,15 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.3</version>
-    <date>2004-02-07</date>
+    <version>1.4</version>
+    <date>2004-08-16</date>
     <license>lgpl</license>
     <state>stable</state>
     <notes>
-      Changes :
-      - Add a warning in examples file because of http://pear.php.net/bugs/bug.php?id=660
       Bug fixed :
-      - little warning fix in Cache_Lite_Function (fab)
-      - little bug fix in lastModified() method (thanks to Yavor Shahpasov)
-      - fix http://pear.php.net/bugs/bug.php?id=513 (thanks to alan@aardwolfweb.com)
+      - problem with clean() method with memoryCaching activated (thanks to Bojan Mihelac (bmihelac at mihelac dot org))
+      - remove() method didn't deal with memoryCaching
+      - bug fix #1758, thanks to Dave (djpenton at cs dot mu dot oz dot au)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -52,6 +50,20 @@
     </filelist>
   </release>
   <changelog>
+    <release>
+     <version>1.3</version>
+     <date>2004-02-07</date>
+     <license>lgpl</license>
+     <state>stable</state>
+     <notes>
+      Changes :
+      - Add a warning in examples file because of http://pear.php.net/bugs/bug.php?id=660
+      Bug fixed :
+      - little warning fix in Cache_Lite_Function (fab)
+      - little bug fix in lastModified() method (thanks to Yavor Shahpasov)
+      - fix http://pear.php.net/bugs/bug.php?id=513 (thanks to alan@aardwolfweb.com) 
+     </notes>
+    </release>
     <release>
       <version>1.2</version>
       <date>2003-10-25</date>
