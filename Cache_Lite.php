@@ -78,18 +78,6 @@ class Cache_Lite
     var $_writeControl = true;
 
     /**
-    * Type of write control (only if write control is enabled)
-    *
-    * Available values are :
-    * 'md5' for a md5 hash control (best but slowest)
-    * 'crc32' for a crc32 hash control (lightly less safe but faster, better choice)
-    * 'length' for a length only test (fastest)
-    *
-    * @var boolean $_writeControlType
-    */
-    var $_writeControlType = 'md5';
-
-    /**
     * Enable / disable read control 
     * 
     * If enabled, a control key is embeded in cache file and this key is compared with the one
@@ -133,7 +121,6 @@ class Cache_Lite
     *     'lifeTime' => cache lifetime in seconds (int),
     *     'fileLocking' => enable / disable fileLocking (boolean),
     *     'writeControl' => enable / disable write control (boolean),
-    *     'writeControlType' => type of write control 'crc32', 'md5', 'strlen' (string)
     *     'readControl' => enable / disable read control (boolean),
     *     'readControlType' => type of read control 'crc32', 'md5', 'strlen' (string)
     *     'pearErrorMode' => pear error mode (when raiseError is called) (cf PEAR doc) (int)
@@ -343,7 +330,7 @@ class Cache_Lite
     {
         $this->_write($data);
         $dataRead = $this->_read($data);
-        return ($this->_hash($dataRead, $this->_writeControlType) == $this->_hash($data, $this->_writeControlType));
+        return ($dataRead==$data);
     }
     
     /**
