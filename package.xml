@@ -20,13 +20,21 @@
     </maintainer>
   </maintainers>
   <release>
-    <version>1.0.1</version>
-    <date>2002-11-12</date>
+    <version>1.1</version>
+    <date>2003-02-23</date>
     <license>lgpl</license>
     <state>stable</state>
     <notes>
+      Changes :
+      - Move to usage of call_user_func_array() and call_user_func() as call_user_method() is depreciated (thanks to Sterling Hughes <sterling@bumblebury.com> 
+      New Features :
+      - Introduce memoryCaching (idea of Mike Benoit)
+      - Add of a file name protection option (can be faster if set to off) (thanks to Brian Webb <bwebb9@yahoo.com> for the idea)
       Bug fixed :
-      - clean() bug with group (Thanks to Ondrej Jombik)
+      - Little fix : cache was inefficient if the output is only 0 (thanks to Brian Webb <bwebb9@yahoo.com>)
+      - notice fix (thanks to Lorenzo Alberton, Pierre-Alain Joye and Jon Parise)
+      - Little fix to avoid file names problems with an exotic group name (thanks to Brian Webb <bwebb9@yahoo.com>)
+      - Fix a possible bug when resave a cache file after a succesfull get (thanks to Michael Caplan <michael@eggplant.ws>) 
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -54,6 +62,16 @@
     </filelist>
   </release>
   <changelog>
+    <release>
+     <version>1.0.1</version>
+     <date>2002-11-12</date>
+     <license>lgpl</license>
+     <state>stable</state>
+     <notes>
+       Bug fixed :
+       - clean() bug with group (Thanks to Ondrej Jombik)
+     </notes>
+    </release>
     <release>
       <version>1.0</version>
       <date>2002-11-11</date>
