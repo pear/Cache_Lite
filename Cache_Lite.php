@@ -15,7 +15,8 @@
 * @author Fabien MARTY <fab@php.net>
 */
 
-require_once 'PEAR.php';
+define('CACHE_LITE_ERROR_RETURN', 1);
+define('CACHE_LITE_ERROR_DIE', 8);
 
 class Cache_Lite
 {
@@ -109,7 +110,7 @@ class Cache_Lite
     * @see setToDebug()
     * @var int $_pearErrorMode
     */
-    var $_pearErrorMode = PEAR_ERROR_DIE;
+    var $_pearErrorMode = CACHE_LITE_ERROR_RETURN;
     
     /**
     * Current cache id
@@ -275,7 +276,7 @@ class Cache_Lite
     */
     function setToDebug()
     {
-        $this->_pearErrorMode = PEAR_ERROR_DIE;
+        $this->_pearErrorMode = CACHE_LITE_ERROR_DIE;
     }
 
     /**
