@@ -474,6 +474,7 @@ class Cache_Lite
         $fp = @fopen($this->_file, "r");
         if ($this->_fileLocking) @flock($fp, LOCK_SH);
         if ($fp) {
+            clearstatcache(); // because the filesize can be cached by PHP itself...
             $length = @filesize($this->_file);
             $mqr = get_magic_quotes_runtime();
             set_magic_quotes_runtime(0);
