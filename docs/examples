@@ -76,6 +76,8 @@ if ($data = $Cache_Lite->get('block2')) {
 A few examples of Cache_Lite_Output using :
 -------------------------------------------
 
+>>> Basic one :
+
 <?php
 
 require_once('Cache_Lite_Output.php');
@@ -93,6 +95,120 @@ if (!($cache->start('123'))) {
         echo('0123456789');
     }
     $cache->end();
+}
+
+?>
+
+>>> Usage with blocks :
+(You can use Cache_Lite_Output for caching blocks and not the whole page)
+
+<?php
+
+require_once('Cache_Lite_Output.php');
+
+$options = array(
+    'cacheDir' => '/tmp/',
+    'lifeTime' => 10
+);
+
+$cache = new Cache_Lite_Output($options);
+
+if (!($cache->start('block1'))) {
+    // Cache missed...
+    echo('Data of the block 1 !<br>');
+    $cache->end();
+}
+
+echo('<br><br>Non cached line !<br><br>');
+
+if (!($cache->start('block2'))) {
+    // Cache missed...
+    echo('Data of the block 2 !<br>');
+    $cache->end();
+}
+
+
+A few examples of Cache_Lite_Function using :
+-------------------------------------------
+
+>>> With function :
+
+<?php
+
+require_once('Cache_Lite/Cache_Lite_Function');
+
+$options = array(
+    'cacheDir' => '/tmp/',
+    'lifeTime' => 10
+);
+
+$cache = new Cache_Lite_Function($options);
+
+$cache->call('function_to_bench', 12, 45);
+
+function function_to_bench($arg1, $arg2) 
+{
+    echo "This is the output of the function function_to_bench($arg1, $arg2) !<br>";
+    return "This is the result of the function function_to_bench($arg1, $arg2) !<br>";
+}
+
+?>
+
+>>> With method :
+
+<?php
+
+require_once('Cache_Lite/Cache_Lite_Function');
+
+$options = array(
+    'cacheDir' => '/tmp/',
+    'lifeTime' => 10
+);
+
+$cache = new Cache_Lite_Function($options);
+
+$obj = new bench();
+$obj->test = 666;
+
+$cache->call('obj->method_to_bench', 12, 45);
+
+class bench
+{
+    var $test;
+
+    function method_to_bench($arg1, $arg2)
+    {
+        echo "\$obj->test = $this->test and this is the output of the method \$obj->method_to_bench($arg1, $arg2) !<br>";
+        return "\$obj->test = $this->test and this is the result of the method \$obj->method_to_bench($arg1, $arg2) !<br>";        
+    }
+    
+}
+
+?>
+
+>>> With static method :
+
+<?php
+
+require_once('Cache_Lite/Cache_Lite_Function');
+
+$options = array(
+    'cacheDir' => '/tmp/',
+    'lifeTime' => 10
+);
+
+$cache = new Cache_Lite_Function($options);
+
+$cache->call('bench::static_method_to_bench', 12, 45);
+
+class bench
+{
+    var $test;
+
+    function static_method_to_bench($arg1, $arg2) {
+        echo "This is the output of the function static_method_to_bench($arg1, $arg2) !<br>";
+        return "This is the result of the function static_method_to_bench($arg1, $arg2) !<br>";
+    }
 }
 
 ?>
