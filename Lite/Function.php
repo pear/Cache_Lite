@@ -70,6 +70,11 @@ class Cache_Lite_Function extends Cache_Lite
     {
         $arguments = func_get_args();
         $id = serialize($arguments); // Generate a cache id
+        if (!$this->_fileNameProtection) {
+            $id = md5($id)
+            // if fileNameProtection is set to false, then the id has to be hashed
+            // because it's a very bad file name in most cases
+        }
         $data = $this->get($id, $this->_defaultGroup);
         if ($data !== false) {
             $array = unserialize($data);
