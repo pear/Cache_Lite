@@ -13,21 +13,36 @@ uses file locking and/or anti-corruption tests).</description>
     </maintainer>
   </maintainers>
   <release>
-    <version>0.1</version>
+    <version>0.1.1</version>
     <date>2002-08-08</date>
     <license>lgpl</license>
     <state>beta</state>
-    <notes>This is the first release.</notes>
+    <notes>A little packaging fix</notes>
     <filelist>
-      <file role="php" baseinstalldir="Cache_Lite" md5sum="5bd6ce8c71878268569d3e635ab7b523" name="Cache_Lite.php"/>
-      <file role="doc" baseinstalldir="Cache_Lite/tests" md5sum="f7a9487bf565e79860114dac982848c5" name="tests/readme"/>
-      <file role="php" baseinstalldir="Cache_Lite/tests" md5sum="5acefa182df097d21315098e179f5707" name="tests/bench.php"/>
-      <file role="php" baseinstalldir="Cache_Lite/tests" name="tests/test2.php"/>
-      <file role="php" baseinstalldir="Cache_Lite/tests" name="tests/bench2.php"/>
-      <file role="php" baseinstalldir="Cache_Lite/tests" md5sum="218a9d4acffeba7c225ad621586322c1" name="tests/test.php"/>
-      <file role="php" baseinstalldir="Cache_Lite/docs" md5sum="27cf445c71e577dbcad20ffe8c6759f9" name="docs/examples"/>
-      <file role="php" baseinstalldir="Cache_Lite/docs" md5sum="934071f21c17611811e01396ca604c79" name="docs/technical"/>
-      <file role="php" baseinstalldir="Cache_Lite" name="Cache_Lite_Output.php"/>
+      <dir name="/" baseinstalldir="Cache_Lite">
+        <file role="php">Cache_Lite.php</file>
+        <file role="php">Cache_Lite_Output.php</file>
+        <dir name="tests">
+          <file role="test">test.php</file>
+          <file role="test">test2.php</file>
+          <file role="test">bench.php</file>
+          <file role="test">bench2.php</file>
+          <file role="doc">readme</file>
+        </dir>
+        <dir name="docs">
+          <file role="doc">technical</file>
+          <file role="doc">examples</file>
+        </dir>
+      </dir>
     </filelist>
   </release>
+  <changelog>
+    <release>
+      <version>0.1</version>
+      <date>2002-08-08</date>
+      <license>lgpl</license>
+      <state>beta</state>
+      <notes>This is the first release.</notes>
+    </release>
+  </changelog> 
 </package>
