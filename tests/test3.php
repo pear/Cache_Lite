@@ -3,7 +3,7 @@
 // Test script of Cache_Lite_Function
 // $Id$
 
-require_once('../Lite/Function.php');
+require_once('Cache/Lite/Function.php');
 
 $options = array(
     'cacheDir' => '/tmp/',
