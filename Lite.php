@@ -186,7 +186,17 @@ class Cache_Lite
     * @var boolean $fileNameProtection
     */
     var $_fileNameProtection = true;
-
+    
+    /**
+    * Enable / disable automatic serialization
+    *
+    * it can be used to save directly datas which aren't strings
+    * (but it's slower)    
+    *
+    * @var boolean $_serialize
+    */
+    var $_automaticSerialization = false;
+    
     // --- Public methods ---
 
     /**
@@ -204,7 +214,9 @@ class Cache_Lite
     *     'pearErrorMode' => pear error mode (when raiseError is called) (cf PEAR doc) (int),
     *     'memoryCaching' => enable / disable memory caching (boolean),
     *     'onlyMemoryCaching' => enable / disable only memory caching (boolean),
-    *     'memoryCachingLimit' => max nbr of records to store into memory caching (int)
+    *     'memoryCachingLimit' => max nbr of records to store into memory caching (int),
+    *     'fileNameProtection' => enable / disable automatic file name protection (boolean),
+    *     'automaticSerialization' => enable / disable automatic serialization (boolean)
     * );
     *
     * @param array $options options
@@ -212,7 +224,7 @@ class Cache_Lite
     */
     function Cache_Lite($options = array(NULL))
     {
-        $availableOptions = '{fileNameProtection}{memoryCaching}{onlyMemoryCaching}{memoryCachingLimit}{cacheDir}{caching}{lifeTime}{fileLocking}{writeControl}{readControl}{readControlType}{pearErrorMode}';
+        $availableOptions = '{automaticSerialization}{fileNameProtection}{memoryCaching}{onlyMemoryCaching}{memoryCachingLimit}{cacheDir}{caching}{lifeTime}{fileLocking}{writeControl}{readControl}{readControlType}{pearErrorMode}';
         while (list($key, $value) = each($options)) {
             if (strpos('>'.$availableOptions, '{'.$key.'}')) {
                 $property = '_'.$key;
@@ -240,7 +252,11 @@ class Cache_Lite
             $this->_setFileName($id, $group);
             if ($this->_memoryCaching) {
                 if (isset($this->_memoryCachingArray[$this->_file])) {
-                    return $this->_memoryCachingArray[$this->_file];
+                    if ($this->_automaticSerialization) {
+                        return unserialize($this->_memoryCachingArray[$this->_file]);
+                    } else {
+                        return $this->_memoryCachingArray[$this->_file];
+                    }
                 } else {
                     if ($this->_onlyMemoryCaching) {
                         return false;
@@ -259,6 +275,9 @@ class Cache_Lite
             if (($data) and ($this->_memoryCaching)) {
                 $this->_memoryCacheAdd($this->_file, $data);
             }
+            if ($this->_automaticSerialization) {
+                $data = unserialize($data);
+            }
             return $data;
         }
         return false;
@@ -267,7 +286,7 @@ class Cache_Lite
     /**
     * Save some data in a cache file
     *
-    * @param string $data data to put in cache
+    * @param string $data data to put in cache (can be another type than strings if automaticSerialization is on)
     * @param string $id cache id
     * @param string $group name of the cache group
     * @return boolean true if no problem
@@ -276,6 +295,9 @@ class Cache_Lite
     function save($data, $id = NULL, $group = 'default')
     {
         if ($this->_caching) {
+            if ($this->_automaticSerialization) {
+                $data = serialize($data);
+            }
             if (isset($id)) {
                 $this->_setFileName($id, $group);
             }
@@ -311,7 +333,7 @@ class Cache_Lite
     {
         $this->_setFileName($id, $group);
         if (!@unlink($this->_file)) {
-            Cache_Lite::raiseError('Cache_Lite : Unable to remove cache !', -3);   
+            $this->raiseError('Cache_Lite : Unable to remove cache !', -3);   
             return false;
         }
         return true;
@@ -346,7 +368,7 @@ class Cache_Lite
             }
         }
         if (!($dh = opendir($this->_cacheDir))) {
-            Cache_Lite::raiseError('Cache_Lite : Unable to open cache directory !', -4);
+            $this->raiseError('Cache_Lite : Unable to open cache directory !', -4);
             return false;
         }
         while ($file = readdir($dh)) {
@@ -355,7 +377,7 @@ class Cache_Lite
                 if (is_file($file)) {
                     if (strpos($file, $motif, 0)) {
                         if (!@unlink($file)) {
-                            Cache_Lite::raiseError('Cache_Lite : Unable to remove cache !', -3);
+                            $this->raiseError('Cache_Lite : Unable to remove cache !', -3);
                             return false;
                         }
                     }
@@ -503,7 +525,7 @@ class Cache_Lite
             }
             return $data;
         }
-        Cache_Lite::raiseError('Cache_Lite : Unable to read cache !', -2);   
+        $this->raiseError('Cache_Lite : Unable to read cache !', -2);   
         return false;
     }
     
@@ -528,7 +550,7 @@ class Cache_Lite
             @fclose($fp);
             return true;
         }
-        Cache_Lite::raiseError('Cache_Lite : Unable to write cache !', -1);
+        $this->raiseError('Cache_Lite : Unable to write cache !', -1);
         return false;
     }
     
