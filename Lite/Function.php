@@ -47,7 +47,7 @@ class Cache_Lite_Function extends Cache_Lite
     * @param array $options options
     * @access public
     */
-    function Cache_Lite_Function($options)
+    function Cache_Lite_Function($options = array(NULL))
     {
         if (isset($options['defaultGroup'])) {
             $this->_defaultGroup = $options['defaultGroup'];
