@@ -14,13 +14,15 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.4.0</version>
-    <date>2005-01-21</date>
+    <version>1.4.1</version>
+    <date>2005-03-01</date>
     <license>lgpl</license>
     <state>stable</state>
     <notes>
-      Changes :
-      - juste a little more docs since 1.4.0beta1
+      Bug fixed :
+      - problem of non-ISO-8859-1 characters in package.xml (bug #3621)
+      - problem of the returning value in clean() method (integer and not void)
+        (thanks to Demian Turner <demian (at) phpkitchen (dot) com>)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -48,6 +50,16 @@
     </filelist>
   </release>  
   <changelog>
+    <release>
+     <version>1.4.0</version>
+     <date>2005-01-21</date>
+     <license>lgpl</license>
+     <state>stable</state>
+     <notes>
+       Changes :
+       - juste a little more docs since 1.4.0beta1
+     </notes>
+    </release>  
     <release>
      <version>1.4.0beta1</version>
      <date>2004-12-11</date>
