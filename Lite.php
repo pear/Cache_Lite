@@ -166,6 +166,18 @@ class Cache_Lite
     * @var int $memoryCachingLimit
     */
     var $_memoryCachingLimit = 1000;
+    
+    /**
+    * File Name protection
+    *
+    * if set to true, you can use any cache id or group name
+    * if set to false, it can be faster but cache ids and group names
+    * will be used directly in cache file names so be carefull with
+    * special characters...
+    *
+    * @var boolean $fileNameProtection
+    */
+    var $_fileNameProtection = true;
 
     // --- Public methods ---
 
@@ -192,7 +204,7 @@ class Cache_Lite
     */
     function Cache_Lite($options = array(NULL))
     {
-        $availableOptions = '{memoryCaching}{onlyMemoryCaching}{memoryCachingLimit}{cacheDir}{caching}{lifeTime}{fileLocking}{writeControl}{readControl}{readControlType}{pearErrorMode}';
+        $availableOptions = '{fileNameProtection}{memoryCaching}{onlyMemoryCaching}{memoryCachingLimit}{cacheDir}{caching}{lifeTime}{fileLocking}{writeControl}{readControl}{readControlType}{pearErrorMode}';
         while (list($key, $value) = each($options)) {
             if (strpos('>'.$availableOptions, '{'.$key.'}')) {
                 $property = '_'.$key;
@@ -309,7 +321,11 @@ class Cache_Lite
     */
     function clean($group = false)     
     {
-        $motif = ($group) ? 'cache_'.md5($group).'_' : 'cache_';
+        if ($this->_fileNameProtection) {
+            $motif = ($group) ? 'cache_'.md5($group).'_' : 'cache_';
+        } else {
+            $motif = ($group) ? 'cache_'.$group.'_' : 'cache_';
+        }
         if ($this->_memoryCaching) {
             while (list($key, $value) = each($this->_memoryCaching)) {
                 if (strpos($key, $motif, 0)) {
@@ -440,7 +456,11 @@ class Cache_Lite
     */
     function _setFileName($id, $group)
     {
-        $this->_file = ($this->_cacheDir.'cache_'.md5($group).'_'.md5($id));
+        if ($this->_fileNameProtection) {
+            $this->_file = ($this->_cacheDir.'cache_'.md5($group).'_'.md5($id));
+        } else {
+            $this->_file = $this->_cacheDir.'cache_'.$group.'_'.$id;
+        }
     }
     
     /**
