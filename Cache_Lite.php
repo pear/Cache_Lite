@@ -118,7 +118,7 @@ class Cache_Lite
     * @var string $_id
     */
     var $_id;
-    
+
     /**
     * Current cache group
     *
@@ -277,6 +277,18 @@ class Cache_Lite
     function setToDebug()
     {
         $this->_pearErrorMode = CACHE_LITE_ERROR_DIE;
+    }
+
+    /**
+    * Set a new life time
+    *
+    * @param int $newLifeTime new life time (in seconds)
+    * @access public
+    */
+    function setLifeTime($newLifeTime)
+    {
+        $this->_lifeTime = $newLifeTime;
+        $this->_refreshTime = time() - $newLifeTime;
     }
 
     /**
