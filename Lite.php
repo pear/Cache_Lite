@@ -300,7 +300,7 @@ class Cache_Lite
     * @return boolean true if no problem
     * @access public
     */
-    function remove($id, $group)
+    function remove($id, $group = 'default')
     {
         $this->_setFileName($id, $group);
         if (!@unlink($this->_file)) {
