@@ -213,3 +213,9 @@ class bench
 
 ?>
 
+>>> IMPORTANT :
+
+If you try to use Cache_Lite_Function with $this object ($cache->call('this->method',...) 
+for example), have a look first at :
+
+http://pear.php.net/bugs/bug.php?id=660
