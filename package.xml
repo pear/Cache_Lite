@@ -14,17 +14,19 @@
     </maintainer>
   </maintainers>
   <release>
-    <version>0.2.0</version>
-    <date>2002-08-10</date>
+    <version>0.3</version>
+    <date>2002-08-31</date>
     <license>lgpl</license>
     <state>beta</state>
     <notes>
       New features :
-      - Adding Cache_Lite_Function (to cache the result and output of functions/methods)
-     
+      - Add '$doNotTestCacheValidity' optional parameter for the get() method
+      Changes :
+      - raiseError() method becomes public
+      - swap of two lines in _write() method (Thanks to Jean-François BUSTARRET)
       Bugs fixed :
-      - In a few cases of cache corruption, it was possible to get some warnings (but the output was correct)
-      - Cache_Lite_Output require_once (to load Cache_Lite) wasn't correct  
+      - remove blank spaces at the end of the class (Thanks to Jean-François BUSTARRET)
+      - E_NOTICEs problems and maybe a minor bug of errors management (Thanks to Sebastian BERGMANN)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache_Lite">
@@ -50,9 +52,23 @@
   </release>
   <changelog>
     <release>
-     <version>0.1.1</version>
-     <date>2002-08-08</date>
-     <license>lgpl</license>
+      <version>0.2.0</version>
+      <date>2002-08-10</date>
+      <license>lgpl</license>
+      <state>beta</state>
+      <notes>
+        New features :
+        - Adding Cache_Lite_Function (to cache the result and output of functions/methods)
+     
+        Bugs fixed :
+        - In a few cases of cache corruption, it was possible to get some warnings (but the output was correct)
+        - Cache_Lite_Output require_once (to load Cache_Lite) wasn't correct  
+      </notes>
+    </release>
+    <release>
+      <version>0.1.1</version>
+      <date>2002-08-08</date>
+      <license>lgpl</license>
       <state>beta</state>
       <notes>A little packaging fix</notes>
     </release>
