@@ -6,6 +6,7 @@
 require_once('../Cache_Lite_Output.php');
 
 $options = array(
+    'caching' => true,
     'cacheDir' => '/tmp/',
     'lifeTime' => 10
 );
