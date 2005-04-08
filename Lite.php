@@ -10,15 +10,12 @@
 * There are some examples in the 'docs/examples' file
 * Technical choices are described in the 'docs/technical' file
 *
-* A tutorial is available in english at this url :
-* http://www.pearfr.org/index.php/en/article/cache_lite
-* (big thanks to Pierre-Alain Joye for the translation)
-*
-* The same tutorial is also available in french at this url :
-* http://www.pearfr.org/index.php/fr/article/cache_lite
-*
 * Memory Caching is from an original idea of
 * Mike BENOIT <ipso@snappymail.ca>
+*
+* Nota : A chinese documentation (thanks to RainX <china_1982@163.com>) is
+* available at :
+* http://rainx.phpmore.com/manual/cache_lite.html
 *
 * @package Cache_Lite
 * @category Caching
