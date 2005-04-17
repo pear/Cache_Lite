@@ -37,12 +37,13 @@ class Cache_Lite_Output extends Cache_Lite
     *
     * @param string $id cache id
     * @param string $group name of the cache group
+    * @param boolean $doNotTestCacheValidity if set to true, the cache validity won't be tested
     * @return boolean true if the cache is hit (false else)
     * @access public
     */
-    function start($id, $group = 'default')
+    function start($id, $group = 'default', $doNotTestCacheValidity = false)
     {
-        $data = $this->get($id, $group);
+        $data = $this->get($id, $group, $doNotTestCacheValidity);
         if ($data !== false) {
             echo($data);
             return true;
