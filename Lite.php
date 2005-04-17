@@ -464,7 +464,7 @@ class Cache_Lite
     * @return int last modification time
     */
     function lastModified() {
-        return filemtime($this->_file);
+        return @filemtime($this->_file);
     }
     
     /**
