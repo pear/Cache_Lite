@@ -681,7 +681,7 @@ class Cache_Lite
                     $root = $this->_cacheDir;
                     for ($i=0 ; $i<$this->_hashedDirectoryLevel ; $i++) {
                         $root = $root . 'cache_' . substr($hash, 0, $i + 1) . '/';
-                        @mkdir($root, 0700);
+                        @mkdir($root, umask());
                     }
                     $try = 2;
                 } else {
