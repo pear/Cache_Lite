@@ -632,7 +632,11 @@ class Cache_Lite
                 $hashControl = @fread($fp, 32);
                 $length = $length - 32;
             } 
-            $data = @fread($fp, $length);
+            if ($length) {
+                $data = @fread($fp, $length);
+            } else {
+                $data = '';
+            }
             set_magic_quotes_runtime($mqr);
             if ($this->_fileLocking) @flock($fp, LOCK_UN);
             @fclose($fp);
