@@ -217,10 +217,22 @@ class Cache_Lite
     /**
     * Nested directory level
     *
+    * Set the hashed directory structure level. 0 means "no hashed directory 
+    * structure", 1 means "one level of directory", 2 means "two levels"... 
+    * This option can speed up Cache_Lite only when you have many thousands of 
+    * cache file. Only specific benchs can help you to choose the perfect value 
+    * for you. Maybe, 1 or 2 is a good start.
     *
     * @var int $_hashedDirectoryLevel
     */
     var $_hashedDirectoryLevel = 0;
+    
+    /**
+    * Umask for hashed directory structure
+    *
+    * @var int $_hashedDirectoryUmask
+    */
+    var $_hashedDirectoryUmask = 0700;
     
     // --- Public methods ---
 
@@ -244,6 +256,7 @@ class Cache_Lite
     *     'automaticSerialization' => enable / disable automatic serialization (boolean)
     *     'automaticCleaningFactor' => distable / tune automatic cleaning process (int)
     *     'hashedDirectoryLevel' => level of the hashed directory system (int)
+    *     'hashedDirectoryUmask' => umask for hashed directory structure (int)
     * );
     *
     * @param array $options options
@@ -251,7 +264,7 @@ class Cache_Lite
     */
     function Cache_Lite($options = array(NULL))
     {
-        $availableOptions = array('hashedDirectoryLevel', 'automaticCleaningFactor', 'automaticSerialization', 'fileNameProtection', 'memoryCaching', 'onlyMemoryCaching', 'memoryCachingLimit', 'cacheDir', 'caching', 'lifeTime', 'fileLocking', 'writeControl', 'readControl', 'readControlType', 'pearErrorMode');
+        $availableOptions = array('hashedDirectoryUmask', 'hashedDirectoryLevel', 'automaticCleaningFactor', 'automaticSerialization', 'fileNameProtection', 'memoryCaching', 'onlyMemoryCaching', 'memoryCachingLimit', 'cacheDir', 'caching', 'lifeTime', 'fileLocking', 'writeControl', 'readControl', 'readControlType', 'pearErrorMode');
         foreach($options as $key => $value) {
             if(in_array($key, $availableOptions)) {
                 $property = '_'.$key;
@@ -681,7 +694,7 @@ class Cache_Lite
                     $root = $this->_cacheDir;
                     for ($i=0 ; $i<$this->_hashedDirectoryLevel ; $i++) {
                         $root = $root . 'cache_' . substr($hash, 0, $i + 1) . '/';
-                        @mkdir($root, umask());
+                        @mkdir($root, $this->_hashedDirectoryUmask);
                     }
                     $try = 2;
                 } else {
