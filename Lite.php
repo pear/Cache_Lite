@@ -634,7 +634,7 @@ class Cache_Lite
             } 
             if ($length) {
                 $data = @fread($fp, $length);
-            } else {
+            } else {
                 $data = '';
             }
             set_magic_quotes_runtime($mqr);
