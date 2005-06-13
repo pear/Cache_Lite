@@ -397,7 +397,8 @@ class Cache_Lite
     * else only cache files of the specified group will be destroyed
     *
     * @param string $group name of the cache group
-    * @param string $mode flush cache mode : 'old', 'ingroup', 'notingroup'
+    * @param string $mode flush cache mode : 'old', 'ingroup', 'notingroup', 
+    *                                        'callback_myFunction'
     * @return boolean true if no problem
     * @access public
     */
@@ -521,7 +522,8 @@ class Cache_Lite
     *
     * @param string $dir directory complete path (with a trailing slash)
     * @param string $group name of the cache group
-    * @param string $mode flush cache mode : 'old', 'ingroup', 'notingroup'
+    * @param string $mode flush cache mode : 'old', 'ingroup', 'notingroup',
+                                             'callback_myFunction'
     * @return boolean true if no problem
     * @access private
     */
@@ -553,15 +555,21 @@ class Cache_Lite
                 if (substr($file, 0, 6)=='cache_') {
                     $file2 = $dir . $file;
                     if (is_file($file2)) {
-                        switch ($mode) {
+                        switch (substr($mode, 0, 9)) {
                             case 'old':
                                 // files older than lifeTime get deleted from cache
                                 if ((mktime() - filemtime($file2)) > $this->_lifeTime) {
                                     $result = ($result and ($this->_unlink($file2)));
                                 }
                                 break;
-                            case 'notingroup':
+                            case 'notingrou':
                                 if (!strpos($file2, $motif, 0)) {
+                                    $result = ($result and ($this->_unlink($file2)));
+                                }
+                                break;
+                            case 'callback_':
+                                $func = substr($mode, 9, strlen($mode) - 9);
+                                if ($func($file2, $group)) {
                                     $result = ($result and ($this->_unlink($file2)));
                                 }
                                 break;
