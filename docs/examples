@@ -129,7 +129,7 @@ if (!($cache->start('block2'))) {
 
 
 A few examples of Cache_Lite_Function using :
--------------------------------------------
+---------------------------------------------
 
 >>> With function :
 
@@ -219,3 +219,35 @@ If you try to use Cache_Lite_Function with $this object ($cache->call('this->met
 for example), have a look first at :
 
 http://pear.php.net/bugs/bug.php?id=660
+
+
+A few examples of Cache_Lite_File using :
+-----------------------------------------
+
+<?php
+
+$options = array(
+    'cacheDir' => '/tmp/',
+    'masterFile' => '/home/web/config.xml'
+);
+
+// Set a id for this cache
+$id = '123';
+
+if ($data = $cache->get($id)) {
+
+    // Cache hit !
+    // Content is in $data
+    // (...)
+
+} else { // No valid cache found (you have to make the page)
+
+    // Cache miss !
+    // Put in $data datas to put in cache
+    // (...)
+    $cache->save($data);
+
+}
+
+
+?>
