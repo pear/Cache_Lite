@@ -14,15 +14,22 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.4.1</version>
-    <date>2005-03-01</date>
+    <version>1.5.0</version>
+    <date>2005-06-18</date>
     <license>lgpl</license>
-    <state>stable</state>
+    <state>beta</state>
     <notes>
+      New features :
+      - add of a doNotTestCacheValidity in Output (like in Lite.php)
+      - request #4502 : better control on cache cleaning condition (thanks to 
+      vincent lascaux); introduce the idea of a user callback for the 
+      cleaning process
+      - new Cache_Lite_File module (for a cache controlled by a master file, 
+      very usefull for templates or config caching)
       Bug fixed :
-      - problem of non-ISO-8859-1 characters in package.xml (bug #3621)
-      - problem of the returning value in clean() method (integer and not void)
-        (thanks to Demian Turner (demian (at) phpkitchen (dot) com))
+      - avoid a potential error message if cache doesn't exist
+      - bug #4236 : fread PHP warning on zero length read (because of the change
+      of fread() behaviour in PHP) (thanks to rick dot overman at gmail dot com)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -50,6 +57,18 @@
     </filelist>
   </release>  
   <changelog>
+    <release>
+     <version>1.4.1</version>
+     <date>2005-03-01</date>
+     <license>lgpl</license>
+     <state>stable</state>
+     <notes>
+       Bug fixed :
+       - problem of non-ISO-8859-1 characters in package.xml (bug #3621)
+       - problem of the returning value in clean() method (integer and not void)
+         (thanks to Demian Turner (demian (at) phpkitchen (dot) com))
+     </notes>
+    </release>
     <release>
      <version>1.4.0</version>
      <date>2005-01-21</date>
