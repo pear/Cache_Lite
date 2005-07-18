@@ -14,14 +14,13 @@
      </maintainer>
   </maintainers>
   <release>
-   <version>1.5.1</version>
-    <date>2005-07-10</date>
+   <version>1.5.2</version>
+    <date>2005-07-18</date>
     <license>lgpl</license>
     <state>stable</state>
     <notes>
-      Changes :
-      - juste a little more docs since 1.5.0 (beta)
-      - the state in "stable" now
+      Bug Fixed :
+      - a "package.xml" problem (a file was forgotten)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -41,6 +40,7 @@
         <dir name="Lite">
           <file role="php">Output.php</file>
           <file role="php">Function.php</file>
+          <file role="php">File.php</file>
         </dir>
         <file role="php">Lite.php</file>
         <file role="doc">LICENSE</file>
@@ -49,6 +49,17 @@
     </filelist>
   </release>
   <changelog>
+    <release>
+     <version>1.5.1</version>
+     <date>2005-07-10</date>
+     <license>lgpl</license>
+     <state>stable</state>
+     <notes>
+       Changes :
+       - juste a little more docs since 1.5.0 (beta)
+       - the state in "stable" now
+     </notes>
+    </release>
     <release>
      <version>1.5.0</version>
      <date>2005-06-18</date>
