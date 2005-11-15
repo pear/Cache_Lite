@@ -535,7 +535,7 @@ class Cache_Lite
             $motif = ($group) ? 'cache_'.$group.'_' : 'cache_';
         }
         if ($this->_memoryCaching) {
-            while (list($key, $value) = each($this->_memoryCachingArray)) {
+            while (list($key, ) = each($this->_memoryCachingArray)) {
                 if (strpos($key, $motif, 0)) {
                     unset($this->_memoryCachingArray[$key]);
                     $this->_memoryCachingCounter = $this->_memoryCachingCounter - 1;
@@ -713,7 +713,7 @@ class Cache_Lite
         $this->raiseError('Cache_Lite : Unable to write cache file : '.$this->_file, -1);
         return false;
     }
-    
+       
     /**
     * Write the given data in the cache file and control it just after to avoir corrupted cache entries
     *
