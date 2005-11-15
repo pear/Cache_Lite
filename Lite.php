@@ -266,12 +266,26 @@ class Cache_Lite
     {
         $availableOptions = array('hashedDirectoryUmask', 'hashedDirectoryLevel', 'automaticCleaningFactor', 'automaticSerialization', 'fileNameProtection', 'memoryCaching', 'onlyMemoryCaching', 'memoryCachingLimit', 'cacheDir', 'caching', 'lifeTime', 'fileLocking', 'writeControl', 'readControl', 'readControlType', 'pearErrorMode');
         foreach($options as $key => $value) {
-            if(in_array($key, $availableOptions)) {
-                $property = '_'.$key;
-                $this->$property = $value;
-            }
+            $this->setOption($key, $value);
         }
         $this->_refreshTime = time() - $this->_lifeTime;
+    }
+    
+    /**
+    * Generic way to set a Cache_Lite option
+    *
+    * see Cache_Lite constructor for available options
+    *
+    * @var string $name name of the option
+    * @var mixed $value value of the option
+    * @access public
+    */
+    function setOption($name, $value) {
+        $availableOptions = array('hashedDirectoryUmask', 'hashedDirectoryLevel', 'automaticCleaningFactor', 'automaticSerialization', 'fileNameProtection', 'memoryCaching', 'onlyMemoryCaching', 'memoryCachingLimit', 'cacheDir', 'caching', 'lifeTime', 'fileLocking', 'writeControl', 'readControl', 'readControlType', 'pearErrorMode');
+        if (in_array($name, $availableOptions)) {
+            $property = '_'.$name;
+            $this->$property = $value;
+        }
     }
     
     /**
