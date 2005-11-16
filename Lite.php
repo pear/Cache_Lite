@@ -613,7 +613,7 @@ class Cache_Lite
     {
         $this->_memoryCachingArray[$this->_file] = $data;
         if ($this->_memoryCachingCounter >= $this->_memoryCachingLimit) {
-            list($key, $value) = each($this->_memoryCachingArray);
+            list($key, ) = each($this->_memoryCachingArray);
             unset($this->_memoryCachingArray[$key]);
         } else {
             $this->_memoryCachingCounter = $this->_memoryCachingCounter + 1;
@@ -760,6 +760,7 @@ class Cache_Lite
         default:
             $this->raiseError('Unknown controlType ! (available values are only \'md5\', \'crc32\', \'strlen\')', -5);
         }
+        return false;
     }
     
 } 
