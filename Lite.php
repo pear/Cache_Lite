@@ -51,6 +51,8 @@ class Cache_Lite
     /**
     * Cache lifetime (in seconds)
     *
+    * If null, the cache is valid forever.
+    *
     * @var int $_lifeTime
     */
     var $_lifeTime = 3600;
@@ -267,7 +269,7 @@ class Cache_Lite
         foreach($options as $key => $value) {
             $this->setOption($key, $value);
         }
-        $this->_refreshTime = time() - $this->_lifeTime;
+        $this->setLifeTime($options['lifeTime']);
     }
     
     /**
@@ -321,7 +323,7 @@ class Cache_Lite
                     $data = $this->_read();
                 }
             } else {
-                if ((file_exists($this->_file)) && (@filemtime($this->_file) > $this->_refreshTime)) {
+                if ((file_exists($this->_file)) && (@filemtime($this->_file) > $this->_refreshTime) && !is_null($this->_refreshTime)) {
                     $data = $this->_read();
                 }
             }
@@ -442,7 +444,11 @@ class Cache_Lite
     function setLifeTime($newLifeTime)
     {
         $this->_lifeTime = $newLifeTime;
-        $this->_refreshTime = time() - $newLifeTime;
+        if (is_null($newLifeTime)) {
+            $this->refreshTime = null;
+        } else {
+            $this->_refreshTime = time() - $newLifeTime;
+        }
     }
 
     /**
