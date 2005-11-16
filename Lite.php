@@ -264,7 +264,6 @@ class Cache_Lite
     */
     function Cache_Lite($options = array(NULL))
     {
-        $availableOptions = array('hashedDirectoryUmask', 'hashedDirectoryLevel', 'automaticCleaningFactor', 'automaticSerialization', 'fileNameProtection', 'memoryCaching', 'onlyMemoryCaching', 'memoryCachingLimit', 'cacheDir', 'caching', 'lifeTime', 'fileLocking', 'writeControl', 'readControl', 'readControlType', 'pearErrorMode');
         foreach($options as $key => $value) {
             $this->setOption($key, $value);
         }
@@ -327,7 +326,7 @@ class Cache_Lite
                 }
             }
             if (($data) and ($this->_memoryCaching)) {
-                $this->_memoryCacheAdd($this->_file, $data);
+                $this->_memoryCacheAdd($data);
             }
             if (($this->_automaticSerialization) and (is_string($data))) {
                 $data = unserialize($data);
@@ -356,7 +355,7 @@ class Cache_Lite
                 $this->_setFileName($id, $group);
             }
             if ($this->_memoryCaching) {
-                $this->_memoryCacheAdd($this->_file, $data);
+                $this->_memoryCacheAdd($data);
                 if ($this->_onlyMemoryCaching) {
                     return true;
                 }
@@ -607,11 +606,10 @@ class Cache_Lite
     /**
     * Add some date in the memory caching array
     *
-    * @param string $id cache id
     * @param string $data data to cache
     * @access private
     */
-    function _memoryCacheAdd($id, $data)
+    function _memoryCacheAdd($data)
     {
         $this->_memoryCachingArray[$this->_file] = $data;
         if ($this->_memoryCachingCounter >= $this->_memoryCachingLimit) {
