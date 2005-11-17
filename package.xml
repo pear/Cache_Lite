@@ -70,14 +70,16 @@
     </filelist>
   </release>
   <changelog>
-   <version>1.5.2</version>
-    <date>2005-07-18</date>
-    <license>lgpl</license>
-    <state>stable</state>
-    <notes>
+    <release>
+     <version>1.5.2</version>
+     <date>2005-07-18</date>
+     <license>lgpl</license>
+     <state>stable</state>
+     <notes>
       Bug Fixed :
       - a "package.xml" problem (a file was forgotten)
-    </notes>
+     </notes>
+    </release>
     <release>
      <version>1.5.1</version>
      <date>2005-07-10</date>
