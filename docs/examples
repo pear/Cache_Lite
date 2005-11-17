@@ -230,6 +230,7 @@ $options = array(
     'cacheDir' => '/tmp/',
     'masterFile' => '/home/web/config.xml'
 );
+$cache = new Cache_Lite_File($options);
 
 // Set a id for this cache
 $id = '123';
