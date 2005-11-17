@@ -28,6 +28,7 @@
       - bugfix #5921 : a variable was unused (no consequence for the end user), 
       thanks to moosh at php dot net
       - bugfix #5938 : little mistakes given by Zend Code Analyser 
+      - little mistake in the example for Cache_Lite_File
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
