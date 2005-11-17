@@ -69,12 +69,7 @@ class Cache_Lite_Function extends Cache_Lite
     function call()
     {
         $arguments = func_get_args();
-        $id = serialize($arguments); // Generate a cache id
-        if (!$this->_fileNameProtection) {
-            $id = md5($id);
-            // if fileNameProtection is set to false, then the id has to be hashed
-            // because it's a very bad file name in most cases
-        }
+        $id = $this->_makeId($arguments);
         $data = $this->get($id, $this->_defaultGroup);
         if ($data !== false) {
             $array = unserialize($data);
@@ -88,7 +83,7 @@ class Cache_Lite_Function extends Cache_Lite
                 list($class, $method) = explode('::', $target);
                 $result = call_user_func_array(array($class, $method), $arguments);
             } else if (strstr($target, '->')) { // object->method
-                // use a stupid name ($objet_123456789 because) of problems when the object
+                // use a stupid name ($objet_123456789 because) of problems whene the object
                 // name is the same as this var name
                 list($object_123456789, $method) = explode('->', $target);
                 global $$object_123456789;
@@ -104,6 +99,40 @@ class Cache_Lite_Function extends Cache_Lite
         }
         echo($output);
         return $result;
+    }
+    
+    /**
+    * Drop a cache file
+    *
+    * Arguments of this method are read with func_get_args. So it doesn't appear
+    * in the function definition. Synopsis : 
+    * remove('functionName', $arg1, $arg2, ...)
+    * (arg1, arg2... are arguments of 'functionName')
+    *
+    * @return boolean true if no problem
+    * @access public
+    */
+    function drop()
+    {
+        $id = $this->_makeId(func_get_args());
+        $this->remove($id, $this->_defaultGroup);
+    }
+    
+    /**
+    * Make an id for the cache
+    *
+    * @var array result of func_get_args for the call() or the remove() method
+    * @return string id
+    * @access private
+    */
+    function _makeId($arguments) {
+        $id = serialize($arguments); // Generate a cache id
+        if (!$this->_fileNameProtection) {
+            $id = md5($id);
+            // if fileNameProtection is set to false, then the id has to be hashed
+            // because it's a very bad file name in most cases
+        }    
+        return $id;
     }
     
 }
