@@ -14,13 +14,20 @@
      </maintainer>
   </maintainers>
   <release>
-   <version>1.5.2</version>
-    <date>2005-07-18</date>
+   <version>1.6.0beta1</version>
+    <date>2005-11-17</date>
     <license>lgpl</license>
-    <state>stable</state>
+    <state>beta</state>
     <notes>
-      Bug Fixed :
-      - a "package.xml" problem (a file was forgotten)
+      New features :
+      - phpt test scripts
+      - add of drop() method to Cache_Lite_Function (thanks to 
+      Hugo Morganho hjm at holos dot pt)  
+      - request #5495 : a null lifetime give an eternal caching (need tests)
+      Bug fixed :
+      - bugfix #5921 : a variable was unused (no consequence for the end user), 
+      thanks to moosh at php dot net
+      - bugfix #5938 : little mistakes given by Zend Code Analyser 
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -29,9 +36,22 @@
           <file role="doc">examples</file>
         </dir>
         <dir name="tests">
-          <file role="test">test.php</file>
-          <file role="test">test2.php</file>
-          <file role="test">test3.php</file>
+          <file role="test">Cache_Lite_classical.phpt</file>
+          <file role="test">Cache_Lite_fatest.phpt</file>
+          <file role="test">Cache_Lite_File_classical.phpt</file>
+          <file role="test">Cache_Lite_Function_classical.phpt</file>
+          <file role="test">Cache_Lite_Function_drop.phpt</file>
+          <file role="test">Cache_Lite_hashed.phpt</file>
+          <file role="test">Cache_Lite_memorycache.phpt</file>
+          <file role="test">Cache_Lite_Output_classical.phpt</file>
+          <file role="test">Cache_Lite_serialization.phpt</file>
+          <file role="test">pearbug513.phpt</file>
+          <file role="test">cache_lite_base.inc</file>
+          <file role="test">cache_lite_file_base.inc</file>
+          <file role="test">cache_lite_function_base.inc</file>
+          <file role="test">cache_lite_output_base.inc</file>
+          <file role="test">callcache.inc</file>
+          <file role="test">tmpdir.inc</file>
           <file role="test">bench.php</file>
           <file role="test">bench2.php</file>
           <file role="test">bench3.php</file>
@@ -49,6 +69,14 @@
     </filelist>
   </release>
   <changelog>
+   <version>1.5.2</version>
+    <date>2005-07-18</date>
+    <license>lgpl</license>
+    <state>stable</state>
+    <notes>
+      Bug Fixed :
+      - a "package.xml" problem (a file was forgotten)
+    </notes>
     <release>
      <version>1.5.1</version>
      <date>2005-07-10</date>
