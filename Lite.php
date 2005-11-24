@@ -269,7 +269,7 @@ class Cache_Lite
         foreach($options as $key => $value) {
             $this->setOption($key, $value);
         }
-        $this->setLifeTime($options['lifeTime']);
+        $this->_setRefreshTime();
     }
     
     /**
@@ -318,12 +318,12 @@ class Cache_Lite
                     }
                 }
             }
-            if ($doNotTestCacheValidity) {
+            if (($doNotTestCacheValidity) || (is_null($this->_refreshTime))) {
                 if (file_exists($this->_file)) {
                     $data = $this->_read();
                 }
             } else {
-                if ((file_exists($this->_file)) && (@filemtime($this->_file) > $this->_refreshTime) && !is_null($this->_refreshTime)) {
+                if ((file_exists($this->_file)) && (@filemtime($this->_file) > $this->_refreshTime)) {
                     $data = $this->_read();
                 }
             }
@@ -444,11 +444,7 @@ class Cache_Lite
     function setLifeTime($newLifeTime)
     {
         $this->_lifeTime = $newLifeTime;
-        if (is_null($newLifeTime)) {
-            $this->refreshTime = null;
-        } else {
-            $this->_refreshTime = time() - $newLifeTime;
-        }
+        $this->_setRefreshTime();
     }
 
     /**
@@ -518,7 +514,20 @@ class Cache_Lite
     }
     
     // --- Private methods ---
-
+    
+    /**
+    * Compute & set the refresh time
+    *
+    * @access private
+    */
+    function _setRefreshTime() {
+        if (is_null($this->_lifeTime)) {
+            $this->_refreshTime = null;
+        } else {
+            $this->_refreshTime = time() - $this->_lifeTime;
+        }
+    }
+    
     /**
     * Remove a file
     * 
