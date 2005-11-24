@@ -586,8 +586,10 @@ class Cache_Lite
                         switch (substr($mode, 0, 9)) {
                             case 'old':
                                 // files older than lifeTime get deleted from cache
-                                if ((mktime() - filemtime($file2)) > $this->_lifeTime) {
-                                    $result = ($result and ($this->_unlink($file2)));
+                                if (!is_null($this->_lifeTime)) {
+                                    if ((mktime() - filemtime($file2)) > $this->_lifeTime) {
+                                        $result = ($result and ($this->_unlink($file2)));
+                                    }
                                 }
                                 break;
                             case 'notingrou':
@@ -691,7 +693,11 @@ class Cache_Lite
             if ($this->_readControl) {
                 $hashData = $this->_hash($data, $this->_readControlType);
                 if ($hashData != $hashControl) {
-                    @touch($this->_file, time() - 2*abs($this->_lifeTime)); 
+                    if (is_null($this->_lifeTime)) {
+                        @touch($this->_file, time() - 2*abs($this->_lifeTime)); 
+                    } else {
+                        @unlink($this->_file);
+                    }
                     return false;
                 }
             }
