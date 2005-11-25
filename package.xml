@@ -14,21 +14,18 @@
      </maintainer>
   </maintainers>
   <release>
-   <version>1.6.0beta1</version>
-    <date>2005-11-17</date>
+    <version>1.6.0beta2</version>
+    <date>2005-11-25</date>
     <license>lgpl</license>
     <state>beta</state>
     <notes>
       New features :
-      - phpt test scripts
-      - add of drop() method to Cache_Lite_Function (thanks to 
-      Hugo Morganho hjm at holos dot pt)  
-      - request #5495 : a null lifetime give an eternal caching (need tests)
+      - a new phpt test script (eternal caching)
+      - you can now call Cache_Lite constructor with any argument (thanks to ratibus at gmail dot com)
       Bug fixed :
-      - bugfix #5921 : a variable was unused (no consequence for the end user), 
-      thanks to moosh at php dot net
-      - bugfix #5938 : little mistakes given by Zend Code Analyser 
-      - little mistake in the example for Cache_Lite_File
+      - bugfixes about eternal caching
+      Other change : 
+      - better code factoring (thanks to ratibus at gmail dot com)      
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -38,6 +35,7 @@
         </dir>
         <dir name="tests">
           <file role="test">Cache_Lite_classical.phpt</file>
+          <file role="test">Cache_Lite_eternal.phpt</file>
           <file role="test">Cache_Lite_fatest.phpt</file>
           <file role="test">Cache_Lite_File_classical.phpt</file>
           <file role="test">Cache_Lite_Function_classical.phpt</file>
@@ -70,6 +68,24 @@
     </filelist>
   </release>
   <changelog>
+    <release>
+     <version>1.6.0beta1</version>
+     <date>2005-11-17</date>
+     <license>lgpl</license>
+     <state>beta</state>
+     <notes>
+       New features :
+       - phpt test scripts
+       - add of drop() method to Cache_Lite_Function (thanks to 
+       Hugo Morganho hjm at holos dot pt)  
+       - request #5495 : a null lifetime give an eternal caching (need tests)
+       Bug fixed :
+       - bugfix #5921 : a variable was unused (no consequence for the end user), 
+       thanks to moosh at php dot net
+       - bugfix #5938 : little mistakes given by Zend Code Analyser 
+       - little mistake in the example for Cache_Lite_File
+     </notes>
+    </release>
     <release>
      <version>1.5.2</version>
      <date>2005-07-18</date>
