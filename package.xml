@@ -14,18 +14,12 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.6.0beta2</version>
-    <date>2005-11-25</date>
+    <version>1.6.0</version>
+    <date>2005-12-03</date>
     <license>lgpl</license>
-    <state>beta</state>
+    <state>stable</state>
     <notes>
-      New features :
-      - a new phpt test script (eternal caching)
-      - you can now call Cache_Lite constructor with any argument (thanks to ratibus at gmail dot com)
-      Bug fixed :
-      - bugfixes about eternal caching
-      Other change : 
-      - better code factoring (thanks to ratibus at gmail dot com)      
+      No change (just some modifications into online documentation)    
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -68,6 +62,21 @@
     </filelist>
   </release>
   <changelog>
+    <release>
+     <version>1.6.0beta2</version>
+     <date>2005-11-25</date>
+     <license>lgpl</license>
+     <state>beta</state>
+     <notes>
+       New features :
+       - a new phpt test script (eternal caching)
+       - you can now call Cache_Lite constructor with any argument (thanks to ratibus at gmail dot com)
+       Bug fixed :
+       - bugfixes about eternal caching
+       Other change : 
+       - better code factoring (thanks to ratibus at gmail dot com)      
+     </notes>   
+    </release>
     <release>
      <version>1.6.0beta1</version>
      <date>2005-11-17</date>
