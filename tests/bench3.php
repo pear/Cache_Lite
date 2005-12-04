@@ -46,7 +46,8 @@ class bench
         return "\$obj->test = $this->test and this is the result of the method \$obj->method_to_bench($arg1, $arg2) !<br>";        
     }
     
-    function static_method_to_bench($arg1, $arg2) {
+    function static_method_to_bench($arg1, $arg2) 
+    {
         for($i=0;$i<10000;$i++) {
             $tmp = md5(md5(md5('Loosing time...')));
         }

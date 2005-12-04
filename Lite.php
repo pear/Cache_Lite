@@ -281,7 +281,8 @@ class Cache_Lite
     * @var mixed $value value of the option
     * @access public
     */
-    function setOption($name, $value) {
+    function setOption($name, $value) 
+    {
         $availableOptions = array('hashedDirectoryUmask', 'hashedDirectoryLevel', 'automaticCleaningFactor', 'automaticSerialization', 'fileNameProtection', 'memoryCaching', 'onlyMemoryCaching', 'memoryCachingLimit', 'cacheDir', 'caching', 'lifeTime', 'fileLocking', 'writeControl', 'readControl', 'readControlType', 'pearErrorMode');
         if (in_array($name, $availableOptions)) {
             $property = '_'.$name;
@@ -492,7 +493,8 @@ class Cache_Lite
     *
     * @return int last modification time
     */
-    function lastModified() {
+    function lastModified() 
+    {
         return @filemtime($this->_file);
     }
     
@@ -520,7 +522,8 @@ class Cache_Lite
     *
     * @access private
     */
-    function _setRefreshTime() {
+    function _setRefreshTime() 
+    {
         if (is_null($this->_lifeTime)) {
             $this->_refreshTime = null;
         } else {

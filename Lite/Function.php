@@ -125,7 +125,8 @@ class Cache_Lite_Function extends Cache_Lite
     * @return string id
     * @access private
     */
-    function _makeId($arguments) {
+    function _makeId($arguments) 
+    {
         $id = serialize($arguments); // Generate a cache id
         if (!$this->_fileNameProtection) {
             $id = md5($id);
