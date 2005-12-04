@@ -60,10 +60,10 @@ class Cache_Lite_File extends Cache_Lite
         if (isset($options['masterFile'])) {
             $this->_masterFile = $options['masterFile'];
         } else {
-            $this->raiseError('Cache_Lite_File : masterFile option must be set !');
+            return $this->raiseError('Cache_Lite_File : masterFile option must be set !');
         }
         if (!($this->_masterFile_mtime = @filemtime($this->_masterFile))) {
-            $this->raiseError('Cache_Lite_File : Unable to read masterFile : '.$this->_masterFile, -3);
+            return $this->raiseError('Cache_Lite_File : Unable to read masterFile : '.$this->_masterFile, -3);
         }
     }
     

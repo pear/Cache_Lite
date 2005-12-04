@@ -510,7 +510,7 @@ class Cache_Lite
     function raiseError($msg, $code)
     {
         include_once('PEAR.php');
-        PEAR::raiseError($msg, $code, $this->_pearErrorMode);
+        return PEAR::raiseError($msg, $code, $this->_pearErrorMode);
     }
     
     // --- Private methods ---
@@ -538,8 +538,7 @@ class Cache_Lite
     function _unlink($file)
     {
         if (!@unlink($file)) {
-            $this->raiseError('Cache_Lite : Unable to remove cache !', -3);
-            return false;
+            return $this->raiseError('Cache_Lite : Unable to remove cache !', -3);
         } else {
             return true;
         }
@@ -574,8 +573,7 @@ class Cache_Lite
             }
         }
         if (!($dh = opendir($dir))) {
-            $this->raiseError('Cache_Lite : Unable to open cache directory !', -4);
-            return false;
+            return $this->raiseError('Cache_Lite : Unable to open cache directory !', -4);
         }
         $result = true;
         while ($file = readdir($dh)) {
@@ -703,8 +701,7 @@ class Cache_Lite
             }
             return $data;
         }
-        $this->raiseError('Cache_Lite : Unable to read cache !', -2);   
-        return false;
+        return $this->raiseError('Cache_Lite : Unable to read cache !', -2);   
     }
     
     /**
@@ -743,8 +740,7 @@ class Cache_Lite
                 }
             }
         }
-        $this->raiseError('Cache_Lite : Unable to write cache file : '.$this->_file, -1);
-        return false;
+        return $this->raiseError('Cache_Lite : Unable to write cache file : '.$this->_file, -1);
     }
        
     /**
@@ -779,9 +775,8 @@ class Cache_Lite
         case 'strlen':
             return sprintf('% 32d', strlen($data));
         default:
-            $this->raiseError('Unknown controlType ! (available values are only \'md5\', \'crc32\', \'strlen\')', -5);
+            return $this->raiseError('Unknown controlType ! (available values are only \'md5\', \'crc32\', \'strlen\')', -5);
         }
-        return false;
     }
     
 } 
