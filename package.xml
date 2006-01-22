@@ -14,12 +14,16 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.6.0</version>
-    <date>2005-12-03</date>
+    <version>1.6.1</version>
+    <date>2006-01-22</date>
     <license>lgpl</license>
     <state>stable</state>
     <notes>
-      No change (just some modifications into online documentation)    
+      Changes :
+      - code refactoring for setToDebug() (thanks to moosh (at) php (dot) net)  
+      - code refactoring (thanks to code analyzer)
+      Bugs fixed :
+      - #6388 : add an explicit dependancy on PEAR package (for error handling) (thanks to moosh (at) php (dot) net)  
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -60,8 +64,20 @@
         <file role="doc">TODO</file>
       </dir>
     </filelist>
+    <deps>
+      <dep type="pkg" rel="has" version="1.0">PEAR</dep>
+    </deps>
   </release>
   <changelog>
+    <release>
+     <version>1.6.0</version>
+     <date>2005-12-03</date>
+     <license>lgpl</license>
+     <state>stable</state>
+     <notes>
+       No change (just some modifications into online documentation)    
+     </notes>
+    </release>
     <release>
      <version>1.6.0beta2</version>
      <date>2005-11-25</date>
