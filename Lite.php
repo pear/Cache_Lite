@@ -310,14 +310,12 @@ class Cache_Lite
                 if (isset($this->_memoryCachingArray[$this->_file])) {
                     if ($this->_automaticSerialization) {
                         return unserialize($this->_memoryCachingArray[$this->_file]);
-                    } else {
-                        return $this->_memoryCachingArray[$this->_file];
                     }
-                } else {
-                    if ($this->_onlyMemoryCaching) {
-                        return false;
-                    }
+                    return $this->_memoryCachingArray[$this->_file];
                 }
+                if ($this->_onlyMemoryCaching) {
+                    return false;
+                }                
             }
             if (($doNotTestCacheValidity) || (is_null($this->_refreshTime))) {
                 if (file_exists($this->_file)) {
@@ -373,12 +371,10 @@ class Cache_Lite
                 if (!$this->_writeAndControl($data)) {
                     @touch($this->_file, time() - 2*abs($this->_lifeTime));
                     return false;
-                } else {
-                    return true;
                 }
-            } else {
+                return true;                
+            }
 	        return $this->_write($data);
-	    }
         }
         return false;
     }
@@ -427,13 +423,13 @@ class Cache_Lite
     * Set to debug mode
     *
     * When an error is found, the script will stop and the message will be displayed
-    * (in debug mode only).
+    * (in debug mode only). 
     *
     * @access public
     */
     function setToDebug()
     {
-        $this->_pearErrorMode = CACHE_LITE_ERROR_DIE;
+        $this->setOptions('pearErrorMode', CACHE_LITE_ERROR_DIE);
     }
 
     /**
@@ -542,9 +538,8 @@ class Cache_Lite
     {
         if (!@unlink($file)) {
             return $this->raiseError('Cache_Lite : Unable to remove cache !', -3);
-        } else {
-            return true;
         }
+        return true;        
     }
 
     /**
@@ -729,19 +724,18 @@ class Cache_Lite
                 if ($this->_fileLocking) @flock($fp, LOCK_UN);
                 @fclose($fp);
                 return true;
-            } else {
-                if (($try==1) and ($this->_hashedDirectoryLevel>0)) {
-                    $hash = md5($this->_fileName);
-                    $root = $this->_cacheDir;
-                    for ($i=0 ; $i<$this->_hashedDirectoryLevel ; $i++) {
-                        $root = $root . 'cache_' . substr($hash, 0, $i + 1) . '/';
-                        @mkdir($root, $this->_hashedDirectoryUmask);
-                    }
-                    $try = 2;
-                } else {
-                    $try = 999;
-                }
             }
+            if (($try==1) and ($this->_hashedDirectoryLevel>0)) {
+                $hash = md5($this->_fileName);
+                $root = $this->_cacheDir;
+                for ($i=0 ; $i<$this->_hashedDirectoryLevel ; $i++) {
+                    $root = $root . 'cache_' . substr($hash, 0, $i + 1) . '/';
+                    @mkdir($root, $this->_hashedDirectoryUmask);
+                }
+                $try = 2;
+            } else {
+                $try = 999;
+            }            
         }
         return $this->raiseError('Cache_Lite : Unable to write cache file : '.$this->_file, -1);
     }
