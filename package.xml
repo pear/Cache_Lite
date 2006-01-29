@@ -14,11 +14,16 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.6.1</version>
-    <date>2006-01-22</date>
+    <version>1.7.0beta1</version>
+    <date>2006-01-28</date>
     <license>lgpl</license>
-    <state>stable</state>
+    <state>beta</state>
     <notes>
+      New features :
+      - 3 new unit tests
+      - a new option is available in the constructor "errorHandlingAPIBreak" (boolean, false by default) ; 
+        if set to true, it introduces a little API break but the error handling is better in CACHE_LITE_ERROR_RETURN
+        mode (specially with the save() method which can return a PEAR_Error object)
       Changes :
       - code refactoring for setToDebug() (thanks to moosh (at) php (dot) net)  
       - code refactoring (thanks to code analyzer)
