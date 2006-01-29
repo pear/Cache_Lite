@@ -15,7 +15,7 @@
   </maintainers>
   <release>
     <version>1.7.0beta1</version>
-    <date>2006-01-28</date>
+    <date>2006-01-29</date>
     <license>lgpl</license>
     <state>beta</state>
     <notes>
@@ -70,7 +70,7 @@
       </dir>
     </filelist>
     <deps>
-      <dep type="pkg" rel="has" version="1.0">PEAR</dep>
+      <dep type="pkg" rel="has">PEAR</dep>
     </deps>
   </release>
   <changelog>
