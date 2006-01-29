@@ -14,21 +14,13 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.7.0beta1</version>
+    <version>1.7.0beta2</version>
     <date>2006-01-29</date>
     <license>lgpl</license>
     <state>beta</state>
     <notes>
-      New features :
-      - 3 new unit tests
-      - a new option is available in the constructor "errorHandlingAPIBreak" (boolean, false by default) ; 
-        if set to true, it introduces a little API break but the error handling is better in CACHE_LITE_ERROR_RETURN
-        mode (specially with the save() method which can return a PEAR_Error object)
-      Changes :
-      - code refactoring for setToDebug() (thanks to moosh (at) php (dot) net)  
-      - code refactoring (thanks to code analyzer)
       Bugs fixed :
-      - #6388 : add an explicit dependancy on PEAR package (for error handling) (thanks to moosh (at) php (dot) net)  
+      - 3 unit test files was forgotten in package.xml  
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -44,6 +36,9 @@
           <file role="test">Cache_Lite_Function_classical.phpt</file>
           <file role="test">Cache_Lite_Function_drop.phpt</file>
           <file role="test">Cache_Lite_hashed.phpt</file>
+          <file role="test">Cache_Lite_error.phpt</file>
+          <file role="test">Cache_Lite_error2.phpt</file>
+          <file role="test">Cache_Lite_error3.phpt</file>
           <file role="test">Cache_Lite_memorycache.phpt</file>
           <file role="test">Cache_Lite_Output_classical.phpt</file>
           <file role="test">Cache_Lite_serialization.phpt</file>
@@ -74,6 +69,24 @@
     </deps>
   </release>
   <changelog>
+    <release>
+     <version>1.7.0beta1</version>
+     <date>2006-01-29</date>
+     <license>lgpl</license>
+     <state>beta</state>
+     <notes>
+       New features :
+       - 3 new unit tests
+       - a new option is available in the constructor "errorHandlingAPIBreak" (boolean, false by default) ; 
+         if set to true, it introduces a little API break but the error handling is better in CACHE_LITE_ERROR_RETURN
+         mode (specially with the save() method which can return a PEAR_Error object)
+       Changes :
+       - code refactoring for setToDebug() (thanks to moosh (at) php (dot) net)  
+       - code refactoring (thanks to code analyzer)
+       Bugs fixed :
+       - #6388 : add an explicit dependancy on PEAR package (for error handling) (thanks to moosh (at) php (dot) net)  
+     </notes>
+    </release>
     <release>
      <version>1.6.0</version>
      <date>2005-12-03</date>
