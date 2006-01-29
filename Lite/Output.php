@@ -47,11 +47,10 @@ class Cache_Lite_Output extends Cache_Lite
         if ($data !== false) {
             echo($data);
             return true;
-        } else {
-            ob_start();
-            ob_implicit_flush(false);
-            return false;
         }
+        ob_start();
+        ob_implicit_flush(false);
+        return false;
     }
 
     /**
