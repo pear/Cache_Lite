@@ -23,7 +23,14 @@ function callCache($id, $type = 'string') {
             $data = array(array('foo', 'bar'), 1, 'foo', 'bar');
             echo(serialize($data));
         }
-        $Cache_Lite->save($data);
+        $res = $Cache_Lite->save($data);
+        if (is_object($res)) {
+            echo "\nPEAR_ERROR : " . $res->getMessage() . " (#" . $res->getCode() . ")\n";
+        } else {
+	        if (!($res)) {
+	            echo "\nError when saving cache !\n";
+	        }
+        }
     }
 }
     
