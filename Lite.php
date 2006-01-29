@@ -236,6 +236,18 @@ class Cache_Lite
     */
     var $_hashedDirectoryUmask = 0700;
     
+    /**
+     * API break for error handling in CACHE_LITE_ERROR_RETURN mode
+     * 
+     * In CACHE_LITE_ERROR_RETURN mode, error handling was not good because
+     * for example save() method always returned a boolean (a PEAR_Error object
+     * would be better in CACHE_LITE_ERROR_RETURN mode). To correct this without
+     * breaking the API, this option (false by default) can change this handling.
+     * 
+     * @var boolean
+     */
+    var $_errorHandlingAPIBreak = false;
+    
     // --- Public methods ---
 
     /**
@@ -255,10 +267,11 @@ class Cache_Lite
     *     'onlyMemoryCaching' => enable / disable only memory caching (boolean),
     *     'memoryCachingLimit' => max nbr of records to store into memory caching (int),
     *     'fileNameProtection' => enable / disable automatic file name protection (boolean),
-    *     'automaticSerialization' => enable / disable automatic serialization (boolean)
-    *     'automaticCleaningFactor' => distable / tune automatic cleaning process (int)
-    *     'hashedDirectoryLevel' => level of the hashed directory system (int)
-    *     'hashedDirectoryUmask' => umask for hashed directory structure (int)
+    *     'automaticSerialization' => enable / disable automatic serialization (boolean),
+    *     'automaticCleaningFactor' => distable / tune automatic cleaning process (int),
+    *     'hashedDirectoryLevel' => level of the hashed directory system (int),
+    *     'hashedDirectoryUmask' => umask for hashed directory structure (int),
+    *     'errorHandlingAPIBreak' => API break for better error handling ? (boolean)
     * );
     *
     * @param array $options options
@@ -283,7 +296,7 @@ class Cache_Lite
     */
     function setOption($name, $value) 
     {
-        $availableOptions = array('hashedDirectoryUmask', 'hashedDirectoryLevel', 'automaticCleaningFactor', 'automaticSerialization', 'fileNameProtection', 'memoryCaching', 'onlyMemoryCaching', 'memoryCachingLimit', 'cacheDir', 'caching', 'lifeTime', 'fileLocking', 'writeControl', 'readControl', 'readControlType', 'pearErrorMode');
+        $availableOptions = array('errorHandlingAPIBreak', 'hashedDirectoryUmask', 'hashedDirectoryLevel', 'automaticCleaningFactor', 'automaticSerialization', 'fileNameProtection', 'memoryCaching', 'onlyMemoryCaching', 'memoryCachingLimit', 'cacheDir', 'caching', 'lifeTime', 'fileLocking', 'writeControl', 'readControl', 'readControlType', 'pearErrorMode');
         if (in_array($name, $availableOptions)) {
             $property = '_'.$name;
             $this->$property = $value;
@@ -296,7 +309,7 @@ class Cache_Lite
     * @param string $id cache id
     * @param string $group name of the cache group
     * @param boolean $doNotTestCacheValidity if set to true, the cache validity won't be tested
-    * @return string data of the cache (or false if no cache available)
+    * @return string data of the cache (else : false)
     * @access public
     */
     function get($id, $group = 'default', $doNotTestCacheValidity = false)
@@ -343,7 +356,7 @@ class Cache_Lite
     * @param string $data data to put in cache (can be another type than strings if automaticSerialization is on)
     * @param string $id cache id
     * @param string $group name of the cache group
-    * @return boolean true if no problem
+    * @return boolean true if no problem (else : false or a PEAR_Error object)
     * @access public
     */
     function save($data, $id = NULL, $group = 'default')
@@ -361,20 +374,32 @@ class Cache_Lite
                     return true;
                 }
             }
-	    if ($this->_automaticCleaningFactor>0) {
+            if ($this->_automaticCleaningFactor>0) {
                 $rand = rand(1, $this->_automaticCleaningFactor);
-	        if ($rand==1) {
-	            $this->clean(false, 'old');
-		}
+                if ($rand==1) {
+                    $this->clean(false, 'old');
+                }
             }
             if ($this->_writeControl) {
-                if (!$this->_writeAndControl($data)) {
+                $res = $this->_writeAndControl($data);
+                if (is_bool($res)) {
+                    if ($res) {
+                        return true;  
+                    }
+                    // if $res if false, we need to invalidate the cache
                     @touch($this->_file, time() - 2*abs($this->_lifeTime));
                     return false;
-                }
-                return true;                
+                }            
+            } else {
+                $res = $this->_write($data);
             }
-	        return $this->_write($data);
+            if (is_object($res)) {
+	        	// $res is a PEAR_Error object 
+	        	if (!($this->_errorHandlingAPIBreak)) {   
+	                return false; // we return false (old API)
+	            }
+	        }
+            return $res;
         }
         return false;
     }
@@ -662,7 +687,7 @@ class Cache_Lite
     /**
     * Read the cache file and return the content
     *
-    * @return string content of the cache file
+    * @return string content of the cache file (else : false or a PEAR_Error object)
     * @access private
     */
     function _read()
@@ -699,14 +724,14 @@ class Cache_Lite
             }
             return $data;
         }
-        return $this->raiseError('Cache_Lite : Unable to read cache !', -2);   
+        return $this->raiseError('Cache_Lite : Unable to read cache !', -2); 
     }
     
     /**
     * Write the given data in the cache file
     *
     * @param string $data data to put in cache
-    * @return boolean true if ok
+    * @return boolean true if ok (a PEAR_Error object else)
     * @access private
     */
     function _write($data)
@@ -744,13 +769,22 @@ class Cache_Lite
     * Write the given data in the cache file and control it just after to avoir corrupted cache entries
     *
     * @param string $data data to put in cache
-    * @return boolean true if the test is ok
+    * @return boolean true if the test is ok (else : false or a PEAR_Error object)
     * @access private
     */
     function _writeAndControl($data)
     {
-        $this->_write($data);
+        $result = $this->_write($data);
+        if (is_object($result)) {
+            return $result; # We return the PEAR_Error object
+        }
         $dataRead = $this->_read($data);
+        if (is_object($dataRead)) {
+            return $result; # We return the PEAR_Error object
+        }
+        if ((is_bool($dataRead)) && (!$dataRead)) {
+            return false; 
+        }
         return ($dataRead==$data);
     }
     
