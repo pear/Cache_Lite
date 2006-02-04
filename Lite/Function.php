@@ -24,11 +24,42 @@ class Cache_Lite_Function extends Cache_Lite
     // --- Private properties ---
     
     /**
-    * Default cache group for function caching
-    *
-    * @var string $_defaultGroup
-    */
+     * Default cache group for function caching
+     *
+     * @var string $_defaultGroup
+     */
     var $_defaultGroup = 'Cache_Lite_Function';
+    
+    /**
+     * Don't cache the method call when its output contains the string "NOCACHE"
+     * 
+     * if set to true, the output of the method will never be displayed (because the output is used
+     * to control the cache)
+     * 
+     * @var boolean $_dontCacheWhenTheOutputContainsNOCACHE
+     */
+    var $_dontCacheWhenTheOutputContainsNOCACHE = false;
+    
+    /**
+     * Don't cache the method call when its result is false
+     * 
+     * @var boolean $_dontCacheWhenTheResultIsFalse
+     */
+    var $_dontCacheWhenTheResultIsFalse = false;
+    
+    /**
+     * Don't cache the method call when its result is null
+     * 
+     * @var boolean $_dontCacheWhenTheResultIsNull
+     */
+    var $_dontCacheWhenTheResultIsNull = false;
+    
+    /**
+     * Debug the Cache_Lite_Function caching process
+     * 
+     * @var boolean $_debugCacheLiteFunction
+     */
+    var $_debugCacheLiteFunction = false;
     
     // --- Public methods ----
     
@@ -41,7 +72,11 @@ class Cache_Lite_Function extends Cache_Lite
     * Comparing to Cache_Lite constructor, there is another option :
     * $options = array(
     *     (...) see Cache_Lite constructor
-    *     'defaultGroup' => default cache group for function caching (string)
+    *     'debugCacheLiteFunction' => (bool) debug the caching process,
+    *     'defaultGroup' => default cache group for function caching (string),
+    *     'dontCacheWhenTheOutputContainsNOCACHE' => (bool) don't cache when the function output contains "NOCACHE",
+    *     'dontCacheWhenTheResultIsFalse' => (bool) don't cache when the function result is false,
+    *     'dontCacheWhenTheResultIsNull' => (bool don't cache when the function result is null
     * );
     *
     * @param array $options options
@@ -49,9 +84,14 @@ class Cache_Lite_Function extends Cache_Lite
     */
     function Cache_Lite_Function($options = array(NULL))
     {
-        if (isset($options['defaultGroup'])) {
-            $this->_defaultGroup = $options['defaultGroup'];
+        $availableOptions = array('debugCacheLiteFunction', 'defaultGroup', 'dontCacheWhenTheOutputContainsNOCACHE', 'dontCacheWhenTheResultIsFalse', 'dontCacheWhenTheResultIsNull');
+        while (list($name, $value) = each($options)) {
+	        if (in_array($name, $availableOptions)) {
+	            $property = '_'.$name;
+	            $this->$property = $value;
+	        }
         }
+        reset($options);
         $this->Cache_Lite($options);
     }
     
@@ -72,10 +112,16 @@ class Cache_Lite_Function extends Cache_Lite
         $id = $this->_makeId($arguments);
         $data = $this->get($id, $this->_defaultGroup);
         if ($data !== false) {
+            if ($this->_debugCacheLiteFunction) {
+                echo "Cache hit !\n";
+            }
             $array = unserialize($data);
             $output = $array['output'];
             $result = $array['result'];
         } else {
+            if ($this->_debugCacheLiteFunction) {
+                echo "Cache missed !\n";
+            } 
             ob_start();
             ob_implicit_flush(false);
             $target = array_shift($arguments);
@@ -100,6 +146,23 @@ class Cache_Lite_Function extends Cache_Lite
             }
             $output = ob_get_contents();
             ob_end_clean();
+            if ($this->_dontCacheWhenTheResultIsFalse) {
+                if ((is_bool($result)) && (!($result))) {
+                    echo($output);
+                    return $result;
+                }
+            }
+            if ($this->_dontCacheWhenTheResultIsNull) {
+                if (is_null($result)) {
+                    echo($output);
+                    return $result;
+                }
+            }
+            if ($this->_dontCacheWhenTheOutputContainsNOCACHE) {
+                if (strpos($output, 'NOCACHE') > -1) {
+                    return $result;
+                }
+            }
             $array['output'] = $output;
             $array['result'] = $result;
             $this->save(serialize($array), $id, $this->_defaultGroup);
