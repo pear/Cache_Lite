@@ -79,17 +79,24 @@ class Cache_Lite_Function extends Cache_Lite
             ob_start();
             ob_implicit_flush(false);
             $target = array_shift($arguments);
-            if (strstr($target, '::')) { // classname::staticMethod
-                list($class, $method) = explode('::', $target);
-                $result = call_user_func_array(array($class, $method), $arguments);
-            } else if (strstr($target, '->')) { // object->method
-                // use a stupid name ($objet_123456789 because) of problems whene the object
-                // name is the same as this var name
-                list($object_123456789, $method) = explode('->', $target);
-                global $$object_123456789;
-                $result = call_user_func_array(array($$object_123456789, $method), $arguments);
-            } else { // function
-                $result = call_user_func_array($target, $arguments);
+            if (is_array($target)) {
+                // in this case, $target is for example array($obj, 'method')
+                $object = $target[0];
+                $method = $target[1];
+                $result = call_user_func_array(array(&$object, $method), $arguments);
+            } else {
+	            if (strstr($target, '::')) { // classname::staticMethod
+	                list($class, $method) = explode('::', $target);
+	                $result = call_user_func_array(array($class, $method), $arguments);
+	            } else if (strstr($target, '->')) { // object->method
+	                // use a stupid name ($objet_123456789 because) of problems where the object
+	                // name is the same as this var name
+	                list($object_123456789, $method) = explode('->', $target);
+	                global $$object_123456789;
+	                $result = call_user_func_array(array($$object_123456789, $method), $arguments);
+	            } else { // function
+	                $result = call_user_func_array($target, $arguments);
+	            }
             }
             $output = ob_get_contents();
             ob_end_clean();

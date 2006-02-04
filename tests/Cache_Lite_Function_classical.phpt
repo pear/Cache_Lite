@@ -34,6 +34,8 @@ $data = $cache->call('bench::static_method_to_bench', 23, 66);
 echo($data);
 $cache->call('bench::static_method_to_bench', 23, 66);
 
+$object = new test($options);
+
 $cache->clean();
 
 function function_to_bench($arg1, $arg2) 
@@ -59,6 +61,21 @@ class bench
 
 }
 
+class test
+{
+    function test($options) {
+        $this->foo = 'bar';
+        $cache = new Cache_Lite_Function($options);
+        echo($cache->call(array($this, 'method_to_bench'), 'foo', 'bar'));
+    }   
+    
+    function method_to_bench($arg1, $arg2)
+    {
+        echo "output : *** $arg1 *** $arg2 *** " . $this->foo . " ***\n";
+        return "result : *** $arg1 *** $arg2 *** " . $this->foo . " ***\n";     
+    }
+}
+
 ?>
 --GET--
 --POST--
@@ -78,3 +95,5 @@ This is the result of the function static_method_to_bench(23, 66) !
 This is the output of the function static_method_to_bench(23, 66) !
 This is the result of the function static_method_to_bench(23, 66) !
 This is the output of the function static_method_to_bench(23, 66) !
+output : *** foo *** bar *** bar ***
+result : *** foo *** bar *** bar ***
