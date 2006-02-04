@@ -282,7 +282,6 @@ class Cache_Lite
         foreach($options as $key => $value) {
             $this->setOption($key, $value);
         }
-        $this->_setRefreshTime();
     }
     
     /**
@@ -318,7 +317,9 @@ class Cache_Lite
         $this->_group = $group;
         $data = false;
         if ($this->_caching) {
+            $this->_setRefreshTime();
             $this->_setFileName($id, $group);
+            clearstatcache();
             if ($this->_memoryCaching) {
                 if (isset($this->_memoryCachingArray[$this->_file])) {
                     if ($this->_automaticSerialization) {
@@ -536,6 +537,18 @@ class Cache_Lite
         return PEAR::raiseError($msg, $code, $this->_pearErrorMode);
     }
     
+    /**
+     * Extend the life of a valid cache file
+     * 
+     * see http://pear.php.net/bugs/bug.php?id=6681
+     * 
+     * @access public
+     */
+    function extendLife()
+    {
+        @touch($this->_file);
+    }
+    
     // --- Private methods ---
     
     /**
@@ -608,7 +621,7 @@ class Cache_Lite
                             case 'old':
                                 // files older than lifeTime get deleted from cache
                                 if (!is_null($this->_lifeTime)) {
-                                    if ((mktime() - filemtime($file2)) > $this->_lifeTime) {
+                                    if ((mktime() - @filemtime($file2)) > $this->_lifeTime) {
                                         $result = ($result and ($this->_unlink($file2)));
                                     }
                                 }
@@ -695,7 +708,6 @@ class Cache_Lite
         $fp = @fopen($this->_file, "rb");
         if ($this->_fileLocking) @flock($fp, LOCK_SH);
         if ($fp) {
-            clearstatcache(); // because the filesize can be cached by PHP itself...
             $length = @filesize($this->_file);
             $mqr = get_magic_quotes_runtime();
             set_magic_quotes_runtime(0);
@@ -714,7 +726,7 @@ class Cache_Lite
             if ($this->_readControl) {
                 $hashData = $this->_hash($data, $this->_readControlType);
                 if ($hashData != $hashControl) {
-                    if (is_null($this->_lifeTime)) {
+                    if (!(is_null($this->_lifeTime))) {
                         @touch($this->_file, time() - 2*abs($this->_lifeTime)); 
                     } else {
                         @unlink($this->_file);
