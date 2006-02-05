@@ -15,12 +15,20 @@
   </maintainers>
   <release>
     <version>1.7.0beta2</version>
-    <date>2006-01-29</date>
+    <date>2006-02-04</date>
     <license>lgpl</license>
     <state>beta</state>
     <notes>
       Bugs fixed :
-      - 3 unit test files was forgotten in package.xml  
+      - 3 unit test files was forgotten in beta1 package.xml  
+      New features :
+      - request #6681 : new extendLife() method (thanks to alex at vegagames dot net)
+      - request #6617 : "$this->method()" calls are ok with Cache_Lite_Function without workaround 
+                        (thanks to thomas dot nicolai at unisg dot ch)
+      - request #6575 : new options 'dontCacheWhenTheOutputContainsNOCACHE', 'dontCacheWhenTheResultIsFalse', 
+                        'dontCacheWhenTheResultIsNull' (thanks to thomas dot nicolai at unisg dot ch)
+      - new debug option for Cache_Lite_Function                 
+      - new test files
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -30,11 +38,13 @@
         </dir>
         <dir name="tests">
           <file role="test">Cache_Lite_classical.phpt</file>
+          <file role="test">Cache_Lite_automaticCleaning.phpt</file>
           <file role="test">Cache_Lite_eternal.phpt</file>
           <file role="test">Cache_Lite_fatest.phpt</file>
           <file role="test">Cache_Lite_File_classical.phpt</file>
           <file role="test">Cache_Lite_Function_classical.phpt</file>
           <file role="test">Cache_Lite_Function_drop.phpt</file>
+          <file role="test">Cache_Lite_Function_dontcache.phpt</file>
           <file role="test">Cache_Lite_hashed.phpt</file>
           <file role="test">Cache_Lite_error.phpt</file>
           <file role="test">Cache_Lite_error2.phpt</file>
@@ -42,6 +52,7 @@
           <file role="test">Cache_Lite_memorycache.phpt</file>
           <file role="test">Cache_Lite_Output_classical.phpt</file>
           <file role="test">Cache_Lite_serialization.phpt</file>
+          <file role="test">Cache_Lite_lifetime.phpt</file>
           <file role="test">pearbug513.phpt</file>
           <file role="test">cache_lite_base.inc</file>
           <file role="test">cache_lite_file_base.inc</file>
