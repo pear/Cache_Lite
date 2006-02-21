@@ -14,21 +14,12 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.7.0beta2</version>
-    <date>2006-02-04</date>
+    <version>1.7.0</version>
+    <date>2006-02-21</date>
     <license>lgpl</license>
-    <state>beta</state>
+    <state>stable</state>
     <notes>
-      Bugs fixed :
-      - 3 unit test files was forgotten in beta1 package.xml  
-      New features :
-      - request #6681 : new extendLife() method (thanks to alex at vegagames dot net)
-      - request #6617 : "$this->method()" calls are ok with Cache_Lite_Function without workaround 
-                        (thanks to thomas dot nicolai at unisg dot ch)
-      - request #6575 : new options 'dontCacheWhenTheOutputContainsNOCACHE', 'dontCacheWhenTheResultIsFalse', 
-                        'dontCacheWhenTheResultIsNull' (thanks to thomas dot nicolai at unisg dot ch)
-      - new debug option for Cache_Lite_Function                 
-      - new test files
+      No change (just some modifications into online documentation) 
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -80,6 +71,24 @@
     </deps>
   </release>
   <changelog>
+    <release>
+     <version>1.7.0beta2</version>
+     <date>2006-02-04</date>
+     <license>lgpl</license>
+     <state>beta</state>
+     <notes>
+       Bugs fixed :
+       - 3 unit test files was forgotten in beta1 package.xml  
+       New features :
+       - request #6681 : new extendLife() method (thanks to alex at vegagames dot net)
+       - request #6617 : "$this->method()" calls are ok with Cache_Lite_Function without workaround 
+                         (thanks to thomas dot nicolai at unisg dot ch)
+       - request #6575 : new options 'dontCacheWhenTheOutputContainsNOCACHE', 'dontCacheWhenTheResultIsFalse', 
+                         'dontCacheWhenTheResultIsNull' (thanks to thomas dot nicolai at unisg dot ch)
+       - new debug option for Cache_Lite_Function                 
+       - new test files
+     </notes>
+    </release>
     <release>
      <version>1.7.0beta1</version>
      <date>2006-01-29</date>
