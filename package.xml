@@ -14,12 +14,14 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.7.0</version>
-    <date>2006-02-21</date>
+    <version>1.7.1</version>
+    <date>2006-05-14</date>
     <license>lgpl</license>
     <state>stable</state>
     <notes>
-      No change (just some modifications into online documentation) 
+      Bugs fixed :
+      - #7618 : can't save cache correctly (in some particular cases)
+        (thanks to neta-master at ywcafe dot net)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -71,6 +73,15 @@
     </deps>
   </release>
   <changelog>
+    <release>
+     <version>1.7.0</version>
+     <date>2006-02-21</date>
+     <license>lgpl</license>
+     <state>stable</state>
+     <notes>
+      No change (just some modifications into online documentation) 
+     </notes>
+    </release>
     <release>
      <version>1.7.0beta2</version>
      <date>2006-02-04</date>
