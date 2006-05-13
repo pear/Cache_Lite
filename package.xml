@@ -22,6 +22,8 @@
       Bugs fixed :
       - #7618 : can't save cache correctly (in some particular cases)
         (thanks to neta-master at ywcafe dot net)
+      Other changes :
+      - new unit test file (about bug #7618)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -47,6 +49,7 @@
           <file role="test">Cache_Lite_serialization.phpt</file>
           <file role="test">Cache_Lite_lifetime.phpt</file>
           <file role="test">pearbug513.phpt</file>
+          <file role="test">pearbug7618.phpt</file>
           <file role="test">cache_lite_base.inc</file>
           <file role="test">cache_lite_file_base.inc</file>
           <file role="test">cache_lite_function_base.inc</file>
