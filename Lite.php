@@ -396,7 +396,7 @@ class Cache_Lite
             }
             if (is_object($res)) {
 	        	// $res is a PEAR_Error object 
-	        	if (!($this->_errorHandlingAPIBreak)) {   
+                if (!($this->_errorHandlingAPIBreak)) {   
 	                return false; // we return false (old API)
 	            }
 	        }
@@ -708,6 +708,7 @@ class Cache_Lite
         $fp = @fopen($this->_file, "rb");
         if ($this->_fileLocking) @flock($fp, LOCK_SH);
         if ($fp) {
+            clearstatcache();
             $length = @filesize($this->_file);
             $mqr = get_magic_quotes_runtime();
             set_magic_quotes_runtime(0);
