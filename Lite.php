@@ -749,32 +749,28 @@ class Cache_Lite
     */
     function _write($data)
     {
-        $try = 1;
-        while ($try<=2) {
-            $fp = @fopen($this->_file, "wb");
-            if ($fp) {
-                if ($this->_fileLocking) @flock($fp, LOCK_EX);
-                if ($this->_readControl) {
-                    @fwrite($fp, $this->_hash($data, $this->_readControlType), 32);
-                }
-                $len = strlen($data);
-                @fwrite($fp, $data, $len);
-                if ($this->_fileLocking) @flock($fp, LOCK_UN);
-                @fclose($fp);
-                return true;
-            }
-            if (($try==1) and ($this->_hashedDirectoryLevel>0)) {
-                $hash = md5($this->_fileName);
-                $root = $this->_cacheDir;
-                for ($i=0 ; $i<$this->_hashedDirectoryLevel ; $i++) {
-                    $root = $root . 'cache_' . substr($hash, 0, $i + 1) . '/';
+        if ($this->_hashedDirectoryLevel > 0) {
+            $hash = md5($this->_fileName);
+            $root = $this->_cacheDir;
+            for ($i=0 ; $i<$this->_hashedDirectoryLevel ; $i++) {
+                $root = $root . 'cache_' . substr($hash, 0, $i + 1) . '/';
+                if (!(@is_dir($root))) {
                     @mkdir($root, $this->_hashedDirectoryUmask);
                 }
-                $try = 2;
-            } else {
-                $try = 999;
-            }            
+            }
         }
+        $fp = @fopen($this->_file, "wb");
+        if ($fp) {
+            if ($this->_fileLocking) @flock($fp, LOCK_EX);
+            if ($this->_readControl) {
+                @fwrite($fp, $this->_hash($data, $this->_readControlType), 32);
+            }
+            $len = strlen($data);
+            @fwrite($fp, $data, $len);
+            if ($this->_fileLocking) @flock($fp, LOCK_UN);
+            @fclose($fp);
+            return true;
+        }      
         return $this->raiseError('Cache_Lite : Unable to write cache file : '.$this->_file, -1);
     }
        
@@ -791,7 +787,7 @@ class Cache_Lite
         if (is_object($result)) {
             return $result; # We return the PEAR_Error object
         }
-        $dataRead = $this->_read($data);
+        $dataRead = $this->_read();
         if (is_object($dataRead)) {
             return $result; # We return the PEAR_Error object
         }
