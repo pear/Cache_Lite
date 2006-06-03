@@ -455,7 +455,7 @@ class Cache_Lite
     */
     function setToDebug()
     {
-        $this->setOptions('pearErrorMode', CACHE_LITE_ERROR_DIE);
+        $this->setOption('pearErrorMode', CACHE_LITE_ERROR_DIE);
     }
 
     /**
