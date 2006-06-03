@@ -14,16 +14,14 @@
      </maintainer>
   </maintainers>
   <release>
-    <version>1.7.1</version>
-    <date>2006-05-14</date>
+    <version>1.7.2</version>
+    <date>2006-06-03</date>
     <license>lgpl</license>
     <state>stable</state>
     <notes>
       Bugs fixed :
-      - #7618 : can't save cache correctly (in some particular cases)
-        (thanks to neta-master at ywcafe dot net)
-      Other changes :
-      - new unit test file (about bug #7618)
+      - #7799 : setToDebug() doesn't work
+      - #7732 (or #7598) : hashedDirectory refactoring to get rid of some warnings (in some particular cases)
     </notes>
     <filelist>
       <dir name="/" baseinstalldir="Cache">
@@ -76,6 +74,19 @@
     </deps>
   </release>
   <changelog>
+    <release>
+     <version>1.7.1</version>
+     <date>2006-05-14</date>
+     <license>lgpl</license>
+     <state>stable</state>
+     <notes>
+      Bugs fixed :
+      - #7618 : can't save cache correctly (in some particular cases)
+        (thanks to neta-master at ywcafe dot net)
+      Other changes :
+      - new unit test file (about bug #7618)
+     </notes>
+    </release>
     <release>
      <version>1.7.0</version>
      <date>2006-02-21</date>
