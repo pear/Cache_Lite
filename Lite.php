@@ -789,7 +789,7 @@ class Cache_Lite
         }
         $dataRead = $this->_read();
         if (is_object($dataRead)) {
-            return $result; # We return the PEAR_Error object
+            return $dataRead; # We return the PEAR_Error object
         }
         if ((is_bool($dataRead)) && (!$dataRead)) {
             return false; 
