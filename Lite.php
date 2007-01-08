@@ -395,11 +395,11 @@ class Cache_Lite
                 $res = $this->_write($data);
             }
             if (is_object($res)) {
-	        	// $res is a PEAR_Error object 
+                // $res is a PEAR_Error object 
                 if (!($this->_errorHandlingAPIBreak)) {   
-	                return false; // we return false (old API)
-	            }
-	        }
+                    return false; // we return false (old API)
+                }
+            }
             return $res;
         }
         return false;
@@ -765,8 +765,10 @@ class Cache_Lite
             if ($this->_readControl) {
                 @fwrite($fp, $this->_hash($data, $this->_readControlType), 32);
             }
-            $len = strlen($data);
-            @fwrite($fp, $data, $len);
+            $mqr = get_magic_quotes_runtime();
+            set_magic_quotes_runtime(0);
+            @fwrite($fp, $data);
+            set_magic_quotes_runtime($mqr);
             if ($this->_fileLocking) @flock($fp, LOCK_UN);
             @fclose($fp);
             return true;
