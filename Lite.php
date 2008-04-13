@@ -599,7 +599,7 @@ class Cache_Lite
         }
         if ($this->_memoryCaching) {
             while (list($key, ) = each($this->_memoryCachingArray)) {
-                if (strpos($key, $motif, 0)) {
+                if (strpos($key, $motif) !== false) {
                     unset($this->_memoryCachingArray[$key]);
                     $this->_memoryCachingCounter = $this->_memoryCachingCounter - 1;
                 }
@@ -627,7 +627,7 @@ class Cache_Lite
                                 }
                                 break;
                             case 'notingrou':
-                                if (!strpos($file2, $motif, 0)) {
+                                if (strpos($file2, $motif) === false) {
                                     $result = ($result and ($this->_unlink($file2)));
                                 }
                                 break;
@@ -639,7 +639,7 @@ class Cache_Lite
                                 break;
                             case 'ingroup':
                             default:
-                                if (strpos($file2, $motif, 0)) {
+                                if (strpos($file2, $motif) !== false) {
                                     $result = ($result and ($this->_unlink($file2)));
                                 }
                                 break;
