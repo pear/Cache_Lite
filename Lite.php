@@ -482,7 +482,7 @@ class Cache_Lite
         if ($this->_caching) {
             $array = array(
                 'counter' => $this->_memoryCachingCounter,
-                'array' => $this->_memoryCachingState
+                'array' => $this->_memoryCachingArray
             );
             $data = serialize($array);
             $this->save($data, $id, $group);
