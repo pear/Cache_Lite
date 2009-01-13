@@ -622,7 +622,7 @@ class Cache_Lite
                             case 'old':
                                 // files older than lifeTime get deleted from cache
                                 if (!is_null($this->_lifeTime)) {
-                                    if ((mktime() - @filemtime($file2)) > $this->_lifeTime) {
+                                    if ((time() - @filemtime($file2)) > $this->_lifeTime) {
                                         $result = ($result and ($this->_unlink($file2)));
                                     }
                                 }
