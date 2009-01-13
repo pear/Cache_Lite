@@ -375,12 +375,9 @@ class Cache_Lite
                     return true;
                 }
             }
-            if ($this->_automaticCleaningFactor>0) {
-                $rand = rand(1, $this->_automaticCleaningFactor);
-                if ($rand==1) {
-                    $this->clean(false, 'old');
-                }
-            }
+            if ($this->_automaticCleaningFactor>0 && ($this->_automaticCleaningFactor==1 || mt_rand(1, $this->_automaticCleaningFactor)==1)) {
+				$this->clean(false, 'old');			
+			}
             if ($this->_writeControl) {
                 $res = $this->_writeAndControl($data);
                 if (is_bool($res)) {
