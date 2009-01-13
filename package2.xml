@@ -20,10 +20,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <email>m@tacker.org</email>
     <active>yes</active>
 </developer>
-<date>2008-06-08</date>
-<time>10:49:00</time>
+<date>2009-01-13</date>
+<time>12:00:00</time>
 <version>
-    <release>1.7.4</release>
+    <release>1.7.5</release>
     <api>1.7.4</api>
 </version>
 <stability>
@@ -31,9 +31,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <api>stable</api>
 </stability>
 <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
-<notes>Implemented feature request:
-    - #13693 Added new option to Cache_Lite::remove() to check for non-existing cache files.
-    - Added unit test file for Bug #13693
+<notes>
+	- Bug #7446 - use time() instead if mktime() to prevent a strict error beeing raised.
+	- Request #11766 - Use mt_rand() instead of rand()
 </notes>
 <contents>
     <dir name="/">
@@ -98,6 +98,22 @@ http://pear.php.net/dtd/package-2.0.xsd">
 </dependencies>
 <phprelease />
 <changelog>
+	<release>
+		<date>2009-01-13</date>
+		<version>
+			<release>1.7.5</release>
+			<api>1.7.4</api>
+		</version>
+		<stability>
+			<release>stable</release>
+			<api>stable</api>
+		</stability>
+		<license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+		<notes>
+			- Bug #7446 - use time() instead if mktime() to prevent a strict error beeing raised.
+			- Request #11766 - Use mt_rand() instead of rand()
+		</notes>
+	</release>
     <release>
         <version>
             <release>1.7.4</release>
