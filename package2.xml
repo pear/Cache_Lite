@@ -14,12 +14,12 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <email>fab@php.net</email>
     <active>no</active>
 </lead>
-<developer>
+<lead>
     <name>Markus Tacker</name>
     <user>tacker</user>
-    <email>m@tacker.org</email>
+    <email>tacker@php.net</email>
     <active>yes</active>
-</developer>
+</lead>
 <date>2009-01-13</date>
 <time>12:00:00</time>
 <version>
