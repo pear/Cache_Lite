@@ -20,10 +20,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <email>tacker@php.net</email>
     <active>yes</active>
 </lead>
-<date>2009-01-13</date>
-<time>12:00:00</time>
+<date>2009-01-25</date>
+<time>00:00:00</time>
 <version>
-    <release>1.7.5</release>
+    <release>1.7.6</release>
     <api>1.7.4</api>
 </version>
 <stability>
@@ -32,8 +32,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 </stability>
 <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
 <notes>
-	- Bug #7446 - use time() instead if mktime() to prevent a strict error beeing raised.
-	- Request #11766 - Use mt_rand() instead of rand()
+	- Changed PEAR dependency to 1.5.4. See http://pear.php.net/advisory-20070507.txt
 </notes>
 <contents>
     <dir name="/">
@@ -88,7 +87,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
         <min>4.0.0</min>
      </php>
      <pearinstaller>
-        <min>1.4.0b1</min>
+        <min>1.5.4</min>
      </pearinstaller>
      <package>
         <name>PEAR</name>
@@ -98,6 +97,22 @@ http://pear.php.net/dtd/package-2.0.xsd">
 </dependencies>
 <phprelease />
 <changelog>
+	<release>
+		<date>2009-01-25</date>
+		<time>00:00:00</time>
+		<version>
+			<release>1.7.6</release>
+			<api>1.7.4</api>
+		</version>
+		<stability>
+			<release>stable</release>
+			<api>stable</api>
+		</stability>
+		<license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+		<notes>
+			- Changed PEAR dependency to 1.5.4. See http://pear.php.net/advisory-20070507.txt
+		</notes>
+	</release>
 	<release>
 		<date>2009-01-13</date>
 		<version>
