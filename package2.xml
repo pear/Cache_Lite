@@ -20,11 +20,11 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <email>tacker@php.net</email>
     <active>yes</active>
 </lead>
-<date>2009-01-25</date>
+<date>2009-03-07</date>
 <time>00:00:00</time>
 <version>
-    <release>1.7.6</release>
-    <api>1.7.4</api>
+    <release>1.7.7</release>
+    <api>1.7.7</api>
 </version>
 <stability>
     <release>stable</release>
@@ -32,7 +32,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 </stability>
 <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
 <notes>
-	- Changed PEAR dependency to 1.5.4. See http://pear.php.net/advisory-20070507.txt
+	- Fixing definition of Cache_Lite_File::get(). See Bug #15986. 
 </notes>
 <contents>
     <dir name="/">
@@ -97,6 +97,22 @@ http://pear.php.net/dtd/package-2.0.xsd">
 </dependencies>
 <phprelease />
 <changelog>
+	<release>
+		<date>2009-03-07</date>
+		<time>00:00:00</time>
+		<version>
+		    <release>1.7.7</release>
+		    <api>1.7.7</api>
+		</version>
+		<stability>
+		    <release>stable</release>
+		    <api>stable</api>
+		</stability>
+		<license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+		<notes>
+			- Fixing definition of Cache_Lite_File::get(). See Bug #15986. 
+		</notes>
+	</release>
 	<release>
 		<date>2009-01-25</date>
 		<time>00:00:00</time>
