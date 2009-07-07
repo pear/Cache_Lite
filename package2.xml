@@ -20,10 +20,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <email>tacker@php.net</email>
     <active>yes</active>
 </lead>
-<date>2009-03-07</date>
+<date>2009-07-07</date>
 <time>00:00:00</time>
 <version>
-    <release>1.7.7</release>
+    <release>1.7.8</release>
     <api>1.7.7</api>
 </version>
 <stability>
@@ -97,6 +97,22 @@ http://pear.php.net/dtd/package-2.0.xsd">
 </dependencies>
 <phprelease />
 <changelog>
+	<release>
+		<date>2009-07-07</date>
+		<time>00:00:00</time>
+		<version>
+		    <release>1.7.8</release>
+		    <api>1.7.7</api>
+		</version>
+		<stability>
+		    <release>stable</release>
+		    <api>stable</api>
+		</stability>
+		<license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+		<notes>
+			- Set magic quotes runtime only if needed. See Bug #15725.
+		</notes>
+	</release>
 	<release>
 		<date>2009-03-07</date>
 		<time>00:00:00</time>
