@@ -273,6 +273,14 @@ class Cache_Lite
     *     'hashedDirectoryUmask' => umask for hashed directory structure (int),
     *     'errorHandlingAPIBreak' => API break for better error handling ? (boolean)
     * );
+    * 
+    * If sys_get_temp_dir() is available and the 
+    * 'cacheDir' option is not provided in the 
+    * constructor options array its output is used 
+    * to determine the suitable temporary directory.
+    * 
+    * @see http://de.php.net/sys_get_temp_dir
+    * @see http://pear.php.net/bugs/bug.php?id=18328
     *
     * @param array $options options
     * @access public
@@ -281,6 +289,9 @@ class Cache_Lite
     {
         foreach($options as $key => $value) {
             $this->setOption($key, $value);
+        }
+        if (!isset($options['cacheDir']) && function_exists('sys_get_temp_dir')) {
+        	$this->setOption('cacheDir', sys_get_temp_dir() . DIRECTORY_SEPARATOR);
         }
     }
     
