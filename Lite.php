@@ -26,6 +26,30 @@
 define('CACHE_LITE_ERROR_RETURN', 1);
 define('CACHE_LITE_ERROR_DIE', 8);
 
+/**
+ * @global string Flush cache mode: old
+ * @since 1.7.10
+ */
+define('CACHE_LITE_FLUSHMODE_OLD', 'old'); 
+
+/**
+ * @global string Flush cache mode: ingroup
+ * @since 1.7.10
+ */
+define('CACHE_LITE_FLUSHMODE_INGROUP', 'ingroup'); 
+
+/**
+ * @global string Flush cache mode: notingroup
+ * @since 1.7.10
+ */
+define('CACHE_LITE_FLUSHMODE_NOTINGROUP', 'notingroup'); 
+
+/**
+ * @global string Flush cache mode: callback
+ * @since 1.7.10
+ */
+define('CACHE_LITE_FLUSHMODE_CALLBACK', 'callback_'); 
+
 class Cache_Lite
 {
 
@@ -387,7 +411,7 @@ class Cache_Lite
                 }
             }
             if ($this->_automaticCleaningFactor>0 && ($this->_automaticCleaningFactor==1 || mt_rand(1, $this->_automaticCleaningFactor)==1)) {
-				$this->clean(false, 'old');			
+				$this->clean(false, CACHE_LITE_FLUSHMODE_OLD);			
 			}
             if ($this->_writeControl) {
                 $res = $this->_writeAndControl($data);
@@ -452,7 +476,7 @@ class Cache_Lite
     * @return boolean true if no problem
     * @access public
     */
-    function clean($group = false, $mode = 'ingroup')
+    function clean($group = false, $mode = CACHE_LITE_FLUSHMODE_INGROUP)
     {
         return $this->_cleanDir($this->_cacheDir, $group, $mode);
     }
@@ -602,7 +626,7 @@ class Cache_Lite
     * @return boolean true if no problem
     * @access private
     */
-    function _cleanDir($dir, $group = false, $mode = 'ingroup')     
+    function _cleanDir($dir, $group = false, $mode = CACHE_LITE_FLUSHMODE_INGROUP)     
     {
         if ($this->_fileNameProtection) {
             $motif = ($group) ? 'cache_'.md5($group).'_' : 'cache_';
@@ -630,7 +654,7 @@ class Cache_Lite
                     $file2 = $dir . $file;
                     if (is_file($file2)) {
                         switch (substr($mode, 0, 9)) {
-                            case 'old':
+                            case CACHE_LITE_FLUSHMODE_OLD:
                                 // files older than lifeTime get deleted from cache
                                 if (!is_null($this->_lifeTime)) {
                                     if ((time() - @filemtime($file2)) > $this->_lifeTime) {
@@ -638,18 +662,18 @@ class Cache_Lite
                                     }
                                 }
                                 break;
-                            case 'notingrou':
+                            case CACHE_LITE_FLUSHMODE_NOTINGROUP:
                                 if (strpos($file2, $motif) === false) {
                                     $result = ($result and ($this->_unlink($file2)));
                                 }
                                 break;
-                            case 'callback_':
+                            case CACHE_LITE_FLUSHMODE_CALLBACK:
                                 $func = substr($mode, 9, strlen($mode) - 9);
                                 if ($func($file2, $group)) {
                                     $result = ($result and ($this->_unlink($file2)));
                                 }
                                 break;
-                            case 'ingroup':
+                            case CACHE_LITE_FLUSHMODE_INGROUP:
                             default:
                                 if (strpos($file2, $motif) !== false) {
                                     $result = ($result and ($this->_unlink($file2)));
