@@ -20,10 +20,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <email>tacker@php.net</email>
     <active>yes</active>
 </lead>
-<date>2011-03-02</date>
+<date>2011-05-29</date>
 <time>12:00:00</time>
 <version>
-    <release>1.7.9</release>
+    <release>1.7.10</release>
     <api>1.7.7</api>
 </version>
 <stability>
@@ -32,7 +32,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 </stability>
 <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
 <notes>
-	- If sys_get_temp_dir() is available and the 'cacheDir' option is not provided in the constructor options array its output is used to determine the suitable temporary directory. See Bug #18328 
+	- Fixed PEAR bug #18569. Props to Rustem Alimovm for reporting.
 </notes>
 <contents>
     <dir name="/">
@@ -97,6 +97,22 @@ http://pear.php.net/dtd/package-2.0.xsd">
 </dependencies>
 <phprelease />
 <changelog>
+    <release>
+        <date>2011-05-29</date>
+        <time>12:00:00</time>
+        <version>
+            <release>1.7.10</release>
+            <api>1.7.7</api>
+        </version>
+        <stability>
+            <release>stable</release>
+            <api>stable</api>
+        </stability>
+        <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+        <notes>
+            - Fixed PEAR bug #18569. Props to Rustem Alimovm for reporting.
+        </notes>
+    </release>
 	<release>
 		<date>2011-03-02</date>
 		<time>12:00:00</time>
