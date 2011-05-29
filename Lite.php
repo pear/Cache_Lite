@@ -718,8 +718,8 @@ class Cache_Lite
     function _read()
     {
         $fp = @fopen($this->_file, "rb");
-        if ($this->_fileLocking) @flock($fp, LOCK_SH);
         if ($fp) {
+	    if ($this->_fileLocking) @flock($fp, LOCK_SH);
             clearstatcache();
             $length = @filesize($this->_file);
             $mqr = get_magic_quotes_runtime();
