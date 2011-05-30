@@ -20,19 +20,20 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <email>tacker@php.net</email>
     <active>yes</active>
 </lead>
-<date>2011-05-29</date>
+<date>2011-05-30</date>
 <time>12:00:00</time>
 <version>
-    <release>1.7.10</release>
+    <release>1.7.11</release>
     <api>1.7.7</api>
 </version>
 <stability>
     <release>stable</release>
     <api>stable</api>
 </stability>
-<license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+<license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
 <notes>
-	- Fixed PEAR bug #18569. Props to Rustem Alimovm for reporting.
+    - Updated LICENSE to include "new" address of FSF. Fixes PEAR Bug #18571. Props to Remi Collet for reporting.
+    - Updated links to LGPL in package.xml
 </notes>
 <contents>
     <dir name="/">
@@ -98,6 +99,23 @@ http://pear.php.net/dtd/package-2.0.xsd">
 <phprelease />
 <changelog>
     <release>
+        <date>2011-05-30</date>
+        <time>12:00:00</time>
+        <version>
+            <release>1.7.11</release>
+            <api>1.7.7</api>
+        </version>
+        <stability>
+            <release>stable</release>
+            <api>stable</api>
+        </stability>
+        <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
+        <notes>
+            - Updated LICENSE to include "new" address of FSF. Fixes PEAR Bug #18571. Props to Remi Collet for reporting.
+            - Updated links to LGPL in package.xml
+        </notes>
+    </release>
+    <release>
         <date>2011-05-29</date>
         <time>12:00:00</time>
         <version>
@@ -108,9 +126,9 @@ http://pear.php.net/dtd/package-2.0.xsd">
             <release>stable</release>
             <api>stable</api>
         </stability>
-        <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+        <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
         <notes>
-            - Fixed PEAR bug #18569. Props to Rustem Alimovm for reporting.
+            - Updated LICENSE to include "new" address of FSF. Fixes PEAR Bug #18571. Props to Remi Collet for reporting.
         </notes>
     </release>
 	<release>
@@ -124,7 +142,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 		    <release>stable</release>
 		    <api>stable</api>
 		</stability>
-		<license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+		<license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
 		<notes>
 			- If sys_get_temp_dir() is available and the 'cacheDir' option is not provided in the constructor options array its output is used to determine the suitable temporary directory. See Bug #18328
 		</notes>
@@ -140,7 +158,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 		    <release>stable</release>
 		    <api>stable</api>
 		</stability>
-		<license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+		<license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
 		<notes>
 			- Set magic quotes runtime only if needed. See Bug #15725.
 		</notes>
@@ -156,7 +174,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 		    <release>stable</release>
 		    <api>stable</api>
 		</stability>
-		<license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+		<license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
 		<notes>
 			- Fixing definition of Cache_Lite_File::get(). See Bug #15986. 
 		</notes>
@@ -172,7 +190,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 			<release>stable</release>
 			<api>stable</api>
 		</stability>
-		<license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+		<license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
 		<notes>
 			- Changed PEAR dependency to 1.5.4. See http://pear.php.net/advisory-20070507.txt
 		</notes>
@@ -187,7 +205,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 			<release>stable</release>
 			<api>stable</api>
 		</stability>
-		<license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+		<license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
 		<notes>
 			- Bug #7446 - use time() instead if mktime() to prevent a strict error beeing raised.
 			- Request #11766 - Use mt_rand() instead of rand()
@@ -203,7 +221,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
             <api>stable</api>
         </stability>
         <date>2008-06-08</date>
-        <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+        <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
         <notes>Implemented feature request:
             - #13693 Added new option to Cache_Lite::remove() to check for non-existing cache files.
             - Added unit test file for Bug #13693
@@ -219,7 +237,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
             <api>stable</api>
         </stability>
         <date>2008-04-13</date>
-        <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+        <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
         <notes>Bugs fixed :
             - #11224 Fixed improper use of strpos
             - #11260 Fixed improper use of internal property resulting in memory cache not beeing saved
@@ -236,7 +254,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
             <api>stable</api>
         </stability>
         <date>2006-06-03</date>
-        <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+        <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
         <notes>Bugs fixed :
             - #7799 : setToDebug() doesn't work
             - #7732 (or #7598) : hashedDirectory refactoring to get rid of some warnings (in some particular cases)
@@ -252,7 +270,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
         <api>stable</api>
      </stability>
      <date>2006-05-14</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Bugs fixed :
 - #7618 : can&apos;t save cache correctly (in some particular cases)
     (thanks to neta-master at ywcafe dot net)
@@ -270,7 +288,7 @@ Other changes :
         <api>stable</api>
      </stability>
      <date>2006-02-21</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>No change (just some modifications into online documentation) 
      </notes>
     </release>
@@ -284,7 +302,7 @@ Other changes :
         <api>beta</api>
      </stability>
      <date>2006-02-04</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Bugs fixed :
 - 3 unit test files was forgotten in beta1 package.xml    
 New features :
@@ -307,7 +325,7 @@ New features :
         <api>beta</api>
      </stability>
      <date>2006-01-29</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>New features :
 - 3 new unit tests
 - a new option is available in the constructor &quot;errorHandlingAPIBreak&quot; (boolean, false by default) ; 
@@ -330,7 +348,7 @@ Bugs fixed :
         <api>stable</api>
      </stability>
      <date>2005-12-03</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>No change (just some modifications into online documentation)        
      </notes>
     </release>
@@ -344,7 +362,7 @@ Bugs fixed :
         <api>beta</api>
      </stability>
      <date>2005-11-25</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>New features :
 - a new phpt test script (eternal caching)
 - you can now call Cache_Lite constructor with any argument (thanks to ratibus at gmail dot com)
@@ -364,7 +382,7 @@ Other change :
         <api>beta</api>
      </stability>
      <date>2005-11-17</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>New features :
 - phpt test scripts
 - add of drop() method to Cache_Lite_Function (thanks to 
@@ -387,7 +405,7 @@ thanks to moosh at php dot net
         <api>stable</api>
      </stability>
      <date>2005-07-18</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Bug Fixed :
 - a &quot;package.xml&quot; problem (a file was forgotten)
      </notes>
@@ -402,7 +420,7 @@ thanks to moosh at php dot net
         <api>stable</api>
      </stability>
      <date>2005-07-10</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Changes :
 - juste a little more docs since 1.5.0 (beta)
 - the state in &quot;stable&quot; now
@@ -418,7 +436,7 @@ thanks to moosh at php dot net
         <api>beta</api>
      </stability>
      <date>2005-06-18</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>New features :
 - add of a doNotTestCacheValidity in Output (like in Lite.php)
 - request #4502 : better control on cache cleaning condition (thanks to 
@@ -442,7 +460,7 @@ of fread() behaviour in PHP) (thanks to rick dot overman at gmail dot com)
         <api>stable</api>
      </stability>
      <date>2005-03-01</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Bug fixed :
 - problem of non-ISO-8859-1 characters in package.xml (bug #3621)
 - problem of the returning value in clean() method (integer and not void)
@@ -459,7 +477,7 @@ of fread() behaviour in PHP) (thanks to rick dot overman at gmail dot com)
         <api>stable</api>
      </stability>
      <date>2005-01-21</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Changes :
 - juste a little more docs since 1.4.0beta1
      </notes>
@@ -474,7 +492,7 @@ of fread() behaviour in PHP) (thanks to rick dot overman at gmail dot com)
         <api>beta</api>
      </stability>
      <date>2004-12-11</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>New features :
 - hashed cache directory structure with the choice of the level (thanks to Mike Benoit (ipso at snappymail dot ca))
 - new options for cleaning the cache (&quot;not in group&quot;, &quot;too old&quot;...) (thanks to dontilooksweetandinnocent@ambience.ru)
@@ -491,7 +509,7 @@ of fread() behaviour in PHP) (thanks to rick dot overman at gmail dot com)
         <api>stable</api>
      </stability>
      <date>2004-08-16</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Bug fixed :
 - problem with clean() method with memoryCaching activated (thanks to Bojan Mihelac (bmihelac at mihelac dot org))
 - remove() method didn&apos;t deal with memoryCaching
@@ -508,7 +526,7 @@ of fread() behaviour in PHP) (thanks to rick dot overman at gmail dot com)
         <api>stable</api>
      </stability>
      <date>2004-02-07</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Changes :
 - Add a warning in examples file because of http://pear.php.net/bugs/bug.php?id=660
 Bug fixed :
@@ -527,7 +545,7 @@ Bug fixed :
         <api>stable</api>
      </stability>
      <date>2003-10-25</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Changes :
 - Rewrite of Cache_Lite constructor (thanks to Brian E. Lozier) 
 New Features :
@@ -551,7 +569,7 @@ Bug fixed :
         <api>stable</api>
      </stability>
      <date>2003-02-23</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Changes :
 - Move to usage of call_user_func_array() and call_user_func() as call_user_method() is depreciated (thanks to Sterling Hughes) 
 New Features :
@@ -574,7 +592,7 @@ Bug fixed :
         <api>stable</api>
      </stability>
      <date>2002-11-12</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>Bug fixed :
 - clean() bug with group (Thanks to Ondrej Jombik)
      </notes>
@@ -589,7 +607,7 @@ Bug fixed :
         <api>stable</api>
      </stability>
      <date>2002-11-11</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>This is the first stable release of Cache_Lite. There is no big change since the
 0.4 beta release but two months of tests !
 Changes :
@@ -606,7 +624,7 @@ Changes :
         <api>beta</api>
      </stability>
      <date>2002-09-25</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>New features :
 - Add setLifeTime() method to change the cache lifetime dynamicaly
 Changes :
@@ -624,7 +642,7 @@ Changes :
         <api>beta</api>
      </stability>
      <date>2002-08-31</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>New features :
 - Add &apos;$doNotTestCacheValidity&apos; optional parameter for the get() method
 Changes :
@@ -645,7 +663,7 @@ Bugs fixed :
         <api>beta</api>
      </stability>
      <date>2002-08-10</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>New features :
 - Adding Cache_Lite_Function (to cache the result and output of functions/methods)
 Bugs fixed :
@@ -663,7 +681,7 @@ Bugs fixed :
         <api>beta</api>
      </stability>
      <date>2002-08-08</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>A little packaging fix
      </notes>
     </release>
@@ -677,7 +695,7 @@ Bugs fixed :
         <api>beta</api>
      </stability>
      <date>2002-08-08</date>
-     <license uri="http://www.gnu.org/copyleft/lesser.html">lgpl</license>
+     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
      <notes>This is the first release.
      </notes>
     </release>
