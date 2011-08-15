@@ -20,10 +20,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
     <email>tacker@php.net</email>
     <active>yes</active>
 </lead>
-<date>2011-05-30</date>
+<date>2011-08-14</date>
 <time>12:00:00</time>
 <version>
-    <release>1.7.11</release>
+    <release>1.7.12</release>
     <api>1.7.7</api>
 </version>
 <stability>
@@ -32,8 +32,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
 </stability>
 <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
 <notes>
-    - Updated LICENSE to include "new" address of FSF. Fixes PEAR Bug #18571. Props to Remi Collet for reporting.
-    - Updated links to LGPL in package.xml
+    - Fixes PEAR Bug #18679. Props to Tama Pugsley for reporting.
 </notes>
 <contents>
     <dir name="/">
@@ -98,6 +97,22 @@ http://pear.php.net/dtd/package-2.0.xsd">
 </dependencies>
 <phprelease />
 <changelog>
+    <release>
+        <date>2011-08-14</date>
+        <time>12:00:00</time>
+        <version>
+            <release>1.7.12</release>
+            <api>1.7.7</api>
+        </version>
+        <stability>
+            <release>stable</release>
+            <api>stable</api>
+        </stability>
+        <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
+        <notes>
+            - Fixes PEAR Bug #18679. Props to Tama Pugsley for reporting.
+        </notes>
+    </release>
     <release>
         <date>2011-05-30</date>
         <time>12:00:00</time>

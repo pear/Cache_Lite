@@ -624,7 +624,7 @@ class Cache_Lite
             return $this->raiseError('Cache_Lite : Unable to open cache directory !', -4);
         }
         $result = true;
-        while ($file = readdir($dh)) {
+        while (($file = readdir($dh)) !== false) {
             if (($file != '.') && ($file != '..')) {
                 if (substr($file, 0, 6)=='cache_') {
                     $file2 = $dir . $file;
