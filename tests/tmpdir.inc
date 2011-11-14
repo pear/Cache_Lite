@@ -11,7 +11,7 @@
  * send a note to license@php.net so we can mail you a copy immediately.
  */
  
-require_once('PEAR.php');
+require_once 'PEAR.php';
 define('FILE_WIN32', defined('OS_WINDOWS') ? OS_WINDOWS : !strncasecmp(PHP_OS, 'win', 3));   
 
 /**

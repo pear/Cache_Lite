@@ -3,9 +3,9 @@ Cache_Lite::Cache_Lite_File (classical)
 --FILE--
 <?php
 
-require_once('callcache.inc');
-require_once('tmpdir.inc');
-require_once('cache_lite_file_base.inc');
+require_once 'callcache.inc';
+require_once 'tmpdir.inc';
+require_once 'cache_lite_file_base.inc';
 
 $master = tmpDir() . '/' . 'foobar.masterfile';
 $options = array(
