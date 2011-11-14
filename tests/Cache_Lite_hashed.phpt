@@ -3,9 +3,9 @@ Cache_Lite::Cache_Lite (hashed level 2)
 --FILE--
 <?php
 
-require_once('callcache.inc');
-require_once('tmpdir.inc');
-require_once('cache_lite_base.inc');
+require_once 'callcache.inc';
+require_once 'tmpdir.inc';
+require_once 'cache_lite_base.inc';
 
 $options = array(
     'cacheDir' => tmpDir() . '/',
