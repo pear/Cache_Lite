@@ -17,9 +17,9 @@
   <active>yes</active>
  </lead>
  <date>2011-11-15</date>
- <time>09:47:51</time>
+ <time>09:50:30</time>
  <version>
-  <release>1.7.12</release>
+  <release>1.7.13</release>
   <api>1.7.7</api>
  </version>
  <stability>
@@ -28,7 +28,8 @@
  </stability>
  <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
  <notes>
-- Fixes PEAR Bug #18679. Props to Tama Pugsley for reporting.
+Bug #18965 Tests fail with current dir structure
+Bug #18987 Remove error_reporting
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -71,9 +72,9 @@
    <file baseinstalldir="/" md5sum="4351e6910e477971c65993af6fea95d5" name="/tests/pearbug18328.phpt" role="data" />
    <file baseinstalldir="/" md5sum="f7a9487bf565e79860114dac982848c5" name="/tests/readme" role="data" />
    <file baseinstalldir="/" md5sum="b59be5741e8f3ee07fc1d077c9018ae3" name="/tests/tmpdir.inc" role="data" />
-   <file baseinstalldir="Cache" md5sum="c73b943dc75f6f65e007c56ac6515c8f" name="LICENSE" role="doc" />
+   <file baseinstalldir="/" md5sum="c73b943dc75f6f65e007c56ac6515c8f" name="LICENSE" role="doc" />
    <file baseinstalldir="/" md5sum="4e7877e52d34e04327b86029872cb009" name="README" role="data" />
-   <file baseinstalldir="Cache" md5sum="4c638b951a7c8a4dcb94f10abf1d818b" name="TODO" role="doc" />
+   <file baseinstalldir="/" md5sum="4c638b951a7c8a4dcb94f10abf1d818b" name="TODO" role="doc" />
   </dir>
  </contents>
  <dependencies>
@@ -733,6 +734,22 @@ Implemented feature request:
    <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
    <notes>
 - Fixes PEAR Bug #18679. Props to Tama Pugsley for reporting.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.7.13</release>
+    <api>1.7.7</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-11-15</date>
+   <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
+   <notes>
+Bug #18965 Tests fail with current dir structure
+Bug #18987 Remove error_reporting
    </notes>
   </release>
  </changelog>
