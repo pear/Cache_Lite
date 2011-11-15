@@ -3,7 +3,7 @@
 // Bench script of Cache_Lite_Function
 // $Id$
 
-require_once('Cache/Lite/Function.php');
+require_once 'Cache/Lite/Function.php';
 
 $options = array(
     'caching' => true,
@@ -24,7 +24,7 @@ echo($data);
 $data = $cache->call('bench::static_method_to_bench', 23, 66);
 echo($data);
 
-function function_to_bench($arg1, $arg2) 
+function function_to_bench($arg1, $arg2)
 {
     for($i=0;$i<10000;$i++) {
         $tmp = md5(md5(md5('Loosing time...')));
@@ -43,10 +43,10 @@ class bench
             $tmp = md5(md5(md5('Loosing time...')));
         }
         echo "\$obj->test = $this->test and this is the output of the method \$obj->method_to_bench($arg1, $arg2) !<br>";
-        return "\$obj->test = $this->test and this is the result of the method \$obj->method_to_bench($arg1, $arg2) !<br>";        
+        return "\$obj->test = $this->test and this is the result of the method \$obj->method_to_bench($arg1, $arg2) !<br>";
     }
-    
-    function static_method_to_bench($arg1, $arg2) 
+
+    function static_method_to_bench($arg1, $arg2)
     {
         for($i=0;$i<10000;$i++) {
             $tmp = md5(md5(md5('Loosing time...')));

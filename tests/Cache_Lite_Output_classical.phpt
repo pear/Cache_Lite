@@ -3,9 +3,9 @@ Cache_Lite::Cache_Lite_Output (classical)
 --FILE--
 <?php
 
-require_once('callcache.inc');
-require_once('tmpdir.inc');
-require_once('cache_lite_output_base.inc');
+require_once 'callcache.inc';
+require_once 'tmpdir.inc';
+require_once 'cache_lite_output_base.inc';
 
 $options = array(
     'cacheDir' => tmpDir() . '/',
