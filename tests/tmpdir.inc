@@ -25,6 +25,7 @@ define('FILE_WIN32', defined('OS_WINDOWS') ? OS_WINDOWS : !strncasecmp(PHP_OS, '
  */
 function tmpDir()
 {
+    if (function_exists('sys_get_temp_dir')) return call_user_func('sys_get_temp_dir');
     if (FILE_WIN32) {
         if (isset($_ENV['TEMP'])) {
             return $_ENV['TEMP'];
@@ -60,5 +61,3 @@ function tmpDir()
     }
     return '/tmp';
 }
-
-?>
