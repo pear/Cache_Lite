@@ -25,7 +25,9 @@ function callCache($id, $type = 'string') {
         }
         $res = $Cache_Lite->save($data);
         if (is_object($res)) {
-            echo "\nPEAR_ERROR : " . $res->getMessage() . " (#" . $res->getCode() . ")\n";
+            $message = $res->getMessage();
+            $message = str_replace(tmpDir(), '<cachedir>/', $message); // Remove system specific cache dir
+            echo "\nPEAR_ERROR : " . $message . " (#" . $res->getCode() . ")\n";
         } else {
 	        if (!($res)) {
 	            echo "\nError when saving cache !\n";

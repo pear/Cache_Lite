@@ -1,26 +1,24 @@
 <?php
 
-/*
- * This code is taken from PEAR/File from Michael Wallner <mike@php.net>
- * to avoid an extra dependency for a single function.
- *
- * LICENSE: This source file is subject to version 3.0 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
- * the PHP License and are unable to obtain it through the web, please
- * send a note to license@php.net so we can mail you a copy immediately.
+/**
+ * @author Markus Tacker <tacker@php.net>
  */
- 
-require_once 'PEAR.php';
-define('FILE_WIN32', defined('OS_WINDOWS') ? OS_WINDOWS : !strncasecmp(PHP_OS, 'win', 3));   
+
+/**
+ * @const String Temp dir for cache files
+ */
+define('TEST_TMP_DIR_DEFAULT', __DIR__ . DIRECTORY_SEPARATOR . 'tmp' . DIRECTORY_SEPARATOR);
 
 /**
  * Returns a directory to use for temp files.
  *
- * Returns the temp directory according to either the constant TEST_TMP_DIR (if defined),
- * sys_get_temp_dir() (if available) or the TMP, TMPDIR, TEMP env variables.
- * If these are not set it will also check for the existence of /tmp, %WINDIR%\temp
+ * The dir is now hard coded to a local dir to make the tests runnable
+ * under jenkins where there is no write access to the system temp dir.
  *
+ * The reason for this solution is, that with phpt files a given
+ * --bootstrap file is ignored.
+ *
+ * @author Markus Tacker <tacker@php.net>*
  * @static
  * @access  public
  * @return  string  The system tmp directory
@@ -28,39 +26,15 @@ define('FILE_WIN32', defined('OS_WINDOWS') ? OS_WINDOWS : !strncasecmp(PHP_OS, '
 function tmpDir()
 {
     if (defined('TEST_TMP_DIR')) return TEST_TMP_DIR;
-    if (function_exists('sys_get_temp_dir')) return call_user_func('sys_get_temp_dir');
-    if (FILE_WIN32) {
-        if (isset($_ENV['TEMP'])) {
-            return $_ENV['TEMP'];
-        }
-        if (isset($_ENV['TMP'])) {
-            return $_ENV['TMP'];
-        }
-        if (isset($_ENV['windir'])) {
-            return $_ENV['windir'] . '\\temp';
-        }
-        if (isset($_ENV['SystemRoot'])) {
-            return $_ENV['SystemRoot'] . '\\temp';
-        }
-        if (isset($_SERVER['TEMP'])) {
-            return $_SERVER['TEMP'];
-        }
-        if (isset($_SERVER['TMP'])) {
-            return $_SERVER['TMP'];
-        }
-        if (isset($_SERVER['windir'])) {
-            return $_SERVER['windir'] . '\\temp';
-        }
-        if (isset($_SERVER['SystemRoot'])) {
-            return $_SERVER['SystemRoot'] . '\\temp';
-        }
-        return '\temp';
-    }
-    if (isset($_ENV['TMPDIR'])) {
-        return $_ENV['TMPDIR'];
-    }
-    if (isset($_SERVER['TMPDIR'])) {
-        return $_SERVER['TMPDIR'];
-    }
-    return '/tmp';
+    return TEST_TMP_DIR_DEFAULT;
 }
+
+// Create directory if not exists
+if (!is_dir(tmpDir())) mkdir(tmpDir());
+
+// Clean up afterwards
+register_shutdown_function(function()
+{
+    exec('rm -rf ' . tmpDir());
+});
+

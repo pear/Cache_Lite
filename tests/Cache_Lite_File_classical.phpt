@@ -8,6 +8,7 @@ require_once 'tmpdir.inc';
 require_once 'cache_lite_file_base.inc';
 
 $master = tmpDir() . '/' . 'foobar.masterfile';
+
 $options = array(
     'cacheDir' => tmpDir() . '/',
     'lifeTime' => 60,
