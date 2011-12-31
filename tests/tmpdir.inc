@@ -15,9 +15,11 @@ require_once 'PEAR.php';
 define('FILE_WIN32', defined('OS_WINDOWS') ? OS_WINDOWS : !strncasecmp(PHP_OS, 'win', 3));   
 
 /**
- * Returns the temp directory according to either the TMP, TMPDIR, or
- * TEMP env variables. If these are not set it will also check for the
- * existence of /tmp, %WINDIR%\temp
+ * Returns a directory to use for temp files.
+ *
+ * Returns the temp directory according to either the constant TEST_TMP_DIR (if defined),
+ * sys_get_temp_dir() (if available) or the TMP, TMPDIR, TEMP env variables.
+ * If these are not set it will also check for the existence of /tmp, %WINDIR%\temp
  *
  * @static
  * @access  public
@@ -25,6 +27,7 @@ define('FILE_WIN32', defined('OS_WINDOWS') ? OS_WINDOWS : !strncasecmp(PHP_OS, '
  */
 function tmpDir()
 {
+    if (defined('TEST_TMP_DIR')) return TEST_TMP_DIR;
     if (function_exists('sys_get_temp_dir')) return call_user_func('sys_get_temp_dir');
     if (FILE_WIN32) {
         if (isset($_ENV['TEMP'])) {
