@@ -13,6 +13,8 @@ require_once 'callcache.inc';
 require_once 'tmpdir.inc';
 require_once 'cache_lite_base.inc';
 
+error_reporting(0);
+
 $options = array(
     'cacheDir' => tmpDir() . '31451992gjhgjh'. '/', # I hope there will be no directory with that silly name
     'lifeTime' => 60,
