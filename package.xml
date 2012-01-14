@@ -16,8 +16,8 @@
   <email>tacker@php.net</email>
   <active>yes</active>
  </lead>
- <date>2011-11-15</date>
- <time>09:50:30</time>
+ <date>2012-01-14</date>
+ <time>14:02:38</time>
  <version>
   <release>1.7.13</release>
   <api>1.7.7</api>
@@ -40,38 +40,39 @@ Bug #18987 Remove error_reporting
    <file baseinstalldir="/" md5sum="5de086f1a7fc80491e8f4fd76889dfcf" name="/Cache/Lite/Output.php" role="php" />
    <file baseinstalldir="/" md5sum="516beafae66ea4b9fd7d29ab9c90845d" name="/docs/examples" role="data" />
    <file baseinstalldir="/" md5sum="934071f21c17611811e01396ca604c79" name="/docs/technical" role="data" />
-   <file baseinstalldir="/" md5sum="9b693800fbe3caa224957c8c1c31e7c4" name="/tests/bench.php" role="php" />
-   <file baseinstalldir="/" md5sum="47de79a35a4d6c67d38953f39ac49e3e" name="/tests/bench2.php" role="php" />
-   <file baseinstalldir="/" md5sum="95841d8533c3329ae885ec6c5525caa3" name="/tests/bench3.php" role="php" />
-   <file baseinstalldir="/" md5sum="710f77b0ed753a42a49aad8b779ee18c" name="/tests/Cache_Lite_automaticCleaning.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="4cfa4bd099dfb552bb6cbfad3e62f12e" name="/tests/cache_lite_base.inc" role="data" />
-   <file baseinstalldir="/" md5sum="02a3c6ac536076fc77810b843e4a6212" name="/tests/Cache_Lite_classical.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="005a0b4093a22454152b10c5b3a5531a" name="/tests/Cache_Lite_error.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="1d7dc15b1621f98e920a0331ed01fb3c" name="/tests/Cache_Lite_error2.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="554b773f3677d0a64e61e0e4c97ebab1" name="/tests/Cache_Lite_error3.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="71d8c3bbeb65faff31ee6822391e2744" name="/tests/Cache_Lite_eternal.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="198f6f9142051df39d9f70e6c9a0b635" name="/tests/Cache_Lite_fatest.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="fc9d144785e80a4fca49e241c059de2f" name="/tests/cache_lite_file_base.inc" role="data" />
-   <file baseinstalldir="/" md5sum="985482fedda364c2b4f166183e1dd9b4" name="/tests/Cache_Lite_File_classical.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="38b9d571d4e216c79ba682f29e1e2d37" name="/tests/cache_lite_function_base.inc" role="data" />
-   <file baseinstalldir="/" md5sum="58e15eced32aaed91afa7b8c2985e7aa" name="/tests/Cache_Lite_Function_classical.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="5c8fbf9a55fe0e62c543ba537b51ba86" name="/tests/Cache_Lite_Function_dontcache.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="5e796fdaf0a7b06e229bdc2057bbb459" name="/tests/Cache_Lite_Function_drop.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="a744ad847aa90ab010217f36a4b02a73" name="/tests/Cache_Lite_hashed.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="c0cebda77abb8bec1fcb8a9d66ae0742" name="/tests/Cache_Lite_lifetime.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="0bbbee2deb4df646b16034ccf128ccbd" name="/tests/Cache_Lite_memorycache.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="90e87442db22f9aae9cc987366616381" name="/tests/cache_lite_output_base.inc" role="data" />
-   <file baseinstalldir="/" md5sum="912efc43bb996181572015e019802f03" name="/tests/Cache_Lite_Output_classical.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="21d2f81e4eca52e62d6ff5d627279358" name="/tests/Cache_Lite_serialization.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="1a49f54c490135ea472c831750458a92" name="/tests/callcache.inc" role="data" />
-   <file baseinstalldir="/" md5sum="4967e02dd8e5c904e053828526c5c5d9" name="/tests/NestedOutputTest.php" role="php" />
-   <file baseinstalldir="/" md5sum="0055a5b3f32732ed93eb1d35da967d15" name="/tests/pearbug513.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="ce290cff1c6d59f355af2fd24264fb3f" name="/tests/pearbug7618.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="3bc88b43e4a320d5a5cab8a6cc50e3cb" name="/tests/pearbug13693.phpt" role="data" />
-   <file baseinstalldir="/" md5sum="76e588665a0a2be797cc43b968e34909" name="/tests/pearbug18192.php" role="php" />
+   <file baseinstalldir="/" md5sum="ef93c33ea1c01b7c904c698075931aef" name="/tests/bench.php" role="data" />
+   <file baseinstalldir="/" md5sum="ff657bfa685eaab06a9e83cd67aab939" name="/tests/bench2.php" role="data" />
+   <file baseinstalldir="/" md5sum="bb126373869a0faced44494f22eebdc9" name="/tests/bench3.php" role="data" />
+   <file baseinstalldir="/" md5sum="c3f00703a1b94e225015deaaaa6f7aca" name="/tests/Cache_Lite_automaticCleaning.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="5af02c3da2b024e5764b1fa26cf333f6" name="/tests/cache_lite_base.inc" role="data" />
+   <file baseinstalldir="/" md5sum="cf8edb665bf1420b2d55a3e55bce86ea" name="/tests/Cache_Lite_classical.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="8cf8a2c108a0c55411bc9546f27a31b8" name="/tests/Cache_Lite_error.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="f565b66fa58593e81780e4181c4aa6af" name="/tests/Cache_Lite_error2.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="150b9ffdab2f5eedbc8530176038a253" name="/tests/Cache_Lite_eternal.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="406a4fae49f9b56e7cd85588565c3f40" name="/tests/Cache_Lite_fatest.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="c6a8ff864cd5fa6fd829b2f753d0b80d" name="/tests/cache_lite_file_base.inc" role="data" />
+   <file baseinstalldir="/" md5sum="a9ca89e6d92abbd0c1295f3f3e9f6141" name="/tests/Cache_Lite_File_classical.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="1dd8a0b795b49990798f27f2545e2448" name="/tests/cache_lite_function_base.inc" role="data" />
+   <file baseinstalldir="/" md5sum="c301318065e0caa012ed70c4f39a12aa" name="/tests/Cache_Lite_Function_classical.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="da404422391f92e1366913bdad4d317a" name="/tests/Cache_Lite_Function_dontcache.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="2e427cb65cb9b1d550b54d3cefc51f58" name="/tests/Cache_Lite_Function_drop.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="5b7c8299d6d2b2a8d9bb578e94bf7486" name="/tests/Cache_Lite_hashed.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="b92f5f1f9c59d7b594d870a660e4cb4a" name="/tests/Cache_Lite_lifetime.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="14af32678db4bec830304be3999b55c9" name="/tests/Cache_Lite_memorycache.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="fcb1c70256d389e3c619a42136cba556" name="/tests/cache_lite_output_base.inc" role="data" />
+   <file baseinstalldir="/" md5sum="bab7a3ea28aa26256f4f9cff56629d06" name="/tests/Cache_Lite_Output_classical.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="46c6bfa06c5442b59f1518484a7d23a7" name="/tests/Cache_Lite_serialization.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="d4a669df034cc609071c825b841a8056" name="/tests/callcache.inc" role="data" />
+   <file baseinstalldir="/" md5sum="4967e02dd8e5c904e053828526c5c5d9" name="/tests/NestedOutputTest.php" role="data" />
+   <file baseinstalldir="/" md5sum="3ce3c02a90445beb08b226559791a9d4" name="/tests/pearbug513.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="cbf478ba244433eb49da45586a4b51c7" name="/tests/pearbug7618.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="166fa5f42e0e8e4ff70a921e2dfc96a2" name="/tests/pearbug13693.phpt" role="data" />
+   <file baseinstalldir="/" md5sum="7b0092afe429cc49727c1c678f6be1af" name="/tests/pearbug18192.php" role="data" />
    <file baseinstalldir="/" md5sum="4351e6910e477971c65993af6fea95d5" name="/tests/pearbug18328.phpt" role="data" />
    <file baseinstalldir="/" md5sum="f7a9487bf565e79860114dac982848c5" name="/tests/readme" role="data" />
-   <file baseinstalldir="/" md5sum="b59be5741e8f3ee07fc1d077c9018ae3" name="/tests/tmpdir.inc" role="data" />
+   <file baseinstalldir="/" md5sum="14628e474fb2fbdc828af7f200f39a80" name="/tests/tmpdir.inc" role="data" />
+   <file baseinstalldir="/" md5sum="74f3b13478bc450df15c5a6dd3dada86" name="/tests/ErrorDieTest.php" role="data" />
+   <file baseinstalldir="/" md5sum="4b833fbf798543c76c2f676aad231181" name="/tests/errordie.php" role="data" />
    <file baseinstalldir="/" md5sum="c73b943dc75f6f65e007c56ac6515c8f" name="LICENSE" role="doc" />
    <file baseinstalldir="/" md5sum="4e7877e52d34e04327b86029872cb009" name="README" role="data" />
    <file baseinstalldir="/" md5sum="4c638b951a7c8a4dcb94f10abf1d818b" name="TODO" role="doc" />
