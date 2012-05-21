@@ -72,7 +72,7 @@
             <file baseinstalldir="/" name="/tests/pearbug13693.phpt" role="data"/>
             <file baseinstalldir="/" name="/tests/pearbug18192.php" role="data"/>
             <file baseinstalldir="/" name="/tests/pearbug18328.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/PearBug19422Test.phpt" role="data"/>
+            <file baseinstalldir="/" name="/tests/pearbug19422.phpt" role="data"/>
             <file baseinstalldir="/" name="/tests/readme" role="data"/>
             <file baseinstalldir="/" name="/tests/tmpdir.inc" role="data"/>
             <file baseinstalldir="/" name="/tests/ErrorDieTest.php" role="data"/>
