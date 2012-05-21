@@ -19,8 +19,8 @@
 *
 * @package Cache_Lite
 * @category Caching
-* @version $Id$
 * @author Fabien MARTY <fab@php.net>
+* @author Markus Tacker <tacker@php.net>
 */
 
 define('CACHE_LITE_ERROR_RETURN', 1);
@@ -846,5 +846,3 @@ class Cache_Lite
     }
     
 } 
-
-?>

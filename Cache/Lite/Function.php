@@ -11,7 +11,6 @@
 * Technical choices are described in the 'docs/technical' file
 *
 * @package Cache_Lite
-* @version $Id$
 * @author Sebastian BERGMANN <sb@sebastian-bergmann.de>
 * @author Fabien MARTY <fab@php.net>
 */
@@ -207,5 +206,3 @@ class Cache_Lite_Function extends Cache_Lite
     }
 
 }
-
-?>

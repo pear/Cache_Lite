@@ -5,7 +5,6 @@
 * It supports nesting of caches
 *
 * @package Cache_Lite
-* @version $Id$
 * @author Markus Tacker <tacker@php.net>
 */
 
