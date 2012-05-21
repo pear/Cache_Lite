@@ -729,9 +729,13 @@ class Cache_Lite
             if ($this->_readControl) {
                 $hashControl = @fread($fp, 32);
                 $length = $length - 32;
-            } 
+            }
+
             if ($length) {
-                $data = @fread($fp, $length);
+                $data = '';
+                // See https://bugs.php.net/bug.php?id=30936
+                // The 8192 magic number is the chunk size used internally by PHP.
+                while(!feof($fp)) $data .= fread($fp, 8192);
             } else {
                 $data = '';
             }
