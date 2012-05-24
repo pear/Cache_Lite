@@ -20,10 +20,10 @@
         <email>tacker@php.net</email>
         <active>yes</active>
     </lead>
-    <date>2012-05-21</date>
+    <date>2012-05-24</date>
     <time>12:00:00</time>
     <version>
-        <release>1.7.14</release>
+        <release>1.7.15</release>
         <api>1.7.7</api>
     </version>
     <stability>
@@ -32,7 +32,7 @@
     </stability>
     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
     <notes>
-        - Fixes PEAR Bug #19422. Props to Fletcher Moore for reporting.
+        - Fixes Bug #19434:	Bad roles for test and doc files. Props to Remi Collet for reporting.
     </notes>
     <contents>
         <dir baseinstalldir="/" name="/">
@@ -41,45 +41,45 @@
             <file baseinstalldir="/" name="/Cache/Lite/Function.php" role="php"/>
             <file baseinstalldir="/" name="/Cache/Lite/NestedOutput.php" role="php"/>
             <file baseinstalldir="/" name="/Cache/Lite/Output.php" role="php"/>
-            <file baseinstalldir="/" name="/docs/examples" role="data"/>
-            <file baseinstalldir="/" name="/docs/technical" role="data"/>
-            <file baseinstalldir="/" name="/tests/bench.php" role="data"/>
-            <file baseinstalldir="/" name="/tests/bench2.php" role="data"/>
-            <file baseinstalldir="/" name="/tests/bench3.php" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_automaticCleaning.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/cache_lite_base.inc" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_classical.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_error.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_error2.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_eternal.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_fatest.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/cache_lite_file_base.inc" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_File_classical.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/cache_lite_function_base.inc" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_Function_classical.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_Function_dontcache.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_Function_drop.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_hashed.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_lifetime.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_memorycache.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/cache_lite_output_base.inc" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_Output_classical.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/Cache_Lite_serialization.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/callcache.inc" role="data"/>
-            <file baseinstalldir="/" name="/tests/NestedOutputTest.php" role="data"/>
-            <file baseinstalldir="/" name="/tests/pearbug513.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/pearbug7618.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/pearbug13693.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/pearbug18192.php" role="data"/>
-            <file baseinstalldir="/" name="/tests/pearbug18328.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/pearbug19422.phpt" role="data"/>
-            <file baseinstalldir="/" name="/tests/readme" role="data"/>
-            <file baseinstalldir="/" name="/tests/tmpdir.inc" role="data"/>
-            <file baseinstalldir="/" name="/tests/ErrorDieTest.php" role="data"/>
-            <file baseinstalldir="/" name="/tests/errordie.php" role="data"/>
+            <file baseinstalldir="/" name="/docs/examples" role="doc"/>
+            <file baseinstalldir="/" name="/docs/technical" role="doc"/>
             <file baseinstalldir="/" name="LICENSE" role="doc"/>
-            <file baseinstalldir="/" name="README.md" role="data"/>
+            <file baseinstalldir="/" name="README.md" role="doc"/>
             <file baseinstalldir="/" name="TODO" role="doc"/>
+            <file baseinstalldir="/" name="/tests/bench.php" role="test"/>
+            <file baseinstalldir="/" name="/tests/bench2.php" role="test"/>
+            <file baseinstalldir="/" name="/tests/bench3.php" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_automaticCleaning.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/cache_lite_base.inc" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_classical.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_error.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_error2.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_eternal.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_fatest.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/cache_lite_file_base.inc" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_File_classical.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/cache_lite_function_base.inc" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_Function_classical.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_Function_dontcache.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_Function_drop.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_hashed.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_lifetime.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_memorycache.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/cache_lite_output_base.inc" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_Output_classical.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/Cache_Lite_serialization.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/callcache.inc" role="test"/>
+            <file baseinstalldir="/" name="/tests/NestedOutputTest.php" role="test"/>
+            <file baseinstalldir="/" name="/tests/pearbug513.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/pearbug7618.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/pearbug13693.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/pearbug18192.php" role="test"/>
+            <file baseinstalldir="/" name="/tests/pearbug18328.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/pearbug19422.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/readme" role="test"/>
+            <file baseinstalldir="/" name="/tests/tmpdir.inc" role="test"/>
+            <file baseinstalldir="/" name="/tests/ErrorDieTest.php" role="test"/>
+            <file baseinstalldir="/" name="/tests/errordie.php" role="test"/>
         </dir>
     </contents>
     <dependencies>
@@ -782,6 +782,22 @@
             <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
             <notes>
                 - Fixes PEAR Bug #19422. Props to Fletcher Moore for reporting.
+            </notes>
+        </release>
+        <release>
+            <date>2012-05-24</date>
+            <time>12:00:00</time>
+            <version>
+                <release>1.7.15</release>
+                <api>1.7.7</api>
+            </version>
+            <stability>
+                <release>stable</release>
+                <api>stable</api>
+            </stability>
+            <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
+            <notes>
+                - Fixes Bug #19434:	Bad roles for test and doc files. Props to Remi Collet for reporting.
             </notes>
         </release>
     </changelog>
