@@ -1,5 +1,5 @@
 {
-    "name":"pear/Cache_Lite",
+    "name":"pear/cache_lite",
     "type":"library",
     "description":"Fast and safe little cache system",
     "keywords":[ "cache" ],
