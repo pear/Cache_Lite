@@ -1,0 +1,25 @@
+{
+    "name":"pear/Cache_Lite",
+    "type":"library",
+    "description":"Fast and safe little cache system",
+    "keywords":[ "cache" ],
+    "homepage":"https://github.com/pear/Cache_Lite",
+    "license":"LGPL",
+    "authors":[
+        {
+            "name":"Markus Tacker",
+            "homepage":"http://pear.php.net/user/tacker"
+        },
+        {
+            "name":"Fabien Marty",
+            "homepage":"http://pear.php.net/user/fab"
+        }
+    ],
+    "require":{
+        "php":">=4.0.0",
+        "pear/PEAR":">=1.5.4"
+    },
+    "autoload":{
+        "classmap":[ "Cache/Lite.php" ]
+    }
+}
