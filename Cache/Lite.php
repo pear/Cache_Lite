@@ -665,7 +665,19 @@ class Cache_Lite
         }
         return $result;
     }
-      
+
+    /**
+    * Touch the cache file while are recreating it to avoid
+    * launch this task more then once when necessary
+    * When the cache recreated and Added in Cache Memory
+    * @return void
+    * @access private
+    */
+    function _touchCacheFile(){
+        if (file_exists($this->_file)) {
+            @touch($this->_file);
+        }
+    }
     /**
     * Add some date in the memory caching array
     *
@@ -674,6 +686,7 @@ class Cache_Lite
     */
     function _memoryCacheAdd($data)
     {
+        $this->_touchCacheFile();
         $this->_memoryCachingArray[$this->_file] = $data;
         if ($this->_memoryCachingCounter >= $this->_memoryCachingLimit) {
             list($key, ) = each($this->_memoryCachingArray);
