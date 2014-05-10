@@ -1,3 +1,7 @@
+# PEAR Cache_Lite
+
+[![Build Status](https://travis-ci.org/pear/Cache_Lite.svg)](https://travis-ci.org/pear/Cache_Lite)
+
 This package is [Cache_Lite](http://pear.php.net/package/Cache_Lite).
 
 Please report all new issues via the [PEAR bug tracker](http://pear.php.net/bugs/).
