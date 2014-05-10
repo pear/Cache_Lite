@@ -7,7 +7,7 @@
  * @author Markus Tacker <tacker@php.net>
  */
 
-require_once 'Cache/Lite.php';
+require_once __DIR__ . '/../Cache/Lite.php';
 $c = new Cache_Lite(array('cacheDir' => '.', 'lifeTime' => 60));
 $id = '#18192';
 for ($i = 0; $i < 100000; $i++) {

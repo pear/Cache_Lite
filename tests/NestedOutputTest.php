@@ -9,7 +9,7 @@
  * @author Markus Tacker <tacker@php.net>
  */
 
-require_once 'Cache/Lite/NestedOutput.php';
+require_once __DIR__ . '/../Cache/Lite/NestedOutput.php';
 
 class NestedOutputTest extends PHPUnit_Framework_TestCase
 {

@@ -14,7 +14,7 @@ Cache_Lite::Cache_Lite (PEAR bug #19422)
  * @author Markus Tacker <tacker@php.net>
  */
 
-require_once 'Cache/Lite.php';
+require_once __DIR__ . '/../Cache/Lite.php';
 
 define('FsStreamWrapper_CACHE_DIR', sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'cachelite-streamwrapper' . DIRECTORY_SEPARATOR);
 

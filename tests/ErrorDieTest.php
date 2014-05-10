@@ -9,7 +9,7 @@
  * @author Markus Tacker <tacker@php.net>
  */
 
-require_once 'tmpdir.inc';
+require_once __DIR__ . '/tmpdir.inc';
 
 class ErrorDieTest extends PHPUnit_Framework_TestCase
 {

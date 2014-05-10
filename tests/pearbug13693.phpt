@@ -2,7 +2,7 @@
 pearbug13693
 --FILE--
 <?php
-require_once 'Cache/Lite.php';
+require_once __DIR__ . '/../Cache/Lite.php';
 
 // Create temp dir
 $dir = dirname( __FILE__ ) . '/' . uniqid();

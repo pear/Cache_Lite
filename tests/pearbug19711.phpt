@@ -13,8 +13,8 @@ Cache_Lite::Cache_Lite (PEAR bug #19711)
  * @author Markus Tacker <tacker@php.net>
  */
 
-require_once 'Cache/Lite.php';
-require_once 'tmpdir.inc';
+require_once __DIR__ . '/../Cache/Lite.php';
+require_once __DIR__ . '/tmpdir.inc';
 
 $options = array(
     'cacheDir' => tmpDir() . '/',

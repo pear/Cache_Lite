@@ -9,9 +9,9 @@
  * @author Markus Tacker <tacker@php.net>
  */
 
-require_once 'callcache.inc';
-require_once 'tmpdir.inc';
-require_once 'cache_lite_base.inc';
+require_once __DIR__ . '/callcache.inc';
+require_once __DIR__ . '/tmpdir.inc';
+require_once __DIR__ . '/cache_lite_base.inc';
 
 error_reporting(0);
 

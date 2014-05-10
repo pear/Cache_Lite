@@ -3,9 +3,9 @@ Cache_Lite::Cache_Lite (error2)
 --FILE--
 <?php
 
-require_once 'callcache.inc';
-require_once 'tmpdir.inc';
-require_once 'cache_lite_base.inc';
+require_once __DIR__ . '/callcache.inc';
+require_once __DIR__ . '/tmpdir.inc';
+require_once __DIR__ . '/cache_lite_base.inc';
 
 $tmpdir = tmpDir() . '31451992gjhgjh'. '/'; # I hope there will be no directory with that silly name
 $options = array(
