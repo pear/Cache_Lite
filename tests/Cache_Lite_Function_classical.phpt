@@ -3,6 +3,7 @@ Cache_Lite::Cache_Lite_Function (classical)
 --FILE--
 <?php
 
+require_once __DIR__ . '/bootstrap.php';
 require_once __DIR__ . '/callcache.inc';
 require_once __DIR__ . '/tmpdir.inc';
 require_once __DIR__ . '/cache_lite_function_base.inc';

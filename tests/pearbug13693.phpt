@@ -2,6 +2,7 @@
 pearbug13693
 --FILE--
 <?php
+require_once __DIR__ . '/bootstrap.php';
 require_once __DIR__ . '/../Cache/Lite.php';
 
 // Create temp dir
