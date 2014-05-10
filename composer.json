@@ -18,12 +18,17 @@
         }
     ],
     "require": {
-        "php": ">=4.0.0"
+        "php": ">=4.0.0",
+        "pear/pear_exception": "dev-master"
     },
     "autoload": {
-        "psr-0": {
-            "Cache":   "Cache"
-        }
+        "classmap": [
+            "Cache/Lite.php",
+            "Cache/Lite/Output.php",
+            "Cache/Lite/NestedOutput.php",
+            "Cache/Lite/Function.php",
+            "Cache/Lite/File.php"
+        ]
     },
     "include-path": [
         "./"
