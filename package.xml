@@ -20,10 +20,10 @@
         <email>tacker@php.net</email>
         <active>yes</active>
     </lead>
-    <date>2012-05-24</date>
+    <date>2014-05-10</date>
     <time>12:00:00</time>
     <version>
-        <release>1.7.15</release>
+        <release>1.7.16</release>
         <api>1.7.7</api>
     </version>
     <stability>
@@ -32,7 +32,7 @@
     </stability>
     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
     <notes>
-        - Fixes Bug #19434:	Bad roles for test and doc files. Props to Remi Collet for reporting.
+        - Update tests to work with PHPUnit4.
     </notes>
     <contents>
         <dir baseinstalldir="/" name="/">
@@ -80,6 +80,8 @@
             <file baseinstalldir="/" name="/tests/tmpdir.inc" role="test"/>
             <file baseinstalldir="/" name="/tests/ErrorDieTest.php" role="test"/>
             <file baseinstalldir="/" name="/tests/errordie.php" role="test"/>
+            <file baseinstalldir="/" name="/tests/bootstrap.php" role="test"/>
+            <file baseinstalldir="/" name="/phpunit.xml.dist" role="test"/>
         </dir>
     </contents>
     <dependencies>
@@ -798,6 +800,22 @@
             <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
             <notes>
                 - Fixes Bug #19434:	Bad roles for test and doc files. Props to Remi Collet for reporting.
+            </notes>
+        </release>
+        <release>
+            <date>2014-05-10</date>
+            <time>12:00:00</time>
+            <version>
+                <release>1.7.16</release>
+                <api>1.7.7</api>
+            </version>
+            <stability>
+                <release>stable</release>
+                <api>stable</api>
+            </stability>
+            <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
+            <notes>
+                - Update tests to work with PHPUnit4
             </notes>
         </release>
     </changelog>
