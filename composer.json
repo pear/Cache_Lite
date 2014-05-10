@@ -20,8 +20,10 @@
     "require": {
         "php": ">=4.0.0"
     },
-    "psr-0": {
-        "Cache": "./"
+    "autoload": {
+        "psr-0": {
+            "Cache":   "Cache"
+        }
     },
     "include-path": [
         "./"
