@@ -18,8 +18,7 @@
         }
     ],
     "require": {
-        "php": ">=4.0.0",
-        "pear/pear_exception": "dev-master"
+        "php": ">=4.0.0"
     },
     "autoload": {
         "classmap": [
