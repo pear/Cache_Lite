@@ -22,7 +22,11 @@
     },
     "autoload": {
         "classmap": [
-            "Cache/Lite.php"
+            "Cache/Lite.php",
+            "Cache/Lite/Output.php",
+            "Cache/Lite/NestedOutput.php"
+            "Cache/Lite/Function.php",
+            "Cache/Lite/File.php"
         ]
     },
     "include-path": [
