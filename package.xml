@@ -95,6 +95,7 @@
             <package>
                 <name>PEAR</name>
                 <channel>pear.php.net</channel>
+                <min>1.10.1</min>
             </package>
         </required>
     </dependencies>
