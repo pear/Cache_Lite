@@ -55,7 +55,7 @@ class bench
         return "\$obj->test = $this->test and this is the result of the method \$obj->method_to_bench($arg1, $arg2) !\n";        
     }
     
-    function static_method_to_bench($arg1, $arg2) {
+    static function static_method_to_bench($arg1, $arg2) {
         echo "This is the output of the function static_method_to_bench($arg1, $arg2) !\n";
         return "This is the result of the function static_method_to_bench($arg1, $arg2) !\n";
     }
@@ -64,7 +64,7 @@ class bench
 
 class test
 {
-    function test($options) {
+    function __construct($options) {
         $this->foo = 'bar';
         $cache = new Cache_Lite_Function($options);
         echo($cache->call(array($this, 'method_to_bench'), 'foo', 'bar'));
