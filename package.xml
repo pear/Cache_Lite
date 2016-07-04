@@ -20,11 +20,11 @@
         <email>tacker@php.net</email>
         <active>yes</active>
     </lead>
-    <date>2014-05-10</date>
-    <time>12:00:00</time>
+    <date>2016-07-04</date>
+    <time>07:00:00</time>
     <version>
-        <release>1.7.16</release>
-        <api>1.7.7</api>
+        <release>1.8.0</release>
+        <api>1.8.0</api>
     </version>
     <stability>
         <release>stable</release>
@@ -32,7 +32,10 @@
     </stability>
     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
     <notes>
-        - Update tests to work with PHPUnit4.
+     - Add PHP5-style constructors, but keep PHP4 ones for BC
+     - Make non-static test method static
+     - Raise minimum PEAR version to 1.10.1
+     - Raise minimum PHP version to 5.4
     </notes>
     <contents>
         <dir baseinstalldir="/" name="/">
@@ -817,6 +820,26 @@
             <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
             <notes>
                 - Update tests to work with PHPUnit4
+            </notes>
+        </release>
+
+        <release>
+            <date>2016-07-04</date>
+            <time>07:00:00</time>
+            <version>
+                <release>1.8.0</release>
+                <api>1.8.0</api>
+            </version>
+            <stability>
+                <release>stable</release>
+                <api>stable</api>
+            </stability>
+            <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
+            <notes>
+             - Add PHP5-style constructors, but keep PHP4 ones for BC
+             - Make non-static test method static
+             - Raise minimum PEAR version to 1.10.1
+             - Raise minimum PHP version to 5.4
             </notes>
         </release>
     </changelog>
