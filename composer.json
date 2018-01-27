@@ -6,7 +6,7 @@
         "cache"
     ],
     "homepage": "https://github.com/pear/Cache_Lite",
-    "license": "LGPL",
+    "license": "LGPL-2.1-or-later",
     "authors": [
         {
             "name": "Markus Tacker",
