@@ -79,6 +79,7 @@
             <file baseinstalldir="/" name="/tests/pearbug18192.php" role="test"/>
             <file baseinstalldir="/" name="/tests/pearbug18328.phpt" role="test"/>
             <file baseinstalldir="/" name="/tests/pearbug19422.phpt" role="test"/>
+            <file baseinstalldir="/" name="/tests/pearbug19711.phpt" role="test"/>
             <file baseinstalldir="/" name="/tests/readme" role="test"/>
             <file baseinstalldir="/" name="/tests/tmpdir.inc" role="test"/>
             <file baseinstalldir="/" name="/tests/ErrorDieTest.php" role="test"/>

@@ -116,6 +116,14 @@ var_dump(strlen($data) === strlen($verify));
 var_dump($data === $verify);
 
 ?>
+--CLEAN--
+<?php
+define('FsStreamWrapper_CACHE_DIR', sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'cachelite-streamwrapper' . DIRECTORY_SEPARATOR);
+foreach(glob(FsStreamWrapper_CACHE_DIR . 'cache*') as $file) {
+  unlink($file);
+}
+@rmdir(FsStreamWrapper_CACHE_DIR);
+?>
 --GET--
 --POST--
 --EXPECT--
