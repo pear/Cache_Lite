@@ -18,12 +18,11 @@
         <name>Markus Tacker</name>
         <user>tacker</user>
         <email>tacker@php.net</email>
-        <active>yes</active>
+        <active>no</active>
     </lead>
-    <date>2016-07-04</date>
-    <time>07:00:00</time>
+    <date>2018-02-13</date>
     <version>
-        <release>1.8.0</release>
+        <release>1.8.2</release>
         <api>1.8.0</api>
     </version>
     <stability>
@@ -32,10 +31,8 @@
     </stability>
     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
     <notes>
-     - Add PHP5-style constructors, but keep PHP4 ones for BC
-     - Make non-static test method static
-     - Raise minimum PEAR version to 1.10.1
-     - Raise minimum PHP version to 5.4
+      - Bug #21003 "PHP7: Cache_Lite has a deprecated constructor"
+      - Bug #21231 "The each() function is deprecated in PHP7.2"
     </notes>
     <contents>
         <dir baseinstalldir="/" name="/">
@@ -841,6 +838,39 @@
              - Make non-static test method static
              - Raise minimum PEAR version to 1.10.1
              - Raise minimum PHP version to 5.4
+            </notes>
+        </release>
+
+        <release>
+            <date>2018-01-27</date>
+            <version>
+                <release>1.8.1</release>
+                <api>1.8.0</api>
+            </version>
+            <stability>
+                <release>stable</release>
+                <api>stable</api>
+            </stability>
+            <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
+            <notes>
+             - Use correct SPDX license identifier
+            </notes>
+        </release>
+
+        <release>
+            <date>2018-02-13</date>
+            <version>
+                <release>1.8.2</release>
+                <api>1.8.0</api>
+            </version>
+            <stability>
+                <release>stable</release>
+                <api>stable</api>
+            </stability>
+            <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
+            <notes>
+              - Bug #21003 "PHP7: Cache_Lite has a deprecated constructor"
+              - Bug #21231 "The each() function is deprecated in PHP7.2"
             </notes>
         </release>
     </changelog>
