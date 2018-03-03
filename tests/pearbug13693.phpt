@@ -1,5 +1,7 @@
 --TEST--
 pearbug13693
+--INI--
+track_errors=Off
 --FILE--
 <?php
 require_once __DIR__ . '/bootstrap.php';

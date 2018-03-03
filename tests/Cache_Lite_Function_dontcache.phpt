@@ -1,5 +1,7 @@
 --TEST--
 Cache_Lite::Cache_Lite_Function (dont cache)
+--INI--
+track_errors=Off
 --FILE--
 <?php
 

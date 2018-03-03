@@ -1,5 +1,7 @@
 --TEST--
 pearbug513
+--INI--
+track_errors=Off
 --FILE--
 <?php
 

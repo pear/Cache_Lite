@@ -1,5 +1,7 @@
 --TEST--
 Cache_Lite::Cache_Lite (PEAR bug #19711)
+--INI--
+track_errors=Off
 --FILE--
 <?php
 
