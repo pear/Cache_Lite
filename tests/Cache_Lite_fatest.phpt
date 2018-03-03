@@ -1,5 +1,7 @@
 --TEST--
 Cache_Lite::Cache_Lite (fatest, no control, no lock)
+--INI--
+track_errors=Off
 --FILE--
 <?php
 
