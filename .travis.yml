@@ -14,4 +14,4 @@ php:
 
 script:
   - composer install
-  - phpunit tests/
+  - vendor/bin/phpunit tests/
