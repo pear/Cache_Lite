@@ -33,6 +33,6 @@
         "source": "https://github.com/pear/Cache_Lite"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "^4"
     }
 }
