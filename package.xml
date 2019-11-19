@@ -20,9 +20,9 @@
         <email>tacker@php.net</email>
         <active>no</active>
     </lead>
-    <date>2018-02-13</date>
+    <date>2019-11-19</date>
     <version>
-        <release>1.8.2</release>
+        <release>1.8.3</release>
         <api>1.8.0</api>
     </version>
     <stability>
@@ -31,8 +31,10 @@
     </stability>
     <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
     <notes>
-      - Bug #21003 "PHP7: Cache_Lite has a deprecated constructor"
-      - Bug #21231 "The each() function is deprecated in PHP7.2"
+      * PR #8:  Fix failing CI
+      * PR #9:  Add PHP 7.1 and 7.2 to run PHPUnit on Travis
+      * PR #10: fix(Lite): make _memoryCacheAdd not clear whole cache if limit reached
+      * PR #11: fix get_magic_quotes_runtime is deprecated
     </notes>
     <contents>
         <dir baseinstalldir="/" name="/">
@@ -871,6 +873,25 @@
             <notes>
               - Bug #21003 "PHP7: Cache_Lite has a deprecated constructor"
               - Bug #21231 "The each() function is deprecated in PHP7.2"
+            </notes>
+        </release>
+
+        <release>
+            <date>2019-11-19</date>
+            <version>
+                <release>1.8.3</release>
+                <api>1.8.0</api>
+            </version>
+            <stability>
+                <release>stable</release>
+                <api>stable</api>
+            </stability>
+            <license uri="http://www.gnu.org/licenses/lgpl-2.1.html">lgpl</license>
+            <notes>
+              * PR #8:  Fix failing CI
+	      * PR #9:  Add PHP 7.1 and 7.2 to run PHPUnit on Travis
+	      * PR #10: fix(Lite): make _memoryCacheAdd not clear whole cache if limit reached
+	      * PR #11: fix get_magic_quotes_runtime is deprecated
             </notes>
         </release>
     </changelog>
