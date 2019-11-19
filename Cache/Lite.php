@@ -756,7 +756,7 @@ class Cache_Lite
 	    if ($this->_fileLocking) @flock($fp, LOCK_SH);
             clearstatcache();
             $length = @filesize($this->_file);
-            $mqr = get_magic_quotes_runtime();
+            $mqr = (function_exists('get_magic_quotes_runtime') ? @get_magic_quotes_runtime() : 0);
             if ($mqr) {
                 set_magic_quotes_runtime(0);
             }
@@ -835,7 +835,7 @@ class Cache_Lite
             if ($this->_readControl) {
                 @fwrite($fp, $this->_hash($data, $this->_readControlType), 32);
             }
-            $mqr = get_magic_quotes_runtime();
+            $mqr = (function_exists('get_magic_quotes_runtime') ? @get_magic_quotes_runtime() : 0);
             if ($mqr) {
                 set_magic_quotes_runtime(0);
             }
