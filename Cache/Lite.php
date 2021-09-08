@@ -639,7 +639,7 @@ class Cache_Lite
                 return true;
             }
         }
-        if (!($dh = opendir($dir))) {
+        if (!($dh = @opendir($dir))) {
             return $this->raiseError('Cache_Lite : Unable to open cache directory !', -4);
         }
         $result = true;
