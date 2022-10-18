@@ -24,7 +24,7 @@ class ErrorDieTest extends PHPUnit_Framework_TestCase
             '0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789Cache_Lite : Unable to write cache file : <cachedir>/31451992gjhgjh/cache_c21f969b5f03d33d43e04f8f136e7682_e9982ec5ca981bd365603623cf4b2277',
         ));
 
-        $this->assertEquals($message, $expected);
+        $this->assertEquals($expected, $message);
 
 	}
 }

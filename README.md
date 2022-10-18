@@ -13,6 +13,11 @@ To test this package, run
 
     phpunit tests/
 
+To test with Composer dependencies rather than a global PEAR install, run
+
+    composer update
+    phpunit tests/
+
 To build, simply execute
 
     pear package

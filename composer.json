@@ -18,7 +18,8 @@
         }
     ],
     "require": {
-        "php": ">=4.0.0"
+        "php": ">=4.0.0",
+        "pear/pear-core-minimal": "^1.10"
     },
     "autoload": {
         "classmap": [
