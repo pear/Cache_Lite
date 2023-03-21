@@ -11,24 +11,11 @@ t is fast and safe (because it uses file locking and/or anti-corruption tests).
 ## Building
 To test this package, run
 
-    phpunit tests/
-
-To build, simply execute
-
-    pear package
+    composer install
+    ./vendor/bin/phpunit
 
 
 ## Installation
-### PEAR
-To install from scratch
-
-    pear install package.xml
-
-To upgrade
-
-    pear upgrade -f package.xml
-
-### Composer
 
     composer require pear/cache_lite
 
