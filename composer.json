@@ -18,21 +18,19 @@
         }
     ],
     "require": {
-        "php": ">=4.0.0"
+        "php": ">=7.4.0",
+        "pear/pear-core-minimal": "^1.10"
     },
     "autoload": {
         "classmap": [
             "Cache/Lite.php"
         ]
     },
-    "include-path": [
-        "./"
-    ],
     "support": {
         "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Cache_Lite",
         "source": "https://github.com/pear/Cache_Lite"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4"
+        "phpunit/phpunit": "^9"
     }
 }

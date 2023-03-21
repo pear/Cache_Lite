@@ -1,2 +1,32 @@
 <phpunit bootstrap="./tests/bootstrap.php">
+ <testsuites>
+  <testsuite name="phpunit">
+   <file>tests/ErrorDieTest.php</file>
+   <file>tests/NestedOutputTest.php</file>
+  </testsuite>
+
+  <testsuite name="phpt">
+   <file>tests/Cache_Lite_automaticCleaning.phpt</file>
+   <file>tests/Cache_Lite_classical.phpt</file>
+   <file>tests/Cache_Lite_error2.phpt</file>
+   <file>tests/Cache_Lite_error.phpt</file>
+   <file>tests/Cache_Lite_eternal.phpt</file>
+   <file>tests/Cache_Lite_fatest.phpt</file>
+   <file>tests/Cache_Lite_File_classical.phpt</file>
+   <file>tests/Cache_Lite_Function_classical.phpt</file>
+   <file>tests/Cache_Lite_Function_dontcache.phpt</file>
+   <file>tests/Cache_Lite_Function_drop.phpt</file>
+   <file>tests/Cache_Lite_hashed.phpt</file>
+   <file>tests/Cache_Lite_lifetime.phpt</file>
+   <file>tests/Cache_Lite_memorycache.phpt</file>
+   <file>tests/Cache_Lite_Output_classical.phpt</file>
+   <file>tests/Cache_Lite_serialization.phpt</file>
+   <file>tests/pearbug13693.phpt</file>
+   <file>tests/pearbug18328.phpt</file>
+   <file>tests/pearbug19422.phpt</file>
+   <file>tests/pearbug19711.phpt</file>
+   <file>tests/pearbug513.phpt</file>
+   <file>tests/pearbug7618.phpt</file>
+  </testsuite>
+ </testsuites>
 </phpunit>

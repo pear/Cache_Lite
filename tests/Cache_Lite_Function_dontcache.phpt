@@ -97,8 +97,6 @@ function function_test2($arg1, $arg2)
 }
 
 ?>
---GET--
---POST--
 --EXPECT--
 Cache missed !
 This is the output of the function function_test(23, 66) !

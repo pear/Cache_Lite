@@ -36,8 +36,6 @@ sleep(1);
 multipleCallCache3_2('string');
 
 ?>
---GET--
---POST--
 --EXPECT--
 ==> First call (cache should be missed)
 Cache Missed !

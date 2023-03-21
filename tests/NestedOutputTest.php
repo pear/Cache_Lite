@@ -11,7 +11,7 @@
 
 require_once __DIR__ . '/../Cache/Lite/NestedOutput.php';
 
-class NestedOutputTest extends PHPUnit_Framework_TestCase
+class NestedOutputTest extends \PHPUnit\Framework\TestCase
 {
 	/**
 	 * "Test" used for documenting the nested output buffering feature of php

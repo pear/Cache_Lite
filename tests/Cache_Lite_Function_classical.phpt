@@ -80,8 +80,6 @@ class test
 }
 
 ?>
---GET--
---POST--
 --EXPECT--
 This is the output of the function function_to_bench(23, 66) !
 This is the result of the function function_to_bench(23, 66) !

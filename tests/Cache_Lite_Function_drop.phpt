@@ -37,8 +37,6 @@ function function_to_bench($arg1, $arg2)
 }
 
 ?>
---GET--
---POST--
 --EXPECT--
 hello !
 100

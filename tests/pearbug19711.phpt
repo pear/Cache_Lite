@@ -29,10 +29,8 @@ $data = array('apples', 'oranges');
 $Cache_Lite->save($data, 'array_cached');
 $fetched_data = $Cache_Lite->get('array_cached');
 
-var_dump($data === $fetched_data);
+var_export($data === $fetched_data); echo "\n";
 
 ?>
---GET--
---POST--
 --EXPECT--
-bool(true)
+true

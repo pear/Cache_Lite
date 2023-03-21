@@ -14,12 +14,10 @@ track_errors=Off
 
 require_once __DIR__ . '/../Cache/Lite.php';
 $c = new Cache_Lite(array('cacheDir' => '.', 'lifeTime' => 60,));
-var_dump($c->_cacheDir === '.'); 
+var_export($c->_cacheDir === '.'); echo "\n";
 $c = new Cache_Lite(array('lifeTime' => 60));
-var_dump($c->_cacheDir === (function_exists('sys_get_temp_dir') ? sys_get_temp_dir() . DIRECTORY_SEPARATOR : '/tmp/'));
+var_export($c->_cacheDir === (function_exists('sys_get_temp_dir') ? sys_get_temp_dir() . DIRECTORY_SEPARATOR : '/tmp/')); echo "\n";
 
---GET--
---POST--
 --EXPECT--
-bool(true)
-bool(true)
+true
+true

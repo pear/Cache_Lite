@@ -63,8 +63,6 @@ function rm($fileglob)
 rm(tmpDir() . '/cache_*');
 
 ?>
---GET--
---POST--
 --EXPECT--
 ==> First call (cache should be missed)
 Cache Missed !

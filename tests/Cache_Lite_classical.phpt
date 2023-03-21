@@ -18,8 +18,6 @@ $Cache_Lite = new Cache_Lite($options);
 multipleCallCache();
 
 ?>
---GET--
---POST--
 --EXPECT--
 ==> First call (cache should be missed)
 Cache Missed !

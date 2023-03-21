@@ -16,6 +16,7 @@ track_errors=Off
  * @author Markus Tacker <tacker@php.net>
  */
 
+require_once __DIR__ . '/bootstrap.php';
 require_once __DIR__ . '/../Cache/Lite.php';
 
 define('FsStreamWrapper_CACHE_DIR', sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'cachelite-streamwrapper' . DIRECTORY_SEPARATOR);
@@ -114,8 +115,8 @@ fclose($fp);
 $Cache_Lite->save($data, 'largechache');
 $verify = $Cache_Lite->get('largechache');
 
-var_dump(strlen($data) === strlen($verify));
-var_dump($data === $verify);
+var_export(strlen($data) === strlen($verify)); echo "\n";
+var_export($data === $verify); echo "\n";
 
 ?>
 --CLEAN--
@@ -126,8 +127,6 @@ foreach(glob(FsStreamWrapper_CACHE_DIR . 'cache*') as $file) {
 }
 @rmdir(FsStreamWrapper_CACHE_DIR);
 ?>
---GET--
---POST--
 --EXPECT--
-bool(true)
-bool(true)
+true
+true
