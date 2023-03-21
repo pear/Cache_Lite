@@ -28,7 +28,7 @@ $data = $cache->call('function_to_bench', 23, 66);
 echo($data."\n");
 $cache->clean();
 
-function function_to_bench($arg1, $arg2) 
+function function_to_bench($arg1, $arg2)
 {
     global $foo;
     $foo = $foo + 1;

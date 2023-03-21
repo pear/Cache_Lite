@@ -31,8 +31,8 @@ echo "\n";
 $dh = opendir(tmpDir());
 while ($file = readdir($dh)) {
     if (($file != '.') && ($file != '..')) {
-        if (substr($file, 0, 6)=='cache_') {  
-            echo "$file\n"; 
+        if (substr($file, 0, 6)=='cache_') {
+            echo "$file\n";
         }
     }
 }

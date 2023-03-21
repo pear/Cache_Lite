@@ -7,7 +7,7 @@ track_errors=Off
 
 /**
  * Process for test pearbug18328
- * 
+ *
  * @see https://pear.php.net/bugs/bug.php?id=18328
  * @author Markus Tacker <tacker@php.net>
  */

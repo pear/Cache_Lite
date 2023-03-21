@@ -41,7 +41,7 @@ $object = new test($options);
 
 $cache->clean();
 
-function function_to_bench($arg1, $arg2) 
+function function_to_bench($arg1, $arg2)
 {
     echo "This is the output of the function function_to_bench($arg1, $arg2) !\n";
     return "This is the result of the function function_to_bench($arg1, $arg2) !\n";
@@ -54,9 +54,9 @@ class bench
     function method_to_bench($arg1, $arg2)
     {
         echo "\$obj->test = $this->test and this is the output of the method \$obj->method_to_bench($arg1, $arg2) !\n";
-        return "\$obj->test = $this->test and this is the result of the method \$obj->method_to_bench($arg1, $arg2) !\n";        
+        return "\$obj->test = $this->test and this is the result of the method \$obj->method_to_bench($arg1, $arg2) !\n";
     }
-    
+
     static function static_method_to_bench($arg1, $arg2) {
         echo "This is the output of the function static_method_to_bench($arg1, $arg2) !\n";
         return "This is the result of the function static_method_to_bench($arg1, $arg2) !\n";
@@ -70,12 +70,12 @@ class test
         $this->foo = 'bar';
         $cache = new Cache_Lite_Function($options);
         echo($cache->call(array($this, 'method_to_bench'), 'foo', 'bar'));
-    }   
-    
+    }
+
     function method_to_bench($arg1, $arg2)
     {
         echo "output : *** $arg1 *** $arg2 *** " . $this->foo . " ***\n";
-        return "result : *** $arg1 *** $arg2 *** " . $this->foo . " ***\n";     
+        return "result : *** $arg1 *** $arg2 *** " . $this->foo . " ***\n";
     }
 }
 

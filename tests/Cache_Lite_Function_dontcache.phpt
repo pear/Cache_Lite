@@ -76,7 +76,7 @@ $data = $cache->call('function_test', 1, 66);
 echo($data);
 $cache->clean();
 
-function function_test($arg1, $arg2) 
+function function_test($arg1, $arg2)
 {
     echo "This is the output of the function function_test($arg1, $arg2) !\n";
     if ($arg1==0) {
@@ -88,7 +88,7 @@ function function_test($arg1, $arg2)
     return '';
 }
 
-function function_test2($arg1, $arg2) 
+function function_test2($arg1, $arg2)
 {
     if ($arg1==0) {
         echo "NOCACHE";
